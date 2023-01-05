@@ -1,0 +1,36 @@
+! Title: Frosteez YT Betterment
+! Description: Improve YouTube UI by hiding clutter and useless buttons, remove bad recommendations, and make better use of screen real estate.
+! Expires: 12 hours
+! Version: 05January2023
+
+! Home Page
+  !! Hide home page when redirecting to subscription page (if too slow)
+  youtube.com###destination-buttons:upward(#content)
+  !! Hide Watch Later & Add to Queue buttons
+  youtube.com###hover-overlays
+  !! Hide every option except "Hide" in the video menu
+  youtube.com##ytd-menu-service-item-renderer:not(:last-child)
+  youtube.com##ytd-menu-service-item-download-renderer
+  !! Hide season/episode counter above video name
+  youtube.com##h3 > ytd-badge-supported-renderer
+  !! Combine grid sections into a continuous page
+  youtube.com##.grid-subheader
+  youtube.com##ytd-item-section-renderer:style(display: inline-block !important)
+  !! Hide sidebar // Fix page width  
+  youtube.com##svg#menu-icon, #guide-button, #masthead-logo, tp-yt-app-drawer, ytd-mini-guide-renderer
+  youtube.com##ytd-page-manager.ytd-app:style(margin-left: 0px !important)
+  youtube.com##ytd-two-column-browse-results-renderer:style(width: calc(97vw - 30px) !important; max-width: calc(97vw - 15px) !important)
+  !! Hide top right buttons // Search button & Voice search button
+  youtube.com##button[aria-label="Create"], button[aria-label="YouTube apps"]:upward(ytd-topbar-menu-button-renderer)
+  youtube.com###voice-search-button, ytd-notification-topbar-button-renderer, #masthead-skeleton-icons
+  !! Hide page view switch buttons
+  youtube.com##[aria-label="Switch to grid view"]:upward(#menu)
+  !! Hide empty sections (when all videos have been removed)
+  youtube.com##:matches-path(/subscriptions/) ytd-item-section-renderer:not(:has(ytd-grid-video-renderer))
+
+! Shorts, Live, Upcoming
+  !! Hide Shorts and Upcoming videos from homescreen & search
+  youtube.com##[title*="#shorts"i]:upward(ytd-video-renderer, ytd-grid-video-renderer):remove()
+  youtube.com###overlays:has([overlay-style="SHORTS"], [overlay-style="UPCOMING"]):upward(ytd-video-renderer, ytd-grid-video-renderer):remove()
+  !! Hide Shorts, Live, Upcoming videos from video-side recommendations (Can't use :remove() cause the thumbnail will try to load forever)
+  youtube.com##ytd-thumbnail-overlay-time-status-renderer:not([overlay-style="DEFAULT"]):upward(ytd-compact-video-renderer)
