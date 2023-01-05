@@ -1,6 +1,6 @@
 ! Title: Frosteez Channel Wrangler
 ! Description: Cleanup Spammy Youtube Subscriptions
-! Expires: 1 day
+! Expires: 12 hours
 ! Version: 05January2023
 
 ! Hide by video title
