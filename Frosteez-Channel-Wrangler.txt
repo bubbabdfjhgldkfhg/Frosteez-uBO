@@ -3,6 +3,7 @@
 ! Expires: 12 hours
 ! Version: 05January2023
 
+! Video Filters (:remove() is faster and more stable, also necessary for the empty section hider to work.)
 ! Hide by video title
 youtube.com##ytd-grid-video-renderer:has([href="/@Judylog"]):has([title*="lookbook"i]):remove()  
 youtube.com##ytd-grid-video-renderer:has([href="/@Formula1"]):has([title*="Esports"i]):remove()
