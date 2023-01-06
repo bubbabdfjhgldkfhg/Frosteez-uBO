@@ -53,9 +53,9 @@
   youtube.com##ytd-compact-movie-renderer
   !! Hide "Recommended for you" videos
   youtube.com##.ytd-video-meta-block:has-text(/Recommended for you/):upward(ytd-compact-video-renderer)
-  !! Hide weird recommendations (ytd-promoted-sparkles-web-renderer doesn't seem to do anything but messes up the nth-child count.)
-  youtube.com##ytd-promoted-sparkles-web-renderer:remove()
-  youtube.com##ytd-compact-video-renderer:nth-child(3)
+  !! Hide weird recommendations (Removing ytd-promoted-sparkles-web-renderer causes infinite load bug.)
+  youtube.com###contents:not(:has(ytd-promoted-sparkles-web-renderer)) ytd-compact-video-renderer:nth-child(3)
+  youtube.com###contents:has(ytd-promoted-sparkles-web-renderer) ytd-compact-video-renderer:nth-child(4)
   youtube.com##ytd-compact-video-renderer:not(#metadata-line > span:first-of-type:has-text(/K|M/i))
   !! Hide endcard suggestions that cover the video
   youtube.com##.ytp-ce-element
