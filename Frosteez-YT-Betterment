@@ -78,7 +78,9 @@
     !!! Hide buttons/clutter under video player
     youtube.com###super-title-icon:upward(1)
     youtube.com##.super-title, #super-title, .super-title-icon, .ytd-video-primary-info-renderer#menu-container, #sponsor-button
-    youtube.com##[href^="/hashtag/"], #actions, #comment-teaser, #subscribe-button
+    youtube.com##[href^="/hashtag/"], #actions, #comment-teaser
+    !! Hide subscribe button
+    youtube.com##:matches-path(/watch/) #subscribe-button
     !! Hide anti-misinformation box
     youtube.com###clarify-box
     !! Show old view count
