@@ -74,12 +74,16 @@ youtube.com##ytd-grid-video-renderer:has([href="/@mkbhd"]):has(#metadata-line > 
 !! Hide Veritasium videos after 3 days if <4M views
 youtube.com##ytd-grid-video-renderer:has([href="/@veritasium"]):has(#metadata-line > span:first-child:not(:has-text(/^[4-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|^[1-2] day/i))):remove()
 
+! Hide by age AND title
+!! Hide all Tested videos w/o "One Day Build" in title after 3 days
+youtube.com##ytd-grid-video-renderer:has([href="/@tested"]):not(:has([title*="One Day Build"i])):not(#metadata-line > span:nth-child(2):has-text(/minute|hour|^[1-2] day/i)):remove()
+
 ! Hide by title OR view count
 !! Hide 60 minutes videos w/ "Archive" in title until they have 10k views
 youtube.com##ytd-grid-video-renderer:has([href="/@60minutes"]):has([title*="Archive"i]):not(#metadata-line > span:first-child:has-text(/\d\dK|M/)):remove()
 !! Hide all Tested videos w/o "Adam" in title until they have 100k views
 youtube.com##ytd-grid-video-renderer:has([href="/@tested"]):not(:has([title*="Adam"i])):not(#metadata-line > span:first-child:has-text(/\d{3}K|M/)):remove()
 
-! Hide by age AND title
-!! Hide all Tested videos w/o "One Day Build" in title after 3 days
-youtube.com##ytd-grid-video-renderer:has([href="/@tested"]):not(:has([title*="One Day Build"i])):not(#metadata-line > span:nth-child(2):has-text(/minute|hour|^[1-2] day/i)):remove()
+! Hide by length OR view count
+! Hide Andy Li videos shorter than 1 hour if they have >1k views
+youtube.com##ytd-grid-video-renderer:has([href="/@andyli"]):has(#text.ytd-thumbnail-overlay-time-status-renderer:not(:has-text(/:\d\d:/))):not(#metadata-line > span:first-child:has-text(/K|M/)):remove()
