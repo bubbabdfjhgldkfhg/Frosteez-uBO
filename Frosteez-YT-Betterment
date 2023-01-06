@@ -6,7 +6,7 @@
 
 ! Home Page
   !! Hide home page when redirecting to subscription page (if too slow)
-  youtube.com###destination-buttons:upward(#content)
+  !youtube.com###destination-buttons:upward(#content)
   !! Hide Watch Later & Add to Queue buttons
   youtube.com###hover-overlays
   !! Hide every option except "Hide" in the video menu
