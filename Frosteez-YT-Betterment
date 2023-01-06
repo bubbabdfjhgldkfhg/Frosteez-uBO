@@ -72,7 +72,7 @@
   youtube.com##.ytp-suggested-action
   !! Hide page load skeleton under video player
   youtube.com##.watch-skeleton
-  !! Hide uselesss buttons under video player
+  !! Hide buttons/clutter under video player
   youtube.com###super-title-icon:upward(1)
   youtube.com##.super-title, #super-title, .super-title-icon, .ytd-video-primary-info-renderer#menu-container, #sponsor-button
   youtube.com##[href^="/hashtag/"], #actions, #comment-teaser, #subscribe-button
