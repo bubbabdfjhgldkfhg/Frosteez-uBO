@@ -54,7 +54,7 @@ youtube.com##ytd-grid-video-renderer:has([href="/@NASA"]):has([overlay-style="DE
 !! Hide videos <150k views
 youtube.com##ytd-grid-video-renderer:has([href="/@CNBC"]):not(#metadata-line > span:first-child:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)):remove()
 
-! Hide by age AND view count (Replace span:nth-child(2) with "+".)
+! Hide by age AND view count
 !! Hide videos after 2 days if <15k views
 youtube.com##ytd-grid-video-renderer:has([href="/@gamesdonequick"], [href="/@TechTechPotato"]):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
 !! Hide videos after 3 days if <50k views
