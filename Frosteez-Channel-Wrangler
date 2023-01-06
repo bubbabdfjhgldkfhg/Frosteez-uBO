@@ -32,7 +32,7 @@ youtube.com##ytd-grid-video-renderer:has([href="/@CES"], [href="/@NFL"], [href="
 !! Hide videos after 2 days ("day ago" ensures no "s" after "day".)
 youtube.com##ytd-grid-video-renderer:has([href="/@hudsoninstitute"], [href="/@FpriOrg"], [href="/@csis"], [href="/@cfr"], [href="/@BrookingsInstitution"], [href="/@IISSorg"], [href="/@CNASdc"], [href="/@ChathamHouse10"], [href="/@aspeninstitute"], [href="/@WoodrowWilsonCenter"], [href="/@HooverInstitution"], [href="/@CarnegieEndowment"], [href="/@AtlanticCouncilUS"], [href="/@HLStimson100"], [href="/@BakerInstitute"], [href="/@catoinstitutevideo"], [href="/@SIPRIorg"], [href="/@wgowshipping"], [href="/@lockpickinglawyer"], [href="/@CNBC"], [href="/@NASA"], [href="/@CovertCabal"]):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|day ago/i))):remove()
 !! Hide videos after 3 days
-youtube.com##ytd-grid-video-renderer:has([href="/@Gametheory101"], [href="/@PerunAU"], [href="/@SandboxxApp"], [href="/@MilitaryAviationHistory"], [href="/@WardCarroll"], [href="/@TomorrowsBuild"], [href="/@TheB1M"], [href="/@yachtingworld"], [href="/@PlanetSailOnline"], [href="/@BookingHunterTV"], [href="/@OptimumTech"], [href="/@tracysohn"], [href="/@Judylog"], [href="/@MaliaRamos"], [href="/@splunk_ml"]):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|^[1-2] day/i))):remove()
+youtube.com##ytd-grid-video-renderer:has([href="/@Gametheory101"], [href="/@PerunAU"], [href="/@SandboxxApp"], [href="/@MilitaryAviationHistory"], [href="/@WardCarroll"], [href="/@TomorrowsBuild"], [href="/@TheB1M"], [href="/@yachtingworld"], [href="/@PlanetSailOnline"], [href="/@BookingHunterTV"], [href="/@OptimumTech"], [href="/@tracysohn"], [href="/@Judylog"], [href="/@MaliaRamos"], [href="/@splunk_ml"]):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
 
 ! Hide by view count
 !! Hide videos <50 views
@@ -58,25 +58,25 @@ youtube.com##ytd-grid-video-renderer:has([href="/@CNBC"]):not(#metadata-line > s
 !! Hide videos after 2 days if <15k views
 youtube.com##ytd-grid-video-renderer:has([href="/@gamesdonequick"], [href="/@TechTechPotato"]):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
 !! Hide videos after 3 days if <50k views
-youtube.com##ytd-grid-video-renderer:has([href="/@kermodeandmayostake"]):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|^[1-2] day/i))):remove()
+youtube.com##ytd-grid-video-renderer:has([href="/@kermodeandmayostake"]):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 !! Hide videos after 3 days if <100k views
-youtube.com##ytd-grid-video-renderer:has([href="/@60minutes"], [href="/@GoodTimesBadTimes"]):has(#metadata-line > span:first-child:not(:has-text(/^\d{3}K|M/)) + span:not(:has-text(/minute|hour|^[1-2] day/i))):remove()
+youtube.com##ytd-grid-video-renderer:has([href="/@60minutes"], [href="/@GoodTimesBadTimes"]):has(#metadata-line > span:first-child:not(:has-text(/^\d{3}K|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 !! Hide videos after 3 days if <150k views
-youtube.com##ytd-grid-video-renderer:has([href="/@Asianometry"]):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|^[1-2] day/i))):remove()
+youtube.com##ytd-grid-video-renderer:has([href="/@Asianometry"]):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 !! Hide videos after 3 days if <300k views
-youtube.com##ytd-grid-video-renderer:has([href="/@MoneyMacro"]):has(#metadata-line > span:first-child:not(:has-text(/^[3-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|^[1-2] day/i))):remove()
+youtube.com##ytd-grid-video-renderer:has([href="/@MoneyMacro"]):has(#metadata-line > span:first-child:not(:has-text(/^[3-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 !! Hide videos after 3 days if <500k views
-youtube.com##ytd-grid-video-renderer:has([href="/@FoundAndExplained"], [href="/@OBFYT"], [href="/@CaspianReport"], [href="/@SamChui"]):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|^[1-2] day/i))):remove()
+youtube.com##ytd-grid-video-renderer:has([href="/@FoundAndExplained"], [href="/@OBFYT"], [href="/@CaspianReport"], [href="/@SamChui"]):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 !! Hide videos after 3 days if <1M views
-youtube.com##ytd-grid-video-renderer:has([href="/@tomscottplus"], [href="/@NotWhatYouThink"]):has(#metadata-line > span:first-child:not(:has-text(/M/)) + span:not(:has-text(/minute|hour|^[1-2] day/i))):remove()
+youtube.com##ytd-grid-video-renderer:has([href="/@tomscottplus"], [href="/@NotWhatYouThink"]):has(#metadata-line > span:first-child:not(:has-text(/M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 !! Hide videos after 3 days if <2.5M views
-youtube.com##ytd-grid-video-renderer:has([href="/@mkbhd"]):has(#metadata-line > span:first-child:not(:has-text(/^2\.[5-9]M|^[3-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|^[1-2] day/i))):remove()
+youtube.com##ytd-grid-video-renderer:has([href="/@mkbhd"]):has(#metadata-line > span:first-child:not(:has-text(/^2\.[5-9]M|^[3-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 !! Hide videos after 3 days if <4M views
-youtube.com##ytd-grid-video-renderer:has([href="/@veritasium"]):has(#metadata-line > span:first-child:not(:has-text(/^[4-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|^[1-2] day/i))):remove()
+youtube.com##ytd-grid-video-renderer:has([href="/@veritasium"]):has(#metadata-line > span:first-child:not(:has-text(/^[4-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 
 ! Hide by age AND title
 !! Hide all Tested videos w/o "One Day Build" in title after 3 days
-youtube.com##ytd-grid-video-renderer:has([href="/@tested"]):not(:has([title*="One Day Build"i])):not(#metadata-line > span:nth-child(2):has-text(/minute|hour|^[1-2] day/i)):remove()
+youtube.com##ytd-grid-video-renderer:has([href="/@tested"]):not(:has([title*="One Day Build"i])):not(#metadata-line > span:nth-child(2):has-text(/minute|hour|^[12] day/i)):remove()
 
 ! Hide by title OR view count
 !! Hide 60 minutes videos w/ "Archive" in title until they have 10k views
