@@ -30,3 +30,82 @@
   youtube.com###overlays:has([overlay-style="SHORTS"], [overlay-style="UPCOMING"]):upward(ytd-video-renderer, ytd-grid-video-renderer):remove()
   !! Hide Shorts, Live, Upcoming videos from video-side recommendations (Can't use :remove() cause the thumbnail will try to load forever)
   youtube.com##ytd-thumbnail-overlay-time-status-renderer:not([overlay-style="DEFAULT"]):upward(ytd-compact-video-renderer)
+
+! Video Player
+  !! Theater mode fills screen
+  youtube.com##:matches-path(/watch/) #content:has(#player-theater-container:has(.video-stream)) #masthead-container
+  youtube.com##:matches-path(/watch/) #content:has(#player-theater-container:has(.video-stream)) #page-manager:style(margin-top: auto !important)
+  youtube.com###player-theater-container:has(.video-stream):style(width: 100vw !important; height: 100vh !important; min-height: 100vh !important; max-height: 100vh !important)
+  !! Hide "Experiencing Interuptions" popup
+  youtube.com##tp-yt-paper-toast
+  !! Hide donation box
+  youtube.com###donation-shelf
+  !! Hide chat/chat replay
+  youtube.com##ytd-live-chat-frame
+  !! Hide recommendation filter buttons // Fix height of first recommendation
+  youtube.com##yt-related-chip-cloud-renderer
+  youtube.com##ytd-compact-video-renderer:first-of-type:style(margin-top: 0px !important)
+  !! Hide badges from recommended videos ("New", etc.)
+  youtube.com##.badges, #badges
+  !! Hide "Mix" Thumbnails
+  youtube.com##ytd-radio-renderer, ytd-compact-radio-renderer, ytd-compact-playlist-renderer, ytd-reel-shelf-renderer, a[data-is-mix="true"]
+  !! Hide movies from recommendations
+  youtube.com##ytd-compact-movie-renderer
+  !! Hide "Recommended for you" videos
+  youtube.com##.ytd-video-meta-block:has-text(/Recommended for you/):upward(ytd-compact-video-renderer)
+  !! Hide weird recommendations (ytd-promoted-sparkles-web-renderer doesn't seem to do anything but messes up the nth-child count.)
+  youtube.com##ytd-promoted-sparkles-web-renderer:remove()
+  youtube.com##ytd-compact-video-renderer:nth-child(3)
+  youtube.com##ytd-compact-video-renderer:not(#metadata-line > span:first-of-type:has-text(/K|M/i))
+  !! Hide endcard suggestions that cover the video
+  youtube.com##.ytp-ce-element
+  ! Hide recommendations after video
+  youtube.com##.ytp-videowall-still, .autonav-endscreen
+  !! Hide uselesss buttons on video player
+  youtube.com##.ytp-chrome-top-buttons, .ytp-cards-button, .ytp-prev-button, .ytp-next-button, .ytp-miniplayer-button, .ytp-size-button, button[title="Autoplay is off"], button[title="Subtitles/closed captions unavailable"], .ytp-fullscreen-button
+  !! Hide "View Products" button
+  youtube.com##.ytp-suggested-action
+  !! Hide page load skeleton under video player
+  youtube.com##.watch-skeleton
+  !! Hide uselesss buttons under video player
+  youtube.com###super-title-icon:upward(1)
+  youtube.com##.super-title, #super-title, .super-title-icon, .ytd-video-primary-info-renderer#menu-container, #sponsor-button
+  youtube.com##[href^="/hashtag/"], #actions, #comment-teaser, #subscribe-button
+  !! Hide anti-misinformation box
+  youtube.com###clarify-box
+  !! Show old view count
+  youtube.com###original-info:style(display: block !important)
+  !! Put Channel name and description side-by-side when description is collapsed.
+  youtube.com##[description-collapsed] #top-row:style(display: inline-flex !important)
+  youtube.com###owner:style(margin-top: 16px !important)
+  youtube.com###upload-info:style(margin-right: 10px !important)
+  youtube.com###bottom-row:style(display: inline-flex !important)
+  youtube.com###description:style(min-width: fit-content !important)
+  youtube.com###description-inner:style(margin: 8px !important)
+  !! Hide unexpanded description // Hide view count & video age in description
+  youtube.com###info-container
+  youtube.com###snippet-text
+  !! Hide text shadow in unexpanded description box
+  youtube.com###info-container:style(-webkit-mask-image: none !important)
+  !! Hide big boxes in description
+  youtube.com##ytd-metadata-row-container-renderer, ytd-structured-description-content-renderer
+  !! Hide comment submission box
+  youtube.com##ytd-comment-simplebox-renderer
+  youtube.com##ytd-comments-header-renderer:style(margin-bottom: 0px !important)
+  !! Hide Dislike and Reply buttons on comments // Hide like counter if likes = 0
+  youtube.com###dislike-button, #reply-button-end
+  youtube.com##ytd-comment-action-buttons-renderer #toolbar:has(#vote-count-middle[hidden]) #like-button
+
+! Search
+  !! Hide "Additional" search results
+  youtube.com###title:has-text(/People also watched|Top news|Results for similar searches|Related to your search|For you|Channels new to you|Trending videos|Popular today/i):upward(ytd-shelf-renderer)
+  youtube.com###title:has-text(/People also search for/i):upward(ytd-horizontal-card-list-renderer)
+  youtube.com##ytd-secondary-search-container-renderer
+  !! Hide chapters from search results
+  youtube.com###expandable-metadata
+
+! Channel Page
+  !! Hide promo links in channel page header
+  youtube.com##.ytd-c4-tabbed-header-renderer#links-holder
+  !! Hide "Join" button/section
+  youtube.com##[aria-label="Join this channel"]:upward(ytd-item-section-renderer)
