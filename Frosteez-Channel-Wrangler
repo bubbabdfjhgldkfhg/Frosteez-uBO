@@ -21,7 +21,7 @@ youtube.com##ytd-grid-video-renderer:has([href="/@NFL"], [href="/@PGATOUR"], [hr
 youtube.com##ytd-grid-video-renderer:has([href="/@gamesdonequick"]):has(#video-title:has-text(/^The Bargain Bin|^Legally Cute|^She is Speed|^Challenger Approaching|^The First Step|^It\'s Dangerous to Go Alone|^PB Precipice|^Awfully Silly|^Think Fast|^Going Places|What\'s Faster?|^How To Train A Speedrunner|^No Category Left Behind|^Game Masters|^Never Before Seen|^Mercy Kill|^Random Number Generation|^The Hotfix Grudge Match|Flame Fatales|^Tina\'s RPG Show|Time Capsule|^GDQ Hotfix|^Speedruns From the Crypt/i)):remove()
 
 ! Hide by video length (have to check that #text exists before checking video length because it loads last.)
-!! Hide videos <5 minutes (Don't need ^ in :has-text() because \d\d: will match things like 12:00 before it gets removed by [5-9]:)
+!! Hide videos <5 minutes
 youtube.com##ytd-grid-video-renderer:has([href="/@SandboxxApp"], [href="/@hudsoninstitute"]):has(#text.ytd-thumbnail-overlay-time-status-renderer:not(:has-text(/[5-9]:|\d\d:/))):remove()
 !! Hide videos <10 minutes
 youtube.com##ytd-grid-video-renderer:has([href="/@60minutes"]):has(#text.ytd-thumbnail-overlay-time-status-renderer:not(:has-text(/\d\d:/))):remove()
