@@ -10,6 +10,8 @@
   !! Hide every option except "Hide" in the video menu
   youtube.com##ytd-menu-service-item-renderer:not(:last-child)
   youtube.com##ytd-menu-service-item-download-renderer
+  !! Hide "Video hidden from feed" box
+  youtube.com##ytd-grid-video-renderer[is-dismissed]
   !! Hide season/episode counter above video name
   youtube.com##h3 > ytd-badge-supported-renderer
   !! Combine grid sections into a continuous page
