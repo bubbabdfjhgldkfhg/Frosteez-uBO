@@ -1,6 +1,6 @@
 ! Title: Frosteez Channel Wrangler
 ! Description: Cleanup Spammy Youtube Subscriptions
-! Expires: 12 hours
+! Expires: 1 hours
 ! Version: 05January2023
 
 ! Video Filters (:remove() is faster and more stable, also necessary for the empty section hider to work.)
