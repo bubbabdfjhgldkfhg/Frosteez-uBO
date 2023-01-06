@@ -85,5 +85,5 @@ youtube.com##ytd-grid-video-renderer:has([href="/@60minutes"]):has([title*="Arch
 youtube.com##ytd-grid-video-renderer:has([href="/@tested"]):not(:has([title*="Adam"i])):not(#metadata-line > span:first-child:has-text(/\d{3}K|M/)):remove()
 
 ! Hide by length OR view count
-! Hide videos shorter than 1 hour if they have <1k views
+! Hide videos <1hr if <1k views
 youtube.com##ytd-grid-video-renderer:has([href="/@andyli"]):has(#text.ytd-thumbnail-overlay-time-status-renderer:not(:has-text(/:\d\d:/))):not(#metadata-line > span:first-child:has-text(/K|M/)):remove()
