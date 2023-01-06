@@ -79,9 +79,9 @@ youtube.com##ytd-grid-video-renderer:has([href="/@veritasium"]):has(#metadata-li
 youtube.com##ytd-grid-video-renderer:has([href="/@tested"]):not(:has([title*="One Day Build"i])):not(#metadata-line > span:nth-child(2):has-text(/minute|hour|^[12] day/i)):remove()
 
 ! Hide by title OR view count
-!! Hide 60 minutes videos w/ "Archive" in title if >10k views
+!! Hide 60 minutes videos w/ "Archive" in title if <10k views
 youtube.com##ytd-grid-video-renderer:has([href="/@60minutes"]):has([title*="Archive"i]):not(#metadata-line > span:first-child:has-text(/\d\dK|M/)):remove()
-!! Hide all Tested videos w/o "Adam" in title if >100k views
+!! Hide all Tested videos w/o "Adam" in title if <100k views
 youtube.com##ytd-grid-video-renderer:has([href="/@tested"]):not(:has([title*="Adam"i])):not(#metadata-line > span:first-child:has-text(/\d{3}K|M/)):remove()
 
 ! Hide by length OR view count
