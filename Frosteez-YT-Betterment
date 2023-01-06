@@ -63,7 +63,11 @@
   ! Hide recommendations after video
   youtube.com##.ytp-videowall-still, .autonav-endscreen
   !! Hide uselesss buttons on video player
-  youtube.com##.ytp-chrome-top-buttons, .ytp-cards-button, .ytp-prev-button, .ytp-next-button, .ytp-miniplayer-button, .ytp-size-button, button[title="Autoplay is off"], button[title="Subtitles/closed captions unavailable"], .ytp-fullscreen-button
+  youtube.com##.ytp-chrome-top-buttons, .ytp-cards-button, .ytp-prev-button, .ytp-next-button, .ytp-miniplayer-button, .ytp-size-button, .ytp-fullscreen-button
+  !! Hide captions button if captions are unavailable
+  youtube.com##button[title="Subtitles/closed captions unavailable"]
+  !! Hide autoplay button if autoplay is disabled
+  youtube.com##button[title="Autoplay is off"]
   !! Hide "View Products" button
   youtube.com##.ytp-suggested-action
   !! Hide page load skeleton under video player
