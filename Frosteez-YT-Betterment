@@ -77,7 +77,7 @@
   youtube.com###original-info:style(display: block !important)
   !! Put Channel name and description side-by-side when description is collapsed.
   youtube.com##[description-collapsed] #top-row:style(display: inline-flex !important)
-  youtube.com###owner:style(margin-top: 24px !important)
+  youtube.com###owner:style(margin-top: 35px !important)
   youtube.com###upload-info:style(margin-right: 10px !important)
   youtube.com###bottom-row:style(display: inline-flex !important)
   youtube.com###description:style(min-width: fit-content !important)
