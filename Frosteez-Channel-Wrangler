@@ -7,7 +7,7 @@
 ! Hide by video title
 youtube.com##ytd-grid-video-renderer:has([href="/@Judylog"]):has([title*="lookbook"i]):remove()  
 youtube.com##ytd-grid-video-renderer:has([href="/@Formula1"]):has([title*="Esports"i]):remove()
-youtube.com##ytd-grid-video-renderer:has([href="/@IGN"]):not(:has([title*="Speedrun"i])):remove()
+youtube.com##ytd-grid-video-renderer:has([href="/@IGN"]):not(:has([title*="Speedrun"i], [title*="CES"])):remove()
 youtube.com##ytd-grid-video-renderer:has([href="/@MLB"]):not(:has([title*="MLB Highlights"i])):remove()
 youtube.com##ytd-grid-video-renderer:has([href="/@penguinz0"]):not(:has([title*="Moist Meter"i])):remove()
 youtube.com##ytd-grid-video-renderer:has([href="/@FirstWeFeast"]):not(:has([title*="Hot Ones"i])):remove()
