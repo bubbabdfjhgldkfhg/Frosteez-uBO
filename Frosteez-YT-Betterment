@@ -5,13 +5,6 @@
 ! Version: 06January2023
 
 ! Home Page
-  !! Use with Chrome Extension -> "Replace YouTube's Home with Subscriptions"
-    !!! Hide home page when redirecting to subscription page (if too slow)
-    !youtube.com###destination-buttons:upward(#content)
-    !!! Hide sidebar // Maximize page width  
-    !youtube.com##svg#menu-icon, #guide-button, #masthead-logo, tp-yt-app-drawer, ytd-mini-guide-renderer
-    !youtube.com##ytd-page-manager.ytd-app:style(margin-left: 0px !important)
-    !youtube.com##ytd-two-column-browse-results-renderer:style(width: calc(97vw - 30px) !important; max-width: calc(97vw - 15px) !important)
   !! Hide Watch Later & Add to Queue buttons
   youtube.com###hover-overlays
   !! Hide every option except "Hide" in the video menu
@@ -124,3 +117,14 @@
   youtube.com##.ytd-c4-tabbed-header-renderer#links-holder
   !! Hide "Join" button/section
   youtube.com##[aria-label="Join this channel"]:upward(ytd-item-section-renderer)
+
+! Extras (Only use with Chrome Extension -> "Replace YouTube's Home with Subscriptions")
+  !! Hide home page when redirecting to subscription page (if too slow)
+  !youtube.com###destination-buttons:upward(#content)
+  !! Hide sidebar // Maximize page width  
+  !youtube.com##svg#menu-icon, #guide-button, #masthead-logo, tp-yt-app-drawer, ytd-mini-guide-renderer
+  !youtube.com##ytd-page-manager.ytd-app:style(margin-left: 0px !important)
+  !youtube.com##ytd-two-column-browse-results-renderer:style(width: calc(97vw - 30px) !important; max-width: calc(97vw - 15px) !important)
+  !! Fix channel name width
+  !youtube.com###channel-header:style(padding-left: 36px !important)
+  !youtube.com###channel-header-container:style(margin: 0 !important)
