@@ -43,63 +43,68 @@
   youtube.com###donation-shelf
   !! Hide chat/chat replay
   youtube.com##ytd-live-chat-frame
-  !! Hide recommendation filter buttons // Fix height of first recommendation
-  youtube.com##yt-related-chip-cloud-renderer
-  youtube.com##ytd-compact-video-renderer:first-of-type:style(margin-top: 0px !important)
-  !! Hide badges from recommended videos ("New", etc.)
-  youtube.com##.badges, #badges
-  !! Hide "Mix" Thumbnails
-  youtube.com##ytd-radio-renderer, ytd-compact-radio-renderer, ytd-compact-playlist-renderer, ytd-reel-shelf-renderer, a[data-is-mix="true"]
-  !! Hide movies from recommendations
-  youtube.com##ytd-compact-movie-renderer
-  !! Hide "Recommended for you" videos
-  youtube.com##.ytd-video-meta-block:has-text(/Recommended for you/):upward(ytd-compact-video-renderer)
-  !! Hide weird recommendations (Removing ytd-promoted-sparkles-web-renderer causes infinite load bug.)
-  youtube.com###contents:not(:has(ytd-promoted-sparkles-web-renderer)) ytd-compact-video-renderer:nth-child(3)
-  youtube.com###contents:has(ytd-promoted-sparkles-web-renderer) ytd-compact-video-renderer:nth-child(4)
-  youtube.com##ytd-compact-video-renderer:not(#metadata-line > span:first-of-type:has-text(/K|M/i))
-  !! Hide endcard suggestions that cover the video
-  youtube.com##.ytp-ce-element
-  ! Hide recommendations after video
-  youtube.com##.ytp-videowall-still, .autonav-endscreen
-  !! Hide uselesss buttons on video player
-  youtube.com##.ytp-chrome-top-buttons, .ytp-cards-button, .ytp-prev-button, .ytp-next-button, .ytp-miniplayer-button, .ytp-size-button, .ytp-fullscreen-button
-  !! Hide captions button if captions are unavailable
-  youtube.com##button[title="Subtitles/closed captions unavailable"]
-  !! Hide autoplay button if autoplay is disabled
-  youtube.com##button[title="Autoplay is off"]
-  !! Hide "View Products" button
-  youtube.com##.ytp-suggested-action
-  !! Hide page load skeleton under video player
-  youtube.com##.watch-skeleton
-  !! Hide buttons/clutter under video player
-  youtube.com###super-title-icon:upward(1)
-  youtube.com##.super-title, #super-title, .super-title-icon, .ytd-video-primary-info-renderer#menu-container, #sponsor-button
-  youtube.com##[href^="/hashtag/"], #actions, #comment-teaser, #subscribe-button
-  !! Hide anti-misinformation box
-  youtube.com###clarify-box
-  !! Show old view count
-  youtube.com###original-info:style(display: block !important)
-  !! Put Channel name and description side-by-side when description is collapsed.
-  youtube.com##[description-collapsed] #top-row:style(display: inline-flex !important)
-  youtube.com###owner:style(margin-top: 35px !important)
-  youtube.com###upload-info:style(margin-right: 10px !important)
-  youtube.com###bottom-row:style(display: inline-flex !important)
-  youtube.com###description:style(min-width: fit-content !important)
-  youtube.com###description-inner:style(margin: 8px !important)
-  !! Hide unexpanded description // Hide view count & video age in description
-  youtube.com###info-container
-  youtube.com###snippet-text
-  !! Hide text shadow in unexpanded description box
-  youtube.com###info-container:style(-webkit-mask-image: none !important)
-  !! Hide big boxes in description
-  youtube.com##ytd-metadata-row-container-renderer, ytd-structured-description-content-renderer
-  !! Hide comment submission box
-  youtube.com##ytd-comment-simplebox-renderer
-  youtube.com##ytd-comments-header-renderer:style(margin-bottom: 0px !important)
-  !! Hide Dislike and Reply buttons on comments // Hide like counter if likes = 0
-  youtube.com###dislike-button, #reply-button-end
-  youtube.com##ytd-comment-action-buttons-renderer #toolbar:has(#vote-count-middle[hidden]) #like-button
+  !! Recommendations
+    !!! Hide recommendation filter buttons // Fix height of first recommendation
+    youtube.com##yt-related-chip-cloud-renderer
+    youtube.com##ytd-compact-video-renderer:first-of-type:style(margin-top: 0px !important)
+    !!! Hide badges from recommended videos ("New", etc.)
+    youtube.com##.badges, #badges
+    !!! Hide "Mix" Thumbnails
+    youtube.com##ytd-radio-renderer, ytd-compact-radio-renderer, ytd-compact-playlist-renderer, ytd-reel-shelf-renderer, a[data-is-mix="true"]
+    !!! Hide movies from recommendations
+    youtube.com##ytd-compact-movie-renderer
+    !!! Hide "Recommended for you" videos
+    youtube.com##.ytd-video-meta-block:has-text(/Recommended for you/):upward(ytd-compact-video-renderer)
+    !!! Hide weird recommendations (Removing ytd-promoted-sparkles-web-renderer causes infinite load bug.)
+    youtube.com###contents:not(:has(ytd-promoted-sparkles-web-renderer)) ytd-compact-video-renderer:nth-child(3)
+    youtube.com###contents:has(ytd-promoted-sparkles-web-renderer) ytd-compact-video-renderer:nth-child(4)
+    youtube.com##ytd-compact-video-renderer:not(#metadata-line > span:first-of-type:has-text(/K|M/i))
+  !! Video Box
+    !!! Hide endcard suggestions that cover the video
+    youtube.com##.ytp-ce-element
+    !!! Hide recommendations after video
+    youtube.com##.ytp-videowall-still, .autonav-endscreen
+    !!! Hide uselesss buttons on video player
+    youtube.com##.ytp-chrome-top-buttons, .ytp-cards-button, .ytp-prev-button, .ytp-next-button, .ytp-miniplayer-button, .ytp-size-button, .ytp-fullscreen-button
+    !!! Hide captions button if captions are unavailable
+    youtube.com##button[title="Subtitles/closed captions unavailable"]
+    !!! Hide autoplay button if autoplay is disabled
+    youtube.com##button[title="Autoplay is off"]
+    !!! Hide "View Products" button
+    youtube.com##.ytp-suggested-action
+  !! Title Area
+    !!! Hide page load skeleton under video player
+    youtube.com##.watch-skeleton
+    !!! Hide buttons/clutter under video player
+    youtube.com###super-title-icon:upward(1)
+    youtube.com##.super-title, #super-title, .super-title-icon, .ytd-video-primary-info-renderer#menu-container, #sponsor-button
+    youtube.com##[href^="/hashtag/"], #actions, #comment-teaser, #subscribe-button
+    !! Hide anti-misinformation box
+    youtube.com###clarify-box
+    !! Show old view count
+    youtube.com###original-info:style(display: block !important)
+  !! Description
+    !!! Put Channel name and description side-by-side when description is collapsed.
+    youtube.com##[description-collapsed] #top-row:style(display: inline-flex !important)
+    youtube.com###owner:style(margin-top: 35px !important)
+    youtube.com###upload-info:style(margin-right: 10px !important)
+    youtube.com###bottom-row:style(display: inline-flex !important)
+    youtube.com###description:style(min-width: fit-content !important)
+    youtube.com###description-inner:style(margin: 8px !important)
+    !!! Hide unexpanded description // Hide view count & video age in description
+    youtube.com###info-container
+    youtube.com###snippet-text
+    !! Hide text shadow in unexpanded description box
+    youtube.com###info-container:style(-webkit-mask-image: none !important)
+    !! Hide big boxes in description
+    youtube.com##ytd-metadata-row-container-renderer, ytd-structured-description-content-renderer
+  !! Comments
+    !!! Hide comment submission box
+    youtube.com##ytd-comment-simplebox-renderer
+    youtube.com##ytd-comments-header-renderer:style(margin-bottom: 0px !important)
+    !! Hide Dislike and Reply buttons on comments // Hide like counter if likes = 0
+    youtube.com###dislike-button, #reply-button-end
+    youtube.com##ytd-comment-action-buttons-renderer #toolbar:has(#vote-count-middle[hidden]) #like-button
 
 ! Search
   !! Hide "Additional" search results
