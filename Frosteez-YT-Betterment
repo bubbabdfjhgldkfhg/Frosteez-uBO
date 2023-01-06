@@ -43,7 +43,7 @@
   youtube.com###donation-shelf
   !! Hide chat/chat replay
   youtube.com##ytd-live-chat-frame
-  !! Recommendations
+  !! Recommendations side-bar
     !!! Hide recommendation filter buttons // Fix height of first recommendation
     youtube.com##yt-related-chip-cloud-renderer
     youtube.com##ytd-compact-video-renderer:first-of-type:style(margin-top: 0px !important)
