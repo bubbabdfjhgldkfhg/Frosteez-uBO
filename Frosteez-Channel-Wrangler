@@ -27,7 +27,7 @@ youtube.com##ytd-grid-video-renderer:has([href="/@SandboxxApp"], [href="/@hudson
 
 ! Hide by video age (Exlude live videos by checking if video age exists with :has(#metadata-line > span:nth-child(2)).)
 !! Hide videos after 1 day
-youtube.com##ytd-grid-video-renderer:has([href="/@NFL"], [href="/@MLB"], [href="/@Formula1"], [href="/@PGATOUR"], [href="/@DPWorldTour"], [href="/@LIVGolf"], [href="/@PrestonStewart"], [href="/@clearvaluetax9382"], [href="/@blancolirio"], [href="/@nbcwashington"]):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour/i))):remove()
+youtube.com##ytd-grid-video-renderer:has([href="/@CES"], [href="/@NFL"], [href="/@MLB"], [href="/@Formula1"], [href="/@PGATOUR"], [href="/@DPWorldTour"], [href="/@LIVGolf"], [href="/@PrestonStewart"], [href="/@clearvaluetax9382"], [href="/@blancolirio"], [href="/@nbcwashington"]):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour/i))):remove()
 !! Hide videos after 2 days ("day ago" ensures no "s" after "day".)
 youtube.com##ytd-grid-video-renderer:has([href="/@hudsoninstitute"], [href="/@FpriOrg"], [href="/@csis"], [href="/@cfr"], [href="/@BrookingsInstitution"], [href="/@IISSorg"], [href="/@CNASdc"], [href="/@ChathamHouse10"], [href="/@aspeninstitute"], [href="/@WoodrowWilsonCenter"], [href="/@HooverInstitution"], [href="/@CarnegieEndowment"], [href="/@AtlanticCouncilUS"], [href="/@HLStimson100"], [href="/@BakerInstitute"], [href="/@catoinstitutevideo"], [href="/@SIPRIorg"], [href="/@wgowshipping"], [href="/@lockpickinglawyer"], [href="/@CNBC"], [href="/@NASA"], [href="/@CovertCabal"]):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|day ago/i))):remove()
 !! Hide videos after 3 days
