@@ -7,8 +7,8 @@
 ! Home Page
   !! Hide Watch Later & Add to Queue buttons
   youtube.com###hover-overlays
-  !! Hide every option except "Hide" in the video menu
-  youtube.com##ytd-menu-service-item-renderer:not(:last-child)
+  !! Hide unused options in the video menu
+  youtube.com##ytd-menu-service-item-renderer:has(yt-formatted-string:has-text(/Add to queue|Save to Watch later|Save to playlist/))
   youtube.com##ytd-menu-service-item-download-renderer
   !! Hide "Video hidden from feed" box
   youtube.com##ytd-grid-video-renderer[is-dismissed]
@@ -123,6 +123,8 @@
   youtube.com##.ytd-c4-tabbed-header-renderer#links-holder
   !! Hide "Join" button/section
   youtube.com##[aria-label="Join this channel"]:upward(ytd-item-section-renderer)
+  ! Hide video menu button on channel page
+  youtube.com##ytd-rich-item-renderer #menu
 
 ! Extras (Only use with Chrome Extension -> "Replace YouTube's Home with Subscriptions")
   !! Hide home page when redirecting to subscription page (if too slow)
