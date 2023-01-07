@@ -74,8 +74,8 @@ youtube.com##ytd-grid-video-renderer:has([href="/@mkbhd"]):has(#metadata-line > 
 youtube.com##ytd-grid-video-renderer:has([href="/@veritasium"]):has(#metadata-line > span:first-child:not(:has-text(/^[4-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 
 ! Hide by age AND title
-!! Hide all Tested videos w/o "One Day Build" in title after 3 days
-youtube.com##ytd-grid-video-renderer:has([href="/@tested"]):not(:has([title*="One Day Build"i])):not(#metadata-line > span:nth-child(2):has-text(/minute|hour|^[12] day/i)):remove()
+!! Hide all Tested videos w/o "One Day Build" in title after 2 days
+youtube.com##ytd-grid-video-renderer:has([href="/@tested"]):not(:has([title*="One Day Build"i])):not(#metadata-line > span:nth-child(2):has-text(/minute|hour|day ago/i)):remove()
 
 ! Hide by title AND view count
 !! Hide 60 minutes videos w/ "Archive" in title if <10k views
