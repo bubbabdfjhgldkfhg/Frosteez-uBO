@@ -40,7 +40,7 @@ youtube.com##ytd-grid-video-renderer:has([href="/@aspeninstitute"]):not(#metadat
 !! Hide videos <200 views
 youtube.com##ytd-grid-video-renderer:has([href="/@WoodrowWilsonCenter"], [href="/@HLStimson100"], [href="/@BakerInstitute"], [href="/@SIPRIorg"]):not(#metadata-line > span:first-child:has-text(/[2-9]\d\d|K|M/)):remove()
 !! Hide videos <500 views
-youtube.com##ytd-grid-video-renderer:has([href="/@hudsoninstitute"], [href="/@FpriOrg"], [href="/@cfr"], [href="/@ChathamHouse10"], [href="/@AtlanticCouncilUS"], [href="/@catoinstitutevideo"]):not(#metadata-line > span:first-child:has-text(/^[5-9]\d\d|K|M/)):remove()
+youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@hudsoninstitute|@FpriOrg|@cfr|@ChathamHouse10|@AtlanticCouncilUS|@catoinstitutevideo/")):not(#metadata-line > span:first-child:has-text(/^[5-9]\d\d|K|M/)):remove()
 !! Hide videos <1k views
 youtube.com##ytd-grid-video-renderer:has([href="/@csis"], [href="/@BrookingsInstitution"], [href="/@CarnegieEndowment"]):not(#metadata-line > span:first-child:has-text(/K|M/)):remove()
 !! Hide videos <10k views
