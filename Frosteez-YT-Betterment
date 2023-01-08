@@ -60,6 +60,8 @@
     youtube.com###contents:has(ytd-promoted-sparkles-web-renderer) ytd-compact-video-renderer:nth-child(4)
     youtube.com##ytd-compact-video-renderer:not(#metadata-line > span:first-of-type:has-text(/K|M/i))
   !! Video Box
+    !!! Make ambient colors bigger
+    youtube.com###cinematics > div:style(inset: -50px !important)
     !!! Hide endcard suggestions that cover the video
     youtube.com##.ytp-ce-element
     !!! Hide recommendations after video
@@ -88,7 +90,7 @@
   !! Description
     !!! Put Channel name and description side-by-side when description is collapsed.
     youtube.com##[description-collapsed] #top-row:style(display: inline-flex !important)
-    youtube.com###owner:style(margin-top: 32px !important)
+    youtube.com###owner:style(margin-top: min(36px, calc((100vh - var(--ytd-watch-flexy-panel-max-height) - 182px)/2)) !important)
     youtube.com###upload-info:style(margin-right: 10px !important)
     youtube.com###bottom-row:style(display: inline-flex !important)
     youtube.com###description:style(min-width: fit-content !important)
@@ -123,6 +125,8 @@
   youtube.com##.ytd-c4-tabbed-header-renderer#links-holder
   !! Hide "Join" button/section
   youtube.com##[aria-label="Join this channel"]:upward(ytd-item-section-renderer)
+  ! Hide gamer tag from channel name
+  youtube.com###channel-handle
   ! Hide video menu button on channel page
   youtube.com##ytd-rich-item-renderer #menu
 
