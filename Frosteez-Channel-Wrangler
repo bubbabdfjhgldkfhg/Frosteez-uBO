@@ -66,7 +66,7 @@ youtube.com##ytd-grid-video-renderer:has([href="/@Asianometry"]):has(#metadata-l
 !! Hide videos after 3 days if <300k views
 youtube.com##ytd-grid-video-renderer:has([href="/@MoneyMacro"]):has(#metadata-line > span:first-child:not(:has-text(/^[3-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 !! Hide videos after 3 days if <500k views
-youtube.com##ytd-grid-video-renderer:has([href="/@FoundAndExplained"], [href="/@OBFYT"], [href="/@CaspianReport"], [href="/@SamChui"]):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
+youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@FoundAndExplained|@OBFYT|@CaspianReport|@SamChui/")):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 !! Hide videos after 3 days if <1M views
 youtube.com##ytd-grid-video-renderer:has([href="/@tomscottplus"], [href="/@NotWhatYouThink"]):has(#metadata-line > span:first-child:not(:has-text(/M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 !! Hide videos after 3 days if <2.5M views
