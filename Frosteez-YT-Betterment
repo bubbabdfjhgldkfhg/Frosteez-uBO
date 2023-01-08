@@ -1,9 +1,9 @@
-[Adblock Plus 3.13]
+[uBlock Origin 1.46.0]
 ! Title: Frosteez YT Betterment
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO-4-YT/blob/main/Frosteez-YT-Betterment
 ! Expires: 1 hours
-! Version: 06January2023
+! Version: 07January2023
 
 ! Home Page
   !! Hide Watch Later & Add to Queue buttons
