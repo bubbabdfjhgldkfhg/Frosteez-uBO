@@ -32,7 +32,7 @@ youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@CES|@NFL|@MLB|@F
 !! Hide videos after 2 days
 youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@hudsoninstitute|@FpriOrg|@csis|@cfr|@BrookingsInstitution|@IISSorg|@CNASdc|@ChathamHouse10|@aspeninstitute|@WoodrowWilsonCenter|@HooverInstitution|@CarnegieEndowment|@AtlanticCouncilUS|@HLStimson100|@BakerInstitute|@catoinstitutevideo|@SIPRIorg|@wgowshipping|@lockpickinglawyer|@CNBC|@NASA|@CovertCabal|@OptimumTech/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|day ago/i))):remove()
 !! Hide videos after 3 days
-youtube.com##ytd-grid-video-renderer:has([href="/@Gametheory101"], [href="/@PerunAU"], [href="/@SandboxxApp"], [href="/@MilitaryAviationHistory"], [href="/@WardCarroll"], [href="/@TomorrowsBuild"], [href="/@TheB1M"], [href="/@yachtingworld"], [href="/@PlanetSailOnline"], [href="/@BookingHunterTV"], [href="/@splunk_ml"]):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
+youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@Gametheory101|@PerunAU|@SandboxxApp|@MilitaryAviationHistory|@WardCarroll|@TomorrowsBuild|@TheB1M|@yachtingworld|@PlanetSailOnline|@BookingHunterTV|@splunk_ml/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
 
 ! Hide by view count
 !! Hide videos <50 views
