@@ -29,7 +29,7 @@
   twitch.tv##button:matches-attr(aria-label="/Vtuber|Furry|Anime|Slots/i"):upward(div[style^="order"])
 
 ! Video player
-  !! Nuke the video player when ads appear
+  !! Nuke the video player when ads appear 
   twitch.tv##span[data-a-target="video-ad-label"]:upward(.video-player):remove()
   !! Truncate video stats (Floating Latency)
   twitch.tv##div[data-a-target="player-overlay-video-stats"]:upward(3):style(right: 0rem; top: max(0px, calc((100vh - 56.25vw)/2)) !important)
@@ -52,18 +52,16 @@
   twitch.tv##button[aria-label="Share"]:upward(4)
   twitch.tv##.boost-status:upward(2)
 
-! Chat Appearance
+! Chat Appearance ([Duplicated] filters need separate lines for live chat and vod chat after a recent uBO patch broke commas. (It's not really a big deal since a recent twitch patch broke vod chat anyway.))
   !! Remove blank floating box
   twitch.tv##.community-highlight-stack__backlog-card
-  !! Dim chat text
-  [Duplicated]
+  !! [Duplicated] Dim chat text
   twitch.tv##.vod-message:style(color: #d9d9d9 !important)
   twitch.tv##.chat-line__message:style(color: #d9d9d9 !important)
   !! Block Ugly Global Badges (Hide Mod/VIP badge but don't remove)
   twitch.tv##.chat-badge:not(:matches-attr(alt="/Subscriber|Founder|Verified|Broadcaster|VIP|Moderator/")):remove()
   twitch.tv##.chat-badge:matches-attr(alt="/VIP|Moderator/")
-  !! Highlight Mod/VIP names so badges can be hidden
-  [Duplicated]
+  !! [Duplicated] Highlight Mod/VIP names so badges can be hidden
   twitch.tv##.vod-message:has(.chat-badge[alt="Moderator"]) .chat-author__display-name:style(color: #d9d9d9 !important; background-color: #008800 !important)
   twitch.tv##.chat-line__message:has(.chat-badge[alt="Moderator"]) .chat-author__display-name:style(color: #d9d9d9 !important; background-color: #008800 !important)
   twitch.tv##.vod-message:has(.chat-badge[alt="VIP"]) .chat-author__display-name:style(color: #d9d9d9 !important; background-color: #b3008f !important)
@@ -90,4 +88,31 @@
   twitch.tv##.chat-card:upward(3):style(box-shadow: none !important; border: none !important)
   twitch.tv##.chat-line__message:has(.chat-card) .link-fragment
   twitch.tv##.vod-message:has(.chat-card) .text-fragment:has-text(/^http/i)
+
+! Chat Moderation
+  !! Treat new subs as plebs
+  twitch.tv##.chat-badge:matches-attr(alt="/^1-Month Subscriber|^Subscriber$/"):remove()
+  twitch.tv##.chat-badge:matches-attr(alt="/^2-Month Subscriber|^3-Month Subscriber/"):remove()
+  !! Treat non-VIPs as plebs (VOD only currently)
+  twitch.tv##.vod-message .chat-badge:not(:matches-attr(alt="/Year|Founder|Verified|Broadcaster|VIP|Moderator/")):remove()
+  !!! Moderation modes
+    !!! Sub Only Mode
+    !twitch.tv##.vod-message, .chat-line__message:not(:has(.chat-badge))
+    !!! [Duplicated] Non-sub emote only (Hide messages with no images // Hide everything that's not an image.)
+    twitch.tv##.vod-message:not(:has(img))
+    twitch.tv##.vod-message:not(:has(.chat-badge, .mention-fragment--recipient)) .text-fragment:style(font-size: 0px !important)
+    twitch.tv##.chat-line__message:not(:has(img))
+    twitch.tv##.chat-line__message:not(:has(.chat-badge, .mention-fragment--recipient)) .text-fragment:style(font-size: 0px !important)
+    !!! Pure emote only
+    !twitch.tv##.text-fragment:style(font-size: 0px !important)
+    !twitch.tv##.vod-message:not(:has(.chat-line__message--emote-button, .chat-image__container, .bttv-emote))
+    !twitch.tv##.chat-line__message:not(:has(.chat-line__message--emote-button, .chat-image__container, .bttv-emote))
+    !!! No emote mode
+    !twitch.tv##.bttv-emote, .chat-image__container, .chat-line__message--emote-button:upward(.vod-message, .chat-line__message)
+  !! Hide chat commands
+  twitch.tv##.text-fragment:has-text(/^!/):upward(.vod-message, .chat-line__message)
+  !! [Duplicated] Hide side conversations (Replies // Messages with mentions)
+  twitch.tv##p[title^="Reply"]:upward(.vod-message, .chat-line__message)
+  twitch.tv##.vod-message:has(.mention-fragment):not(:has(.chat-badge:matches-attr(alt="/Verified|Broadcaster/"), .mention-fragment--recipient, .mention-fragment--sender))
+  twitch.tv##.chat-line__message:has(.mention-fragment):not(:has(.chat-badge:matches-attr(alt="/Verified|Broadcaster/"), .mention-fragment--recipient, .mention-fragment--sender))
 
