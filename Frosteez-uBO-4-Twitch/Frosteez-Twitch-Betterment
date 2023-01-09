@@ -1,0 +1,24 @@
+[uBlock Origin 1.46.0]
+! Title: Frosteez Twitch Betterment
+! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
+! Homepage: 
+! Expires: 1 hours
+! Version: 09January2023
+
+! Hide VOD/Offline notifications from sidebar
+  twitch.tv##.side-nav-card__metadata p[title*="video"]
+  twitch.tv##.side-nav-card__live-status > span
+  twitch.tv##.side-nav-card__live-status:has(> span)
+! Hide "Popular Channels" section in sidebar
+  twitch.tv##div[aria-label="Popular Channels"]
+! Hide "____ Viewers Also Watch" section in sidebar
+  twitch.tv##div[aria-label$="Viewers Also Watch"]
+! Hide "Get Bits", "More", and "Following" buttons
+  twitch.tv##.shell-nav
+  twitch.tv##button[data-a-target="top-nav-get-bits-button"], button[aria-label="More"][data-a-target="ellipsis-button"]:upward(4)
+  twitch.tv##a[data-test-selector="top-nav__following-link"]:upward(2)
+! Hide channel tags
+  twitch.tv##.tw-tag:upward(3)
+! Hide recommended categories on home/browse page
+  twitch.tv##[href="/directory"]:upward(.find-me):upward(1)
+  twitch.tv##.vertical-selector-card__container:upward(1)
