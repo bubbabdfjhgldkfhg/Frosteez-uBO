@@ -1,0 +1,56 @@
+[uBlock Origin 1.46.0]
+! Title: Frosteez Twitch Local Chat Moderation
+! Description: Advanced local automoderation for Twitch (Put non-subs into Emote Only, etc.)
+! Homepage: 
+! Expires: 1 hours
+! Version: 09January2023
+
+! Moderation modes
+  !! Sub Only Mode
+  !twitch.tv##.vod-message, .chat-line__message:not(:has(.chat-badge))
+  !! [Duplicated] Non-sub emote only (Hide messages with no images // Hide everything that's not an image.)
+  twitch.tv##.vod-message:not(:has(img))
+  twitch.tv##.vod-message:not(:has(.chat-badge, .mention-fragment--recipient)) .text-fragment:style(font-size: 0px !important)
+  twitch.tv##.chat-line__message:not(:has(img))
+  twitch.tv##.chat-line__message:not(:has(.chat-badge, .mention-fragment--recipient)) .text-fragment:style(font-size: 0px !important)
+  !! Pure emote only
+  !twitch.tv##.text-fragment:style(font-size: 0px !important)
+  !twitch.tv##.vod-message:not(:has(.chat-line__message--emote-button, .chat-image__container, .bttv-emote))
+  !twitch.tv##.chat-line__message:not(:has(.chat-line__message--emote-button, .chat-image__container, .bttv-emote))
+  !! No emote mode
+  !twitch.tv##.bttv-emote, .chat-image__container, .chat-line__message--emote-button:upward(.vod-message, .chat-line__message)
+
+! Treat new subs as plebs
+  twitch.tv##.chat-badge:matches-attr(alt="/^1-Month Subscriber|^Subscriber$/"):remove()
+  twitch.tv##.chat-badge:matches-attr(alt="/^2-Month Subscriber|^3-Month Subscriber/"):remove()
+
+! Treat non-VIPs as plebs (VOD only currently)
+  twitch.tv##.vod-message .chat-badge:not(:matches-attr(alt="/Year|Founder|Verified|Broadcaster|VIP|Moderator/")):remove()
+
+! Hide chat commands
+  twitch.tv##.text-fragment:has-text(/^!/):upward(.vod-message, .chat-line__message)
+
+! [Duplicated] Hide side conversations (Replies // Messages with mentions)
+  twitch.tv##p[title^="Reply"]:upward(.vod-message, .chat-line__message)
+  twitch.tv##.vod-message:has(.mention-fragment):not(:has(.chat-badge:matches-attr(alt="/Verified|Broadcaster/"), .mention-fragment--recipient, .mention-fragment--sender))
+  twitch.tv##.chat-line__message:has(.mention-fragment):not(:has(.chat-badge:matches-attr(alt="/Verified|Broadcaster/"), .mention-fragment--recipient, .mention-fragment--sender))
+
+! Everything invisible on load (Reduce bouncing) // Dim messages // Reduce chat padding
+  !! Solve weird chat height bug
+  twitch.tv##.chat-scrollable-area__message-container:style(padding-bottom: 0rem !important)
+  !! Hide/Restore VOD messages
+  twitch.tv##.video-chat__message-list-wrapper > div > ul > li:style(display: none !important)
+  twitch.tv##.vod-message:upward(1):style(display: flex !important)
+  !! Hide height and visibility
+  twitch.tv##.chat-scrollable-area__message-container > *:style(height: 0rem !important; padding: 0rem 1.3rem !important; opacity: 0 !important)
+  !! Restore height // Reduce padding (This needs to run slow, so we're explicitly checking for badges because that's the slow part.)
+  twitch.tv##.chat-line__message:not(:last-child):not(:has(.chat-badge:not(:matches-attr(alt="/Subscriber|Founder|Verified|Broadcaster|VIP|Moderator/")))):style(height: 100% !important; padding: .4rem 1.3rem !important)
+  twitch.tv##.vod-message:style(padding: .3rem .75rem !important)
+  !! Restore opacity (Fade in)
+  twitch.tv##.chat-line__message:style(transition: opacity .5s)
+  twitch.tv##:has(.bttv-swap-chat:has(.persistent-player--theatre)) .vod-message:style(opacity: .5 !important)
+  twitch.tv##:has(.right-column):has(.chat-shell):has(.chat-shell__expanded) .right-column--theatre .chat-line__message:not(:last-child):style(opacity: .5 !important)
+  twitch.tv##:has(.right-column):has(.chat-shell):has(.chat-shell__expanded) .right-column:not(.right-column--theatre) .chat-line__message:not(:last-child):style(opacity: 1 !important)
+  !! TODO Fix :)
+  !twitch.tv##:has(.bttv-swap-chat:has(.persistent-player--theatre)) .chat-line__message:not(:last-child):style(opacity: .5 !important)
+  !twitch.tv##:not(:has(.bttv-swap-chat:has(.persistent-player--theatre))) .chat-line__message:not(:last-child):style(opacity: 1 !important)
