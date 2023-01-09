@@ -124,7 +124,7 @@
 ! Search
   !! Hide "Additional" search results
   youtube.com###title:has-text(/People also watched|Top news|Results for similar searches|Related to your search|For you|Channels new to you|Trending videos|Popular today/i):upward(ytd-shelf-renderer)
-  youtube.com###title:has-text(/People also search for/i):upward(ytd-horizontal-card-list-renderer)
+  youtube.com###title:has-text(/People also search for|Searches related to/i):upward(ytd-horizontal-card-list-renderer)
   youtube.com##ytd-secondary-search-container-renderer
   !! Hide chapters from search results
   youtube.com###expandable-metadata
