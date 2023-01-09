@@ -39,7 +39,7 @@
   !! Hide videos <50 views
   youtube.com##ytd-grid-video-renderer:has([href="/@aspeninstitute"]):not(#metadata-line > span:first-child:has-text(/^[5-9]\d|\d{3}|K|M/)):remove()  
   !! Hide videos <200 views
-  youtube.com##ytd-grid-video-renderer:has([href="/@WoodrowWilsonCenter"], [href="/@HLStimson100"], [href="/@BakerInstitute"], [href="/@SIPRIorg"]):not(#metadata-line > span:first-child:has-text(/[2-9]\d\d|K|M/)):remove()
+  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@WoodrowWilsonCenter|@HLStimson100|@BakerInstitute|@SIPRIorg/")):not(#metadata-line > span:first-child:has-text(/[2-9]\d\d|K|M/)):remove()
   !! Hide videos <500 views
   youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@hudsoninstitute|@FpriOrg|@cfr|@ChathamHouse10|@AtlanticCouncilUS|@catoinstitutevideo/")):not(#metadata-line > span:first-child:has-text(/^[5-9]\d\d|K|M/)):remove()
   !! Hide videos <1k views
