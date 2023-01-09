@@ -5,20 +5,50 @@
 ! Expires: 1 hours
 ! Version: 09January2023
 
-! Hide VOD/Offline notifications from sidebar
+! Browse page
+  !! Hide VOD/Offline notifications from sidebar
   twitch.tv##.side-nav-card__metadata p[title*="video"]
   twitch.tv##.side-nav-card__live-status > span
   twitch.tv##.side-nav-card__live-status:has(> span)
-! Hide "Popular Channels" section in sidebar
+  !! Hide "Popular Channels" section in sidebar
   twitch.tv##div[aria-label="Popular Channels"]
-! Hide "____ Viewers Also Watch" section in sidebar
+  !! Hide "____ Viewers Also Watch" section in sidebar
   twitch.tv##div[aria-label$="Viewers Also Watch"]
-! Hide "Get Bits", "More", and "Following" buttons
+  !! Hide "Get Bits", "More", and "Following" buttons
   twitch.tv##.shell-nav
   twitch.tv##button[data-a-target="top-nav-get-bits-button"], button[aria-label="More"][data-a-target="ellipsis-button"]:upward(4)
   twitch.tv##a[data-test-selector="top-nav__following-link"]:upward(2)
-! Hide channel tags
+  !! Hide channel tags
   twitch.tv##.tw-tag:upward(3)
-! Hide recommended categories on home/browse page
+  !! Hide recommended categories on home/browse page
   twitch.tv##[href="/directory"]:upward(.find-me):upward(1)
   twitch.tv##.vertical-selector-card__container:upward(1)
+  !! Hide channels playing specific categories
+  twitch.tv##a:matches-attr(href="/Slots$|Pools|ASMR$|Grand%20Theft%20Auto%20V$|Among%20Us$|Fall%20Guys/"):upward(div[style^="order"])
+  !! Hide channels with specific tags
+  twitch.tv##button:matches-attr(aria-label="/Vtuber|Furry|Anime|Slots/i"):upward(div[style^="order"])
+
+! Video player
+  !! Nuke the video player when ads appear
+  twitch.tv##span[data-a-target="video-ad-label"]:upward(.video-player):remove()
+  !! Truncate video stats (Floating Latency)
+  twitch.tv##div[data-a-target="player-overlay-video-stats"]:upward(3):style(right: 0rem; top: max(0px, calc((100vh - 56.25vw)/2)) !important)
+  twitch.tv##div[data-a-target="player-overlay-video-stats"]:style(background: none !important; color: #d9d9d9; transition: opacity .5s; opacity: .25)
+  twitch.tv##button[aria-label="Close video stats"]
+  twitch.tv##div[data-a-target="player-overlay-video-stats"] .tw-table:style(box-shadow: none !important)
+  twitch.tv##div[data-a-target="player-overlay-video-stats"] thead
+  twitch.tv##div[data-a-target="player-overlay-video-stats"] tbody p:not([aria-label="Latency To Broadcaster"]):upward(.tw-table-cell)
+  twitch.tv##tbody p[aria-label="Latency To Broadcaster"]:not(:has-text(/^-?[0-2]\.|^3\.[0-5]/)):upward(div[data-a-target="player-overlay-video-stats"]):style(opacity: 1 !important)
+  !! Hide some clutter from the video player
+  twitch.tv##.theatre-social-panel:upward(2)
+  twitch.tv##.tw-channel-status-text-indicator:upward(1)
+  twitch.tv###bttv-picture-in-picture
+  twitch.tv##button:matches-attr(data-a-target="/player-clip-button|player-fullscreen-button/"):upward(1)
+  !! Hide useless button from video settings
+  twitch.tv##div[data-a-target="player-settings-menu"] button[data-a-target="player-settings-menu-item-report"]:upward(1)
+  twitch.tv##div[data-a-target="player-settings-menu"] label:has-text(/Notify Track Changes in Theatre Mode/):upward(2)
+  !! Hide useless buttons under video player
+  twitch.tv##div[data-target="channel-header-right"]
+  twitch.tv##button[aria-label="Share"]:upward(4)
+  twitch.tv##.boost-status:upward(2)
+
