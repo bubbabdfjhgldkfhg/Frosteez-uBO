@@ -24,9 +24,9 @@
   twitch.tv##[href="/directory"]:upward(.find-me):upward(1)
   twitch.tv##.vertical-selector-card__container:upward(1)
   !! Hide channels playing specific categories
-  twitch.tv##a:matches-attr(href="/Slots$|Pools|ASMR$|Grand%20Theft%20Auto%20V$|Among%20Us$|Fall%20Guys/"):upward(div[style^="order"])
+  twitch.tv##a:matches-attr(href="/ASMR|Pools|Slots|Among%20Us|Fall%20Guys|Grand%20Theft%20Auto%20V/"):upward(div[style^="order"])
   !! Hide channels with specific tags
-  twitch.tv##button:matches-attr(aria-label="/Vtuber|Furry|Anime|Slots/i"):upward(div[style^="order"])
+  twitch.tv##button:matches-attr(aria-label="/Anime|ASMR|Furry|Slots|Vtuber/i"):upward(div[style^="order"])
 
 ! Video player
   !! Nuke the video player when ads appear 
