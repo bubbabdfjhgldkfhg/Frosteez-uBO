@@ -24,7 +24,7 @@
   !! Hide season/episode counter above video name
   youtube.com##h3 > ytd-badge-supported-renderer
   !! Combine grid sections into a continuous page
-  youtube.com##:matches-path(/subscriptions/) .grid-subheader
+  youtube.com##.grid-subheader
   youtube.com##:matches-path(/subscriptions/) ytd-item-section-renderer:style(display: inline-block !important)
   !! Hide top right buttons & Voice search button
   youtube.com##button:matches-attr(aria-label="/Create|YouTube apps/"):upward(ytd-topbar-menu-button-renderer)
