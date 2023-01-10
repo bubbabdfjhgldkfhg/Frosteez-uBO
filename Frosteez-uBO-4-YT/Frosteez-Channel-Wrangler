@@ -16,7 +16,7 @@
   youtube.com##ytd-grid-video-renderer:has([href="/@nbcwashington"]):not(:has([title*="News4 Rundown"i])):remove()
   youtube.com##ytd-grid-video-renderer:has([href="/@GrowlingSidewinder"]):has(#video-title:has-text(/DCS|Digital Combat|Virtual Reality|IL-2/i)):remove()
   youtube.com##ytd-grid-video-renderer:has([href="/@tested"]):has([title*="Ask Adam Savage"i], [title*="Show and Tell"i], [title*="This is Only a Test"i]):remove()
-  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(NFL|PGATOUR|LIVGolf|DPWorldTour|SailGP|Formula1)/")):not(:has([title*="Highlight"i])):remove()
+  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(NFL|PGATOUR|LIVGolf|DPWorldTour|SailGP|Formula1)$/")):not(:has([title*="Highlight"i])):remove()
   youtube.com##ytd-grid-video-renderer:has([href="/@gamesdonequick"]):has(#video-title:has-text(/^The Bargain Bin|^Legally Cute|^She is Speed|^Challenger Approaching|^The First Step|^It\'s Dangerous to Go Alone|^PB Precipice|^Awfully Silly|^Think Fast|^Going Places|What\'s Faster\?|^How To Train A Speedrunner|^No Category Left Behind|^Game Masters|^Never Before Seen|^Mercy Kill|^Random Number Generation|^The Hotfix Grudge Match|Flame Fatales|^Tina\'s RPG Show|Time Capsule|^GDQ Hotfix|^Speedruns From the Crypt/i)):remove()
 
 ! Hide by video length (have to check that #text exists before checking video length because it loads last.)
@@ -29,19 +29,19 @@
   !! Hide videos after 1 day
   youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(NFL|MLB|Formula1|PGATOUR|DPWorldTour|LIVGolf|PrestonStewart|clearvaluetax9382|blancolirio|nbcwashington)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour/i))):remove()
   !! Hide videos after 2 days
-  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(hudsoninstitute|FpriOrg|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|aspeninstitute|WoodrowWilsonCenter|HooverInstitution|CarnegieEndowment|AtlanticCouncilUS|HLStimson100|BakerInstitute|catoinstitutevideo|SIPRIorg|wgowshipping|lockpickinglawyer|CNBC|NASA|CovertCabal|OptimumTech)/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(hudsoninstitute|FpriOrg|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|aspeninstitute|WoodrowWilsonCenter|HooverInstitution|CarnegieEndowment|AtlanticCouncilUS|HLStimson100|BakerInstitute|catoinstitutevideo|SIPRIorg|wgowshipping|lockpickinglawyer|CNBC|NASA|CovertCabal|OptimumTech)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 3 days
-  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(Gametheory101|PerunAU|SandboxxApp|MilitaryAviationHistory|WardCarroll|TomorrowsBuild|TheB1M|yachtingworld|PlanetSailOnline|BookingHunterTV|splunk_ml)/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
+  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(Gametheory101|PerunAU|SandboxxApp|MilitaryAviationHistory|WardCarroll|TomorrowsBuild|TheB1M|yachtingworld|PlanetSailOnline|BookingHunterTV|splunk_ml)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
 
 ! Hide by view count
   !! Hide videos <100 views
   youtube.com##ytd-grid-video-renderer:has([href="/@aspeninstitute"]):not(#metadata-line > span:first-child:has-text(/\d{3}|K|M/)):remove()  
   !! Hide videos <200 views
-  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(WoodrowWilsonCenter|HLStimson100|BakerInstitute|SIPRIorg)/")):not(#metadata-line > span:first-child:has-text(/[2-9]\d\d|K|M/)):remove()
+  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(WoodrowWilsonCenter|HLStimson100|BakerInstitute|SIPRIorg)$/")):not(#metadata-line > span:first-child:has-text(/[2-9]\d\d|K|M/)):remove()
   !! Hide videos <500 views
-  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(hudsoninstitute|FpriOrg|cfr|ChathamHouse10|AtlanticCouncilUS|catoinstitutevideo)/")):not(#metadata-line > span:first-child:has-text(/^[5-9]\d\d|K|M/)):remove()
+  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(hudsoninstitute|FpriOrg|cfr|ChathamHouse10|AtlanticCouncilUS|catoinstitutevideo)$/")):not(#metadata-line > span:first-child:has-text(/^[5-9]\d\d|K|M/)):remove()
   !! Hide videos <1k views
-  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(csis|BrookingsInstitution|CarnegieEndowment)/")):not(#metadata-line > span:first-child:has-text(/K|M/)):remove()
+  youtube.com##ytd-grid-video-renderer:has(a:matches-attr(href="/@(csis|BrookingsInstitution|CarnegieEndowment)$/")):not(#metadata-line > span:first-child:has-text(/K|M/)):remove()
   !! Hide videos <10k views
   youtube.com##ytd-grid-video-renderer:has([href="/@kermodeandmayostake"], [href="/@HooverInstitution"]):not(#metadata-line > span:first-child:has-text(/\d\dK|M/)):remove()
   !! Hide videos <20k views
