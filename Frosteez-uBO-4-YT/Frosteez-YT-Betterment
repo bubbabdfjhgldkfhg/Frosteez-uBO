@@ -83,6 +83,14 @@
     youtube.com##button[title="Autoplay is off"]
     !!! Hide "View Products" button
     youtube.com##.ytp-suggested-action
+  
+    !!! Make player bigger (aka Break Everything)
+      youtube.com###columns.ytd-watch-flexy:style(min-width: 100vw !important)
+      youtube.com###secondary.ytd-watch-flexy:style(padding-right: 10px !important)
+      youtube.com###columns .video-stream:style(width: -webkit-fill-available !important; height: auto !important)
+      !!!! Hide videos after ending (so they don't sit at the top of the player container.)
+      youtube.com##video:matches-css(top: /^-/)
+  
   !! Title Area
     !!! Hide page load skeleton under video player
     youtube.com##.watch-skeleton
@@ -99,7 +107,7 @@
   !! Description
     !!! Put Channel name and description side-by-side when description is collapsed.
     youtube.com##[description-collapsed] #top-row:style(display: inline-flex !important)
-    youtube.com###owner:style(margin-top: min(36px, calc((100vh - var(--ytd-watch-flexy-panel-max-height) - 182px)/2)) !important)
+    youtube.com#@##owner:style(margin-top: min(36px, calc((100vh - var(--ytd-watch-flexy-panel-max-height) - 182px)/2)) !important)
     youtube.com###upload-info:style(margin-right: 10px !important)
     youtube.com###bottom-row:style(display: inline-flex !important)
     youtube.com###description:style(min-width: fit-content !important)
