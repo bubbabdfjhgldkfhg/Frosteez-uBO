@@ -28,7 +28,7 @@
   !! Hide channels playing specific categories
   twitch.tv###directory-rectangle ~ div:has(a:matches-attr(href="/ASMR|Pools|Slots|Among%20Us|Fall%20Guys|Grand%20Theft%20Auto%20V/"))
   !! Hide channels with specific tags
-  twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/Anime|ASMR|Furry|Roleplay|Slots|Vtuber|Woman/i"))
+  twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/An[ií]me|ASMR|Furry|Roleplay|Slots|[Vｖ]tuber|Woman/i"))
   !! Hide channels with default profile picture
   twitch.tv###directory-rectangle ~ div:has(.tw-image-avatar[src*="user-default-pictures"])
 
