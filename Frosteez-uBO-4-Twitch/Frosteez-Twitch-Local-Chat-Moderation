@@ -3,16 +3,17 @@
 ! Description: Advanced local automoderation for Twitch (Put non-subs into Emote Only, etc.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 09January2023
+! Version: 11January2023
+
+! Need to copy chat-badge remover from main betterment script.
+!# include Frosteez-Twitch-Betterment
 
 ! Moderation modes
   !! Sub Only Mode
-  !twitch.tv##.vod-message, .chat-line__message:not(:has(.chat-badge))
-  !! [Duplicated] Non-sub emote only (Hide messages with no images // Hide everything that's not an image.)
-  twitch.tv##.vod-message:not(:has(img))
-  twitch.tv##.vod-message:not(:has(.chat-badge, .mention-fragment--recipient)) .text-fragment:style(font-size: 0px !important)
-  twitch.tv##.chat-line__message:not(:has(img))
-  twitch.tv##.chat-line__message:not(:has(.chat-badge, .mention-fragment--recipient)) .text-fragment:style(font-size: 0px !important)
+  !twitch.tv##:is(.vod-message, .chat-line__message):not(:has(.chat-badge))
+  !! Non-sub emote only (Hide messages with no images // Hide everything that's not an image.)
+  twitch.tv##:is(.vod-message, .chat-line__message):not(:has(img))
+  twitch.tv##:is(.vod-message, .chat-line__message):not(:has(.chat-badge, .mention-fragment--recipient)) .text-fragment:style(font-size: 0px !important)
   !! Pure emote only
   !twitch.tv##.text-fragment:style(font-size: 0px !important)
   !twitch.tv##.vod-message:not(:has(.chat-line__message--emote-button, .chat-image__container, .bttv-emote))
@@ -30,7 +31,7 @@
 ! Hide chat commands
   twitch.tv##.text-fragment:has-text(/^!/):upward(.vod-message, .chat-line__message)
 
-! [Duplicated] Hide side conversations (Replies // Messages with mentions)
+! Hide side conversations (Replies // Messages with mentions)
   twitch.tv##p[title^="Reply"]:upward(.vod-message, .chat-line__message)
   twitch.tv##:is(.vod-message, .chat-line__message):has(.mention-fragment:not(:matches-attr(class="/--(sender|recipient)/"))):not(:has(.chat-badge:matches-attr(alt="/Verified|Broadcaster/")))
 
