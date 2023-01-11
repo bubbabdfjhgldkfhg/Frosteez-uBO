@@ -25,8 +25,10 @@
   !! Hide recommended categories
   twitch.tv##[href="/directory"]:upward(.find-me):upward(1)
   twitch.tv##.vertical-selector-card__container:upward(1)
-  !! Hide channels playing specific categories
-  twitch.tv###directory-rectangle ~ div:has(a:matches-attr(href="/ASMR|Pools|Slots|Among%20Us|Fall%20Guys|Genshin%20Impact|Grand%20Theft%20Auto%20V/"))
+  !! Hide channels playing spammy categories 
+  twitch.tv###directory-rectangle ~ div:has(a:matches-attr(href="/ASMR|Pools|Slots|Among%20Us|Fall%20Guys|Grand%20Theft%20Auto%20V|Roblox|Virtual%20Casino/"))
+  !! Hide channels playing anime junk 
+  twitch.tv###directory-rectangle ~ div:has(a:matches-attr(href="/Anime%20World|Genshin%20Impact|Lost%20Ark|osu!|MapleStory|VRChat/"))
   !! Hide channels with specific tags
   twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/An[ií]me|ASMR|Depression|Furry|Roleplay|Slots|([Vｖ]tuber|브이튜버)|(Girl|Wom[ae]n)/i"))
   !! Hide channels with default profile picture
