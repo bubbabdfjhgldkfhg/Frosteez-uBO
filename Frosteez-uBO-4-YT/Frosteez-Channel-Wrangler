@@ -15,7 +15,6 @@
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@thespiffingbrit"]):not(:has([title*="balanced"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@nbcwashington"]):not(:has([title*="News4 Rundown"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@GrowlingSidewinder"]):has(#video-title:has-text(/DCS|Digital Combat|Virtual Reality|IL-2/i)):remove()
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tested"]):has([title*="Ask Adam Savage"i], [title*="Show and Tell"i], [title*="This is Only a Test"i]):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(NFL|PGATOUR|LIVGolf|DPWorldTour|SailGP|Formula1)$/")):not(:has([title*="Highlight"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@gamesdonequick"]):has(#video-title:has-text(/^The Bargain Bin|^Legally Cute|^She is Speed|^Challenger Approaching|^The First Step|^It\'s Dangerous to Go Alone|^PB Precipice|^Awfully Silly|^Think Fast|^Going Places|What\'s Faster\?|^How To Train A Speedrunner|^No Category Left Behind|^Game Masters|^Never Before Seen|^Mercy Kill|^Random Number Generation|^The Hotfix Grudge Match|Flame Fatales|^Tina\'s RPG Show|Time Capsule|^GDQ Hotfix|^Speedruns From the Crypt/i)):remove()
 
@@ -73,15 +72,15 @@
   !! Hide videos after 3 days if <4M views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@veritasium"]):has(#metadata-line > span:first-child:not(:has-text(/^[4-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
 
-! Hide by age AND title
-  !! Hide all Tested videos w/o "One Day Build" in title after 2 days
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tested"]):not(:has([title*="One Day Build"i])):not(#metadata-line > span:nth-child(2):has-text(/minute|hour|day ago/i)):remove()
-
 ! Hide by title AND view count
   !! Hide 60 minutes videos w/ "Archive" in title if <10k views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@60minutes"]):has([title*="Archive"i]):not(#metadata-line > span:first-child:has-text(/\d\dK|M/)):remove()
-  !! Hide all Tested videos w/o "Adam" in title if <100k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tested"]):not(:has([title*="Adam"i])):not(#metadata-line > span:first-child:has-text(/\d{3}K|M/)):remove()
+  !! Hide all Tested videos w/o "One Day Build" in title if <100k views
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tested"]):not(:has([title*="One Day Build"i])):not(#metadata-line > span:first-child:has-text(/\d{3}K|M/)):remove()
+
+! Hide by age AND title
+  !! Hide all Tested videos w/o "One Day Build" in title after 2 days
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tested"]):not(:has([title*="One Day Build"i])):not(#metadata-line > span:nth-child(2):has-text(/minute|hour|day ago/i)):remove()
 
 ! Hide by length OR view count
   !! Hide videos <1hr if <1k views
