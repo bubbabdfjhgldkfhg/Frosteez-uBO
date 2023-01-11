@@ -32,8 +32,7 @@
 
 ! [Duplicated] Hide side conversations (Replies // Messages with mentions)
   twitch.tv##p[title^="Reply"]:upward(.vod-message, .chat-line__message)
-  twitch.tv##.vod-message:has(.mention-fragment):not(:has(.chat-badge:matches-attr(alt="/Verified|Broadcaster/"), .mention-fragment--recipient, .mention-fragment--sender))
-  twitch.tv##.chat-line__message:has(.mention-fragment):not(:has(.chat-badge:matches-attr(alt="/Verified|Broadcaster/"), .mention-fragment--recipient, .mention-fragment--sender))
+  twitch.tv##:is(.vod-message, .chat-line__message):has(.mention-fragment:not(:matches-attr(class="/--(sender|recipient)/"))):not(:has(.chat-badge:matches-attr(alt="/Verified|Broadcaster/")))
 
 ! Everything invisible on load (Reduce bouncing) // Dim messages // Reduce chat padding
   !! Solve weird chat height bug
