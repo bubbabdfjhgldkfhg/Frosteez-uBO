@@ -20,9 +20,9 @@
 
 ! Hide by video length (have to check that #text exists before checking video length because it loads last.)
   !! Hide videos <5 minutes
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@SandboxxApp"], [href="/@hudsoninstitute"]):has(#text[class*="time-status"]:not(:has-text(/[5-9]:|\d\d:/))):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@SandboxxApp"]):has(#text[class*="time-status"]:not(:has-text(/[5-9]:|\d\d:/))):remove()
   !! Hide videos <10 minutes
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@60minutes"]):has(#text[class*="time-status"]:not(:has-text(/\d\d:/))):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(60minutes|hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|aspeninstitute|WoodrowWilsonCenter|HooverInstitution|CarnegieEndowment|AtlanticCouncilUS|HLStimson100|BakerInstitute|catoinstitutevideo|SIPRIorg)$/")):has(#text[class*="time-status"]:not(:has-text(/\d\d:/))):remove()
 
 ! Hide by video age (Exlude live videos by checking if video age exists with :has(#metadata-line > span:nth-child(2)).)
   !! Hide videos after 1 day
