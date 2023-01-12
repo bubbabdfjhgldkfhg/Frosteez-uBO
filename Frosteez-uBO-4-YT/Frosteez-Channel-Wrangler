@@ -55,22 +55,22 @@
 ! Hide by age AND view count
   !! Hide videos after 2 days if <15k views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@gamesdonequick"], [href="/@TechTechPotato"]):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
-  !! Hide videos after 3 days if <50k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@kermodeandmayostake"]):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
-  !! Hide videos after 3 days if <100k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@60minutes"], [href="/@GoodTimesBadTimes"]):has(#metadata-line > span:first-child:not(:has-text(/^\d{3}K|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
-  !! Hide videos after 3 days if <150k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@Asianometry"]):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
-  !! Hide videos after 3 days if <300k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@MoneyMacro"]):has(#metadata-line > span:first-child:not(:has-text(/^[3-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
-  !! Hide videos after 3 days if <500k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(FoundAndExplained|OBFYT|CaspianReport|SamChui)/")):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
-  !! Hide videos after 3 days if <1M views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tomscottplus"], [href="/@NotWhatYouThink"]):has(#metadata-line > span:first-child:not(:has-text(/M/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
-  !! Hide videos after 3 days if <2.5M views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@mkbhd"]):has(#metadata-line > span:first-child:not(:has-text(/^2\.[5-9]M|^[3-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
-  !! Hide videos after 3 days if <4M views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@veritasium"]):has(#metadata-line > span:first-child:not(:has-text(/^[4-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|^[12] day/i))):remove()
+  !! Hide videos after 2 days if <50k views
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@kermodeandmayostake"]):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  !! Hide videos after 2 days if <100k views
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@60minutes"], [href="/@GoodTimesBadTimes"]):has(#metadata-line > span:first-child:not(:has-text(/^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  !! Hide videos after 2 days if <150k views
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@Asianometry"]):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  !! Hide videos after 2 days if <300k views
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@MoneyMacro"]):has(#metadata-line > span:first-child:not(:has-text(/^[3-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  !! Hide videos after 2 days if <500k views
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(FoundAndExplained|OBFYT|CaspianReport|SamChui)/")):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  !! Hide videos after 2 days if <1M views
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tomscottplus"], [href="/@NotWhatYouThink"]):has(#metadata-line > span:first-child:not(:has-text(/M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  !! Hide videos after 2 days if <2.5M views
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@mkbhd"]):has(#metadata-line > span:first-child:not(:has-text(/^2\.[5-9]M|^[3-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  !! Hide videos after 2 days if <4M views
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@veritasium"]):has(#metadata-line > span:first-child:not(:has-text(/^[4-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
 
 ! Hide by title AND view count
   !! Hide 60 minutes videos w/ "Archive" in title if <10k views
