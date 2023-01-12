@@ -17,7 +17,7 @@
   !! Hide Watch Later & Add to Queue buttons
   youtube.com###hover-overlays
   !! Hide unused options in the video menu
-  youtube.com##ytd-menu-service-item-renderer:has(yt-formatted-string:has-text(/Add to queue|Save to Watch later|Save to playlist/))
+  youtube.com##ytd-menu-service-item-renderer:has(yt-formatted-string:has-text(/Share|Add to queue|Save to Watch later|Save to playlist/))
   youtube.com##ytd-menu-service-item-download-renderer
   !! Hide "Video hidden from feed" box
   youtube.com##ytd-grid-video-renderer[is-dismissed]
