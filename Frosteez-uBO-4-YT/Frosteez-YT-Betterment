@@ -37,7 +37,7 @@
 ! Shorts, Live, Upcoming
   !! Hide Shorts and Upcoming videos from homescreen & search
   youtube.com##[title*="#shorts"i]:upward(ytd-video-renderer, ytd-grid-video-renderer):remove()
-  youtube.com###overlays:has([overlay-style="SHORTS"], [overlay-style="UPCOMING"]):upward(ytd-video-renderer, ytd-grid-video-renderer):remove()
+  youtube.com###overlays:has([overlay-style="SHORTS"], [overlay-style="UPCOMING"]):upward(ytd-video-renderer, ytd-grid-video-renderer, ytd-rich-item-renderer):remove()
   !! Hide Shorts, Live, Upcoming videos from video-side recommendations (Can't use :remove() cause the thumbnail will try to load forever)
   youtube.com##ytd-thumbnail-overlay-time-status-renderer:not([overlay-style="DEFAULT"]):upward(ytd-compact-video-renderer)
 
