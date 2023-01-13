@@ -41,8 +41,8 @@
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|cfr|ChathamHouse10|AtlanticCouncilUS|catoinstitutevideo)$/")):not(#metadata-line > span:first-child:has-text(/^[5-9]\d\d|K|M/)):remove()
   !! Hide videos <1k views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(BrookingsInstitution|CarnegieEndowment)$/")):not(#metadata-line > span:first-child:has-text(/K|M/)):remove()
-  !! Hide videos <1.5k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@csis"]):not(#metadata-line > span:first-child:has-text(/^1\.[5-9]K|^[2-9](\.\d)?K|\d{2,3}K|M/)):remove()
+  !! Hide videos <2k views
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@csis"]):not(#metadata-line > span:first-child:has-text(/^[2-9](\.\d)?K|\d{2,3}K|M/)):remove()
   !! Hide videos <10k views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@kermodeandmayostake"], [href="/@HooverInstitution"]):not(#metadata-line > span:first-child:has-text(/\d\dK|M/)):remove()
   !! Hide videos <20k views
