@@ -88,8 +88,8 @@
 
 ! Hide by length OR view count
   !! Hide videos <1hr if <1k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@andyli"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(#metadata-line > span:first-child:has-text(/K|M/)):remove()
+  !youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@andyli"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(#metadata-line > span:first-child:has-text(/K|M/)):remove()
 
 ! Hide by length AND age
   !! Hide videos after 2 days if <1hr
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@andyli"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(#metadata-line > span:nth-child(2):has-text(/minute|hour|day ago/i)):remove()
+  !youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@andyli"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(#metadata-line > span:nth-child(2):has-text(/minute|hour|day ago/i)):remove()
