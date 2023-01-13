@@ -85,7 +85,7 @@
     youtube.com##.ytp-suggested-action
   
     !!! Make player bigger (aka Break Everything)
-      youtube.com###columns.ytd-watch-flexy:style(min-width: 100vw !important)
+      youtube.com###columns.ytd-watch-flexy:style(max-width: 100vw !important)
       youtube.com###secondary.ytd-watch-flexy:style(padding-right: 4px !important)
       youtube.com###columns .video-stream:style(width: -webkit-fill-available !important; height: auto !important)
       !!!! Hide videos after ending (so they don't sit at the top of the player container.)
