@@ -81,7 +81,8 @@
   !! Block Gifted Subs, Highlighted Messages & Bits Notifications in Chat
   twitch.tv##.chat-line__message--cheer-amount:upward(.vod-message, .chat-line__message)
   twitch.tv##.chat-scrollable-area__message-container > *:not(.chat-line__message, .vod-message--user-notice)
-  !! Hide VOD timestamps from chat
+  !! Hide timestamps from chat
+  twitch.tv##.chat-line__timestamp
   twitch.tv##.vod-message__header[data-test-selector="message-timestamp"]
   !! Hide english names from intl names
   twitch.tv##.chat-author__intl-login
