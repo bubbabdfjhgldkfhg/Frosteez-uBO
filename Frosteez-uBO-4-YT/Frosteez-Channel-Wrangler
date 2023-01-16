@@ -18,7 +18,6 @@
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@thespiffingbrit"]):not(:has([title*="balanced"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@nbcwashington"]):not(:has([title*="News4 Rundown"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@hollywoodreporter"]):not(:has([title*="Roundtable"i])):remove()
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@GrowlingSidewinder"]):has(#video-title:has-text(/DCS|Digital Combat|Virtual Reality|IL-2/i)):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(NFL|LIVGolf|DPWorldTour|SailGP|Formula1)$/")):not(:has([title*="Highlight"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@gamesdonequick"]):has(#video-title:has-text(/^The Bargain Bin|^Legally Cute|^She is Speed|^Challenger Approaching|^The First Step|^It\'s Dangerous to Go Alone|^PB Precipice|^Awfully Silly|^Think Fast|^Going Places|What\'s Faster\?|^How To Train A Speedrunner|^No Category Left Behind|^Game Masters|^Never Before Seen|^Mercy Kill|^Random Number Generation|^The Hotfix Grudge Match|Flame Fatales|^Tina\'s RPG Show|Time Capsule|^GDQ Hotfix|^Speedruns From the Crypt/i)):remove()
 
@@ -32,7 +31,7 @@
 ! Hide by video age (Exlude live videos by checking if video age exists with :has(#metadata-line > span:nth-child(2)).)
   !! Hide videos after 1 day
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(NFL|MLB|Formula1|PGATOUR|DPWorldTour|LIVGolf)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour/i))):remove()
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(PrestonStewart|clearvaluetax9382|blancolirio|yachtingworld|PlanetSailOnline|nbcwashington|OptimumTech)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour/i))):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(PrestonStewart|clearvaluetax9382|blancolirio|GrowlingSidewinder|yachtingworld|PlanetSailOnline|nbcwashington|OptimumTech)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour/i))):remove()
   !! Hide videos after 2 days
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|NASA|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|day ago/i))):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|HooverInstitution|CarnegieEndowment|AtlanticCouncilUS|HLStimson100|SIPRIorg)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|day ago/i))):remove()
