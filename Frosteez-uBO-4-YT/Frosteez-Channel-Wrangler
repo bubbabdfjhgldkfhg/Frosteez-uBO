@@ -9,6 +9,7 @@
 
 ! Hide by video title
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@Formula1"]):has([title*="Esports"i]):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@CovertCabal"]):has([title*="Tac Ops"i]):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@PGATOUR"]):not(:has([title*="The CUT"i])):remove()  
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@MLB"]):not(:has([title*="MLB Highlights"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tested"]):not(:has([title*="One Day Build"i])):remove()  
