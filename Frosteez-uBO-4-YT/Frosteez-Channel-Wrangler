@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are finely tuned personal preferences, not intended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 10January2023
+! Version: 16January2023
 
 ! Video Filters (:remove() is faster and more stable, also necessary for the empty section hider to work.)
 
@@ -49,7 +49,7 @@
   !! Hide videos <2k views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@csis"]):not(#metadata-line > span:first-child:has-text(/^[2-9](\.\d)?K|\d{2,3}K|M/)):remove()
   !! Hide videos <10k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@kermodeandmayostake"], [href="/@HooverInstitution"]):not(#metadata-line > span:first-child:has-text(/\d\dK|M/)):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(kermodeandmayostake|HooverInstitution)$/")):not(#metadata-line > span:first-child:has-text(/\d\dK|M/)):remove()
   !! Hide videos <20k views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@PrestonStewart"]):not(#metadata-line > span:first-child:has-text(/^[2-9]\dK|^\d{3}K|M/)):remove()
   !! Hide videos <40k views
@@ -63,11 +63,11 @@
 
 ! Hide by age AND view count
   !! Hide videos after 2 days if <15k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@gamesdonequick"], [href="/@TechTechPotato"]):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(gamesdonequick|TechTechPotato)/")):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <50k views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@kermodeandmayostake"]):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <100k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@60minutes"], [href="/@GoodTimesBadTimes"]):has(#metadata-line > span:first-child:not(:has-text(/^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(60minutes|GoodTimesBadTimes)/")):has(#metadata-line > span:first-child:not(:has-text(/^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <150k views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@Asianometry"]):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <300k views
@@ -75,9 +75,9 @@
   !! Hide videos after 2 days if <500k views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(FoundAndExplained|OBFYT|CaspianReport|SamChui)/")):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <1M views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tomscottplus"], [href="/@NotWhatYouThink"]):has(#metadata-line > span:first-child:not(:has-text(/M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(tomscottplus|NotWhatYouThink)/")):has(#metadata-line > span:first-child:not(:has-text(/M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <2.5M views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@mkbhd"]):has(#metadata-line > span:first-child:not(:has-text(/^2\.[5-9]M|^[3-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(mkbhd|RealLifeLore)/")):has(#metadata-line > span:first-child:not(:has-text(/^2\.[5-9]M|^[3-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <4M views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@veritasium"]):has(#metadata-line > span:first-child:not(:has-text(/^[4-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
 
