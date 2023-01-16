@@ -66,10 +66,8 @@
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(gamesdonequick|TechTechPotato)/")):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <50k views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@kermodeandmayostake"]):has(#metadata-line > span:first-child:not(:has-text(/^[5-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
-  !! Hide videos after 2 days if <100k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(60minutes|GoodTimesBadTimes)/")):has(#metadata-line > span:first-child:not(:has-text(/^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
-  !! Hide videos after 2 days if <150k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@Asianometry"]):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  !! Hide videos after 2 days if <150k views  
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(60minutes|Asianometry|GoodTimesBadTimes)/")):has(#metadata-line > span:first-child:not(:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <300k views
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@MoneyMacro"]):has(#metadata-line > span:first-child:not(:has-text(/^[3-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <500k views
