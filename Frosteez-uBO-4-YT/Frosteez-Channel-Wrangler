@@ -36,7 +36,7 @@
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|NASA|SpaceX|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|day ago/i))):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|HooverInstitution|CarnegieEndowment|AtlanticCouncilUS|HLStimson100|SIPRIorg)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 3 days
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(PerunAU|MilitaryAviationHistory|MentourPilot|WardCarroll|CasualNavigation|TheB1M|BookingHunterTV|SeoulWalker|splunk_ml|SplunkHowTo|travishall2073)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(PerunAU|MilitaryAviationHistory|MentourPilot|WardCarroll|FighterPilotPodcast|CasualNavigation|TheB1M|BookingHunterTV|SeoulWalker|splunk_ml|SplunkHowTo|travishall2073)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
 
 ! Hide by view count
   !! Hide videos <200 views
