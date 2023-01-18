@@ -98,3 +98,6 @@
   [Kept for templates]
   !! Hide videos after 2 days if <1hr
   !youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@andyli"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(#metadata-line > span:nth-child(2):has-text(/minute|hour|day ago/i)):remove()
+
+! Hide VODs
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@thespiffingbrit"]):has(#metadata-line > span:nth-child(2):has-text(/Streamed/i)):remove()
