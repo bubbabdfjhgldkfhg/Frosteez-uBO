@@ -3,13 +3,11 @@
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 11January2023
+! Version: 17January2023
 
 ! Site-wide
-  !! Hide VOD/Offline notifications from sidebar
-  twitch.tv##.side-nav-card__metadata p[title*="video"]
-  twitch.tv##.side-nav-card__live-status > span
-  twitch.tv##.side-nav-card__live-status:has(> span)
+  !! Hide Offline notifications from sidebar
+  twitch.tv##.side-nav-card__live-status:not(:has([aria-label="Live"]))
   !! Hide "Popular Channels" section in sidebar
   twitch.tv##div[aria-label="Popular Channels"]
   !! Hide "____ Viewers Also Watch" section in sidebar
