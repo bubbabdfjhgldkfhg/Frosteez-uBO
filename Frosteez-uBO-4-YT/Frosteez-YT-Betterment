@@ -3,7 +3,7 @@
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 10January2023
+! Version: 28January2023
 
 ! Extras (Only use with Chrome Extension -> "Replace YouTube's Home with Subscriptions")
   !! Hide home page when redirecting to subscription page (if too slow)
@@ -65,8 +65,8 @@
     !!! Hide "Recommended for you" videos
     youtube.com##.ytd-video-meta-block:has-text(/Recommended for you/):upward(ytd-compact-video-renderer)
     !!! Hide weird recommendations (Removing ytd-promoted-sparkles-web-renderer causes infinite load bug.)
-    youtube.com###contents:not(:has(ytd-promoted-sparkles-web-renderer)) ytd-compact-video-renderer:nth-child(3)
-    youtube.com###contents:has(ytd-promoted-sparkles-web-renderer) ytd-compact-video-renderer:nth-child(4)
+    youtube.com##:is(#contents, #items):not(:has(ytd-promoted-sparkles-web-renderer)) ytd-compact-video-renderer:nth-child(3)
+    youtube.com##:is(#contents, #items):has(ytd-promoted-sparkles-web-renderer) ytd-compact-video-renderer:nth-child(4)
     youtube.com##ytd-compact-video-renderer:not(#metadata-line > span:first-of-type:has-text(/K|M/i))
   !! Video Box
     !!! Make ambient colors bigger
