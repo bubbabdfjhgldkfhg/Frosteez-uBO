@@ -3,7 +3,7 @@
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 28January2023
+! Version: 06Feb2023
 
 ! Extras (Only use with Chrome Extension -> "Replace YouTube's Home with Subscriptions")
   !! Hide home page when redirecting to subscription page (if too slow)
@@ -76,7 +76,7 @@
     !!! Hide recommendations after video
     youtube.com##.ytp-videowall-still, .autonav-endscreen
     !!! Hide uselesss buttons on video player
-    youtube.com##.ytp-chrome-top-buttons, .ytp-cards-button, .ytp-prev-button, .ytp-next-button, .ytp-miniplayer-button, .ytp-size-button, ytp-remote-button, .ytp-fullscreen-button
+    youtube.com##.ytp-chrome-top-buttons, .ytp-cards-button, .ytp-prev-button, .ytp-next-button, .ytp-miniplayer-button, .ytp-size-button, .ytp-remote-button, .ytp-fullscreen-button
     !!! Hide captions button if captions are unavailable
     youtube.com##button[title="Subtitles/closed captions unavailable"]
     !!! Hide autoplay button if autoplay is disabled
