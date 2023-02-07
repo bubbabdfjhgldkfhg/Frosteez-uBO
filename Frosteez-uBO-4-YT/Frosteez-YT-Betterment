@@ -104,6 +104,7 @@
     youtube.com###clarify-box
     !! Show old view count
     youtube.com###original-info:style(display: block !important)
+    youtube.com###original-info > a
   !! Description
     !!! Put Channel name and description side-by-side when description is collapsed.
     youtube.com##[description-collapsed] #top-row:style(display: inline-flex !important)
