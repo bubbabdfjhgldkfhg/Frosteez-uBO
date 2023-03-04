@@ -79,8 +79,8 @@
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@veritasium"]):has(#metadata-line > span:first-child:not(:has-text(/^[4-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
 
 ! Hide by title AND view count
-  !! Hide 60 minutes videos w/ "Archive" in title if <10k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@60minutes"]):has([title*="Archive"i]):not(#metadata-line > span:first-child:has-text(/\d\dK|M/)):remove()
+  !! Hide 60 minutes videos w/ "Archive" or "Full Espisodes" in title if <10k views
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@60minutes"]):has([title*="Archive"i], [title*="Full Episodes"i]):not(#metadata-line > span:first-child:has-text(/\d\dK|M/)):remove()
 
 ! Hide by age AND title
   [Kept for templates]
