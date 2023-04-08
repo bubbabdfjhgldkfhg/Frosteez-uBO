@@ -1,19 +1,17 @@
-[uBlock Origin 1.46.0]
+[uBlock Origin 1.48.4]
 ! Title: Frosteez Channel Wrangler
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are finely tuned personal preferences, not intended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 18January2023
+! Version: 08Apr2023
 
 ! Video Filters (:remove() is faster and more stable, also necessary for the empty section hider to work.)
 
 ! Hide by video title
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@Formula1"]):has([title*="Esports"i]):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@CovertCabal"]):has([title*="Tac Ops"i]):remove()
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@PGATOUR"]):not(:has([title*="The CUT"i])):remove()  
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@MLB"]):not(:has([title*="MLB Highlights"i])):remove()
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tested"]):not(:has([title*="One Day Build"i])):remove()  
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@penguinz0"]):not(:has([title*="Moist Meter"i])):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@PGATOUR"]):not(:has([title*="The CUT"i])):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tested"]):not(:has([title*="One Day Build"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@FirstWeFeast"]):not(:has([title*="Hot Ones"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@nbcwashington"]):not(:has([title*="News4 Rundown"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(NFL|LIVGolf|DPWorldTour|SailGP|Formula1)$/")):not(:has([title*="Highlight"i])):remove()
@@ -28,11 +26,11 @@
 
 ! Hide by video age (Exlude live videos by checking if video age exists with :has(#metadata-line > span:nth-child(2)).)
   !! Hide videos after 1 day
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(NFL|MLB|Formula1|PGATOUR|DPWorldTour|LIVGolf)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour/i))):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(NFL|Formula1|PGATOUR|DPWorldTour|LIVGolf)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour/i))):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(PrestonStewart|clearvaluetax9382|blancolirio|GrowlingSidewinder|yachtingworld|PlanetSailOnline|nbcwashington)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour/i))):remove()
   !! Hide videos after 2 days
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|NASA|SpaceX|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport|PerunAU|WardCarroll|FighterPilotPodcast)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|day ago/i))):remove()
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|HooverInstitution|CarnegieEndowment|AtlanticCouncilUS|HLStimson100|SIPRIorg|shieldoftherepublicpodcast9416)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(FPRI|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|HooverInstitution|CarnegieEndowment|AtlanticCouncilUS|HLStimson100|SIPRIorg|shieldoftherepublicpodcast9416)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 3 days
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(MilitaryAviationHistory|MentourPilot|CasualNavigation|TheB1M|BookingHunterTV|SeoulWalker|splunk_ml|SplunkHowTo|travishall2073)$/")):has(#metadata-line > span:nth-child(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
 
@@ -79,8 +77,8 @@
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@veritasium"]):has(#metadata-line > span:first-child:not(:has-text(/^[4-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
 
 ! Hide by title AND view count
-  !! Hide 60 minutes videos w/ "Archive" or "Full Espisodes" in title if <10k views
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@60minutes"]):has([title*="Archive"i], [title*="Full Episodes"i]):not(#metadata-line > span:first-child:has-text(/\d\dK|M/)):remove()
+  !! Hide 60 minutes videos w/ "Archive" or "Full Espisodes" in title if <15k views
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@60minutes"]):has([title*="Archive"i], [title*="Full Episodes"i]):not(#metadata-line > span:first-child:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)):remove()
 
 ! Hide by age AND title
   [Kept for templates]
