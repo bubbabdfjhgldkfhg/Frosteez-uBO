@@ -1,9 +1,9 @@
-[uBlock Origin 1.46.0]
+[uBlock Origin 1.48.4]
 ! Title: Frosteez Twitch Local Chat Moderation
 ! Description: Advanced local automoderation for Twitch (Put non-subs into Emote Only, etc.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 11January2023
+! Version: 17Apr2023
 
 ! Need to copy chat-badge remover from main betterment script.
 !# include Frosteez-Twitch-Betterment
@@ -23,7 +23,7 @@
 
 ! Treat new subs as plebs
   twitch.tv##.chat-badge:matches-attr(alt="/^1-Month Subscriber|^Subscriber$/"):remove()
-  twitch.tv##.chat-badge:matches-attr(alt="/^2-Month Subscriber|^3-Month Subscriber/"):remove()
+  twitch.tv##.chat-badge:matches-attr(alt="/^[234]-Month Subscriber/"):remove()
 
 ! Treat non-VIPs as plebs (VOD only currently)
   twitch.tv##.vod-message .chat-badge:not(:matches-attr(alt="/Year|Founder|Verified|Broadcaster|VIP|Moderator/")):remove()
