@@ -13,7 +13,7 @@
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tested"]):not(:has([title*="One Day Build"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@FirstWeFeast"]):not(:has([title*="Hot Ones"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@nbcwashington"]):not(:has([title*="News4 Rundown"i])):remove()
-  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(TomorrowsBuild|TheB1M)$/"):has([title*="New York"i]):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(TomorrowsBuild|TheB1M)$/")):has([title*="New York"i]):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@Formula1"]):has(#video-title:has-text(/Esports|^F2|^F3|F1 Academy/i)):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has(a:matches-attr(href="/@(NFL|SailGP|Formula1)$/")):not(:has([title*="Highlight"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@gamesdonequick"]):has(#video-title:has-text(/^The Bargain Bin|^Legally Cute|^She is Speed|^Challenger Approaching|^The First Step|^It\'s Dangerous to Go Alone|^PB Precipice|^Awfully Silly|^Think Fast|^Going Places|What\'s Faster\?|^How To Train A Speedrunner|^No Category Left Behind|^Game Masters|^Never Before Seen|^Mercy Kill|^Random Number Generation|^The Hotfix Grudge Match|Flame Fatales|^Tina\'s RPG Show|Time Capsule|^GDQ Hotfix|^Speedruns From the Crypt|^Passion Project|Frost Fatales/i)):remove()
