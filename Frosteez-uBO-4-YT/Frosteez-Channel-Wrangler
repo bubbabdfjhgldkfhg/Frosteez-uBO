@@ -8,6 +8,7 @@
 ! Video Filters (:remove() is faster and more stable, also necessary for the empty section hider to work.)
 
 ! Hide by video title
+  youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@TheB1M"]):has([title*="New York"i]):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@CovertCabal"]):has([title*="Tac Ops"i]):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@PGATOUR"]):not(:has([title*="The CUT"i])):remove()
   youtube.com##:is(ytd-video-renderer, ytd-grid-video-renderer):has([href="/@tested"]):not(:has([title*="One Day Build"i])):remove()
