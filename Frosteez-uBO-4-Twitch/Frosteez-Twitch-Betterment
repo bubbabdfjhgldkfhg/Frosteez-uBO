@@ -1,9 +1,9 @@
-[uBlock Origin 1.46.0]
+[uBlock Origin 1.49.2]
 ! Title: Frosteez Twitch Betterment
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 17January2023
+! Version: 09May2023
 
 ! Site-wide
   !! Hide Offline notifications from sidebar
@@ -81,7 +81,7 @@
   twitch.tv##.chat-scrollable-area__message-container > *:not(.chat-line__message, .vod-message--user-notice)
   !! Hide timestamps from chat
   twitch.tv##.chat-line__timestamp
-  twitch.tv##.vod-message__header[data-test-selector="message-timestamp"]
+  twitch.tv##.vod-message__header
   !! Hide english names from intl names
   twitch.tv##.chat-author__intl-login
   !! Hide purple "chat" button
