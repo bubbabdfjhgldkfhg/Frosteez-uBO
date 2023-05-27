@@ -7,7 +7,7 @@
 
 ! Site-wide
   !! Hide Offline notifications from sidebar
-  twitch.tv##.side-nav-card__live-status:not(:has([aria-label="Live"]))
+  twitch.tv##.side-nav-card__live-status:not(:has(.tw-channel-status-indicator))
   !! Hide "Popular Channels" section in sidebar
   twitch.tv##div[aria-label="Popular Channels"]
   !! Hide "____ Viewers Also Watch" section in sidebar
