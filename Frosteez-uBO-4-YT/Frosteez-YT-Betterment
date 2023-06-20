@@ -1,9 +1,9 @@
-[uBlock Origin 1.46.0]
+[uBlock Origin 1.50.0]
 ! Title: Frosteez YT Betterment
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 06Feb2023
+! Version: 20June2023
 
 ! Extras (Only use with Chrome Extension -> "Replace YouTube's Home with Subscriptions")
   !! Hide home page when redirecting to subscription page (if too slow)
@@ -145,5 +145,3 @@
   youtube.com##[aria-label="Join this channel"]:upward(ytd-item-section-renderer)
   ! Hide gamer tag from channel name
   youtube.com###channel-handle
-  ! Hide video menu button on channel page
-  youtube.com##ytd-rich-item-renderer #menu
