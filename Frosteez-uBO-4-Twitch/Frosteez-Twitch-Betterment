@@ -46,6 +46,8 @@
   twitch.tv##div[data-a-target="player-overlay-video-stats"] thead
   twitch.tv##div[data-a-target="player-overlay-video-stats"] tbody p:not([aria-label="Latency To Broadcaster"]):upward(.tw-table-cell)
   twitch.tv##tbody p[aria-label="Latency To Broadcaster"]:not(:has-text(/^-?[0-2]\.|^3\.[0-5]/)):upward(div[data-a-target="player-overlay-video-stats"]):style(opacity: 1 !important)
+  !! Hide "Mature Audiences" warning
+  twitch.tv##.disclosure-tool
   !! Hide some clutter from the video player
   twitch.tv##.theatre-social-panel:upward(2)
   twitch.tv##.tw-channel-status-text-indicator:upward(1)
@@ -86,6 +88,8 @@
   twitch.tv##.chat-author__intl-login
   !! Hide purple "chat" button
   twitch.tv##button[data-a-target="chat-send-button"]:upward(2)
+  !! Hide donate button on chat box
+  twitch.tv##[aria-label="Hype Chat"]:upward(1)
   !! Hide scroll bar
   twitch.tv##.video-chat__message-list-wrapper::-webkit-scrollbar, .simplebar-track
   !! Hide "Elevate Message" button
