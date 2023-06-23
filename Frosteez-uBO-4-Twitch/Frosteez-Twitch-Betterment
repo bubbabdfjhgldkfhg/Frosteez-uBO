@@ -62,6 +62,8 @@
   twitch.tv##.boost-status:upward(2)
 
 ! Chat Appearance ([Duplicated] filters need separate lines for live chat and vod chat after a recent uBO patch broke commas. (It's not really a big deal since a recent twitch patch broke vod chat anyway.))
+  !! Hide pinned donations
+  twitch.tv##.paid-pinned-chat-message-list:upward(2)
   !! Remove blank floating box
   twitch.tv##.community-highlight-stack__backlog-card
   !! [Duplicated] Dim chat text
