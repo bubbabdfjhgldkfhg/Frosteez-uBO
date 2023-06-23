@@ -20,7 +20,7 @@
   youtube.com##ytd-menu-service-item-renderer:has(yt-formatted-string:has-text(/Share|Add to queue|Save to Watch later|Save to playlist/))
   youtube.com##ytd-menu-service-item-download-renderer
   !! Hide "Video hidden from feed" box
-  youtube.com##ytd-rich-item-renderer[is-dismissed]
+  youtube.com##ytd-rich-grid-media[is-dismissed]:upward(ytd-rich-item-renderer):remove()
   !! Hide season/episode counter above video name
   youtube.com##h3 > ytd-badge-supported-renderer
   !! Combine grid sections into a continuous page
@@ -37,7 +37,7 @@
 ! Shorts, Live, Upcoming
   !! Hide Shorts and Upcoming videos from homescreen & search
   youtube.com##[title*="#shorts"i]:upward(ytd-rich-item-renderer):remove()
-  youtube.com###overlays:has([overlay-style="SHORTS"], [overlay-style="UPCOMING"]):upward(ytd-rich-item-renderer):remove()
+  youtube.com##ytd-video-renderer:has([overlay-style="SHORTS"], [overlay-style="UPCOMING"]):remove()
   !! Hide Shorts, Live, Upcoming videos from video-side recommendations (Can't use :remove() cause the thumbnail will try to load forever)
   youtube.com##ytd-thumbnail-overlay-time-status-renderer:not([overlay-style="DEFAULT"]):upward(ytd-compact-video-renderer)
 
