@@ -3,7 +3,7 @@
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 20June2023
+! Version: 28June2023
 
 ! Extras (Only use with Chrome Extension -> "Replace YouTube's Home with Subscriptions")
   !! Hide home page when redirecting to subscription page (if too slow)
@@ -37,7 +37,7 @@
 ! Shorts, Live, Upcoming
   !! Hide Shorts and Upcoming videos from homescreen & search
   youtube.com##[title*="#shorts"i]:upward(ytd-rich-item-renderer):remove()
-  youtube.com##ytd-video-renderer:has([overlay-style="SHORTS"], [overlay-style="UPCOMING"]):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-rich-item-renderer):has([overlay-style="SHORTS"], [overlay-style="UPCOMING"]):remove()
   !! Hide Shorts, Live, Upcoming videos from video-side recommendations (Can't use :remove() cause the thumbnail will try to load forever)
   youtube.com##ytd-thumbnail-overlay-time-status-renderer:not([overlay-style="DEFAULT"]):upward(ytd-compact-video-renderer)
 
