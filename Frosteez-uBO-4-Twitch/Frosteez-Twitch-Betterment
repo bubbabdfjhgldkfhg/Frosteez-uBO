@@ -1,9 +1,9 @@
-[uBlock Origin 1.49.2]
+[uBlock Origin 1.50.0]
 ! Title: Frosteez Twitch Betterment
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 09May2023
+! Version: 29June2023
 
 ! Site-wide
   !! Hide Offline notifications from sidebar
@@ -28,7 +28,7 @@
   !! Hide channels playing anime junk 
   twitch.tv###directory-rectangle ~ div:has(a:matches-attr(href="/Anime%20World|Genshin%20Impact|Lost%20Ark|osu!|Mabinogi|MapleStory|VRChat/"))
   !! Hide channels with red flag tags (Unreliable: channel box only shows 4 tags which rotate randomly.)
-  twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/ADHD|Anxiety|Depression/i"))
+  twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/ADH?D|Anxiety|Depression/i"))
   twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/An[ií]me|Cute|Comfy|Cozy|Furry|Roleplay|UwU|[vｖ]tuber/i"))
   twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/ASMR|Bikini|Cosplay|Dancing|Girl|Wom[ae]n|Yoga/i"))
   twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/News|Politics|Slots/i"))
@@ -53,6 +53,10 @@
   twitch.tv##.tw-channel-status-text-indicator:upward(1)
   twitch.tv###bttv-picture-in-picture
   twitch.tv##button:matches-attr(data-a-target="/player-clip-button|player-fullscreen-button/"):upward(1)
+  !! Hide sponsor logo
+  twitch.tv##.channel-skins-overlay__interactive
+  !! Hide sponsor banner
+  twitch.tv##.channel-skins-ribbon__container:upward(1)
   !! Hide useless button from video settings
   twitch.tv##div[data-a-target="player-settings-menu"] button[data-a-target="player-settings-menu-item-report"]:upward(1)
   twitch.tv##div[data-a-target="player-settings-menu"] label:has-text(/Notify Track Changes in Theatre Mode/):upward(2)
