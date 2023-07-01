@@ -1,9 +1,9 @@
-[uBlock Origin 1.48.4]
+[uBlock Origin 1.50.0]
 ! Title: Frosteez Twitch Local Chat Moderation
 ! Description: Advanced local automoderation for Twitch (Put non-subs into Emote Only, etc.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 17Apr2023
+! Version: 01July2023
 
 ! Need to copy chat-badge remover from main betterment script.
 !# include Frosteez-Twitch-Betterment
@@ -34,6 +34,9 @@
 ! Hide side conversations (Replies // Messages with mentions)
   twitch.tv##p[title^="Reply"]:upward(.vod-message, .chat-line__message)
   twitch.tv##:is(.vod-message, .chat-line__message):has(.mention-fragment:not(:matches-attr(class="/--(sender|recipient)/"))):not(:has(.chat-badge:matches-attr(alt="/Verified|Broadcaster/")))
+
+! Hide Heart spam
+  twitch.tv##.chat-line__message--emote-button:has(img:matches-attr(alt="/(Love|Heart)$/")) + .text-fragment:has-text(/ /) + .chat-line__message--emote-button:has(img:matches-attr(alt="/(Love|Heart)$/"))
 
 ! Everything invisible on load (Reduce bouncing) // Dim messages // Reduce chat padding
   !! Solve weird chat height bug
