@@ -3,7 +3,7 @@
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 28June2023
+! Version: 01July2023
 
 ! Extras (Only use with Chrome Extension -> "Replace YouTube's Home with Subscriptions")
   !! Hide home page when redirecting to subscription page (if too slow)
@@ -106,19 +106,23 @@
     youtube.com###original-info:style(display: block !important)
     youtube.com###original-info > a
   !! Description
-    !!! Put Channel name and description side-by-side when description is collapsed.
-    youtube.com##[description-collapsed] #top-row:style(display: inline-flex !important)
-    youtube.com#@##owner:style(margin-top: min(36px, calc((100vh - var(--ytd-watch-flexy-panel-max-height) - 182px)/2)) !important)
-    youtube.com###upload-info:style(margin-right: 10px !important)
+    !!! Put Channel name and description side-by-side when description is collapsed. [Disabled for now]
+    !youtube.com##[description-collapsed] #top-row:style(display: inline-flex !important)
+    !youtube.com###owner:style(margin-top: min(36px, calc((100vh - var(--ytd-watch-flexy-panel-max-height) - 182px)/2)) !important)
+    !!! Hide unexpanded description
+    youtube.com###snippet-text
+    youtube.com###snippet.ytd-text-inline-expander
+    !!! Hide "#X in Trending"
+    youtube.com###info > a
+    !!! Make unexpanded description box a little smaller
     youtube.com###bottom-row:style(display: inline-flex !important)
     youtube.com###description:style(min-width: fit-content !important)
     youtube.com###description-inner:style(margin: 8px !important)
-    !!! Hide unexpanded description // Hide view count & video age in description
-    youtube.com###info-container
-    youtube.com###snippet-text
-    !! Hide text shadow in unexpanded description box
+    !!! Fix spacing for title and description box
+    youtube.com##.item.ytd-watch-metadata:style(margin-top: 8px !important)
+    !!! Hide text shadow in unexpanded description box
     youtube.com###info-container:style(-webkit-mask-image: none !important)
-    !! Hide big boxes in description
+    !!! Hide big boxes in description
     youtube.com##ytd-metadata-row-container-renderer, ytd-structured-description-content-renderer
   !! Comments
     !!! Hide separator above comment section
