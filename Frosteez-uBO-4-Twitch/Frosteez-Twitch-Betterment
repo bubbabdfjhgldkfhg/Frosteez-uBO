@@ -21,7 +21,7 @@
   !! Hide channel tags
   twitch.tv##.tw-tag:upward(3)
 
-! Home // Directory
+! Home // Channel Directory
   !! Hide recommended categories
   twitch.tv##[href="/directory"]:upward(.find-me):upward(1)
   twitch.tv##.vertical-selector-card__container:upward(1)
@@ -36,6 +36,10 @@
   twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/News|Politics|Slots/i"))
   !! Hide channels with default profile picture
   twitch.tv###directory-rectangle ~ div:has(.tw-image-avatar[src*="user-default-pictures"])
+
+! VOD/Clip Directory
+  !! Hide report buttons (More space for titles)
+  twitch.tv##button[data-a-target="report-button-more-button"]:upward(1)
 
 ! Video player
   !! Nuke the video player when ads appear 
