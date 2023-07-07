@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are finely tuned personal preferences, not intended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 17June2023
+! Version: 06July2023
 
 ! Video Filters (:remove() is faster and more stable, also necessary for the empty section hider to work.)
 
@@ -16,7 +16,7 @@
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(TomorrowsBuild|TheB1M)$/")):has([title*="New York"i]):remove()
   youtube.com##:is(ytd-rich-item-renderer):has([href="/@Formula1"]):has(#video-title:has-text(/Esports|^F2|^F3|F1 Academy/i)):remove()
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(NFL|SailGP|Formula1)$/")):not(:has([title*="Highlight"i])):remove()
-  youtube.com##:is(ytd-rich-item-renderer):has([href="/@gamesdonequick"]):has(#video-title:has-text(/^The Bargain Bin|^Legally Cute|^She is Speed|^Challenger Approaching|^The First Step|^It\'s Dangerous to Go Alone|^PB Precipice|^Awfully Silly|^Think Fast|^Going Places|What\'s Faster\?|^How To Train A Speedrunner|^No Category Left Behind|^Game Masters|^Never Before Seen|^Mercy Kill|^Random Number Generation|^The Hotfix Grudge Match|Flame Fatales|^Tina\'s RPG Show|Time Capsule|^GDQ Hotfix|^Speedruns From the Crypt|^Passion Project|Frost Fatales|^Tiny Treefort/i)):remove()
+  youtube.com##:is(ytd-rich-item-renderer):has([href="/@gamesdonequick"]):has(#video-title:has-text(/The Bargain Bin|^Legally Cute|^She is Speed|^Challenger Approaching|^The First Step|^It\'s Dangerous to Go Alone|^PB Precipice|^Awfully Silly|^Think Fast|^Going Places|What\'s Faster\?|^How To Train A Speedrunner|^No Category Left Behind|^Game Masters|^Never Before Seen|^Mercy Kill|^Random Number Generation|^The Hotfix Grudge Match|Flame Fatales|^Tina\'s RPG Show|Time Capsule|^GDQ Hotfix|^Speedruns From the Crypt|^Passion Project|Frost Fatales|Tiny Treefort/i)):remove()
 
 ! Hide by video length (have to check that #text exists before checking video length because it loads last.)
   !! Hide videos <5 minutes
