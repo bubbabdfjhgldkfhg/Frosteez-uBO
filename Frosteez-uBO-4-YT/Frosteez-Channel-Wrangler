@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are finely tuned personal preferences, not intended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 06July2023
+! Version: 12July2023
 
 ! Video Filters (:remove() is faster and more stable, also necessary for the empty section hider to work.)
 
