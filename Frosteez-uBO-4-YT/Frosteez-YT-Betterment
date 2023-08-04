@@ -100,6 +100,8 @@
     youtube.com##[href^="/hashtag/"], #actions, #comment-teaser
     !! Hide subscribe button
     youtube.com##:matches-path(/watch/) #subscribe-button
+    !! Hide "Purchase" button
+    youtube.com###purchase-button
     !! Hide anti-misinformation box
     youtube.com###clarify-box
     !! Show old view count
