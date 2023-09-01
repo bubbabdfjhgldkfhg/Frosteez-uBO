@@ -70,6 +70,8 @@
   twitch.tv##div[data-target="channel-header-right"]
   twitch.tv##button[aria-label="Share"]:upward(4)
   twitch.tv##.boost-status:upward(2)
+  !! Hide Subtember Banner
+  twitch.tv##.subtember-gradient:upward(2)
 
 ! Chat Appearance ([Duplicated] filters need separate lines for live chat and vod chat after a recent uBO patch broke commas. (It's not really a big deal since a recent twitch patch broke vod chat anyway.))
   !! Hide pinned donations
