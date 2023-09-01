@@ -3,7 +3,7 @@
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 01July2023
+! Version: 31Aug2023
 
 ! Site-wide
   !! Hide Offline notifications from sidebar
