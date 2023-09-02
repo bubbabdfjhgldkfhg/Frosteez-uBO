@@ -26,7 +26,7 @@
   twitch.tv##[href="/directory"]:upward(.find-me):upward(1)
   twitch.tv##.vertical-selector-card__container:upward(1)
   !! Hide channels playing spammy categories 
-  twitch.tv###directory-rectangle ~ div:has(a:matches-attr(href="/ASMR|Fitness-And-Health|Pools|Slots|Among-Us|Fall-Guys|Grand-Theft-Auto-V|Roblox|Virtual-Casino/i"))
+  twitch.tv###directory-rectangle ~ div:has(a:matches-attr(href="/ASMR|Fitness-And-Health|Poker|Pools|Slots|Among-Us|Fall-Guys|Grand-Theft-Auto-V|Roblox|Virtual-Casino/i"))
   !! Hide channels playing anime junk 
   twitch.tv###directory-rectangle ~ div:has(a:matches-attr(href="/Anime-World|Genshin-Impact|Lost-Ark|osu!|Mabinogi|MapleStory|VRChat/i"))
   !! Hide channels with red flag tags (Unreliable: channel box only shows 4 tags which rotate randomly.)
