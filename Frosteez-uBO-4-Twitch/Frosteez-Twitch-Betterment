@@ -30,7 +30,7 @@
   !! Hide channels playing anime junk 
   twitch.tv###directory-rectangle ~ div:has(a:matches-attr(href="/Anime%20World|Genshin%20Impact|Lost%20Ark|osu!|Mabinogi|MapleStory|VRChat/"))
   !! Hide channels with red flag tags (Unreliable: channel box only shows 4 tags which rotate randomly.)
-  twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/ADH?D|Anxiety|Depression/i"))
+  twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/ADH?D|Anxiety|Chao(s|tic)|Depression/i"))
   twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/An[ií]me|Cute|Comfy|Cozy|Furry|Roleplay|UwU|[vｖ]tuber/i"))
   twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/Asian|ASMR|Bikini|Cosplay|Dancing|Female|Girl|Wom[ae]n|Yoga/i"))
   twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/News|Politics|Slots/i"))
