@@ -31,7 +31,7 @@
   twitch.tv###directory-rectangle ~ div:has(a:matches-attr(href="/Anime-World|Genshin-Impact|Lost-Ark|osu!|Mabinogi|MapleStory|VRChat/i"))
   !! Hide channels with red flag tags (Unreliable: channel box only shows 4 tags which rotate randomly.)
   twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/ADH?D|Anxiety|Chao(s|tic)|Depression/i"))
-  twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/An[ií]me|Chatty|Cute|Comfy|Cozy|Furry|Roleplay|UwU|[vｖ]tuber/i"))
+  twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/An[ií]me|Chatty|Cute|Comfy|Cozy|Furry|Roleplay|UwU|[vｖ](tuber|shojo)/i"))
   twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/Asian|ASMR|Bikini|Cosplay|Dancing|Female|Girl|Mommy|Wom[ae]n|Yoga/i"))
   twitch.tv###directory-rectangle ~ div:has(button:matches-attr(aria-label="/News|Politics|Slots/i"))
   !! Hide channels with default profile picture
