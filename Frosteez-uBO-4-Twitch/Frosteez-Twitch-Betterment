@@ -46,7 +46,7 @@
   twitch.tv##span[data-a-target="video-ad-label"]:upward(.video-player):remove()
   !! Truncate video stats (Floating Latency)
   twitch.tv##div[data-a-target="player-overlay-video-stats"]:upward(3):style(right: 0rem; top: max(0px, calc((100vh - 56.25vw)/2)) !important)
-  twitch.tv##div[data-a-target="player-overlay-video-stats"]:style(background: none !important; color: #d9d9d9; transition: opacity .5s; opacity: .25)
+  !twitch.tv##div[data-a-target="player-overlay-video-stats"]:style(background: none !important; color: #d9d9d9; transition: opacity .5s; opacity: .25)
   twitch.tv##button[aria-label="Close video stats"]
   twitch.tv##div[data-a-target="player-overlay-video-stats"] .tw-table:style(box-shadow: none !important)
   twitch.tv##div[data-a-target="player-overlay-video-stats"] thead
