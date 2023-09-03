@@ -51,7 +51,7 @@
   twitch.tv##div[data-a-target="player-overlay-video-stats"] .tw-table:style(box-shadow: none !important)
   twitch.tv##div[data-a-target="player-overlay-video-stats"] thead
   twitch.tv##div[data-a-target="player-overlay-video-stats"] tbody p:not([aria-label="Latency To Broadcaster"]):upward(.tw-table-cell)
-  twitch.tv##tbody p[aria-label="Latency To Broadcaster"]:not(:has-text(/^(0\.|1\.[0-5])/)):upward(div[data-a-target="player-overlay-video-stats"]):style(opacity: 1 !important)
+  !twitch.tv##tbody p[aria-label="Latency To Broadcaster"]:not(:has-text(/^(0\.|1\.[0-5])/)):upward(div[data-a-target="player-overlay-video-stats"]):style(opacity: 1 !important)
   !! Hide "Mature Audiences" warning
   twitch.tv##.disclosure-tool
   !! Hide some clutter from the video player
