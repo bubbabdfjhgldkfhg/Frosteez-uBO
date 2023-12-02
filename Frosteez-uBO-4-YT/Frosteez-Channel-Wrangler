@@ -1,9 +1,9 @@
-[uBlock Origin 1.51.0]
+[uBlock Origin 1.53.0]
 ! Title: Frosteez Channel Wrangler
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are finely tuned personal preferences, not intended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 22AUG2023
+! Version: 02DEC2023
 
 ! Video Filters (:remove() is faster and more stable, also necessary for the empty section hider to work.)
 
@@ -16,7 +16,6 @@
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(TomorrowsBuild|TheB1M)$/")):has([title*="New York"i]):remove()
   youtube.com##:is(ytd-rich-item-renderer):has([href="/@Formula1"]):has(#video-title:has-text(/Esports|^F2|^F3|F1 Academy/i)):remove()
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(NFL|SailGP|Formula1)$/")):not(:has([title*="Highlight"i])):remove()
-  youtube.com##:is(ytd-rich-item-renderer):has([href="/@gamesdonequick"]):has(#video-title:has-text(/The Bargain Bin|Legally Cute|She is Speed|Challenger Approaching|The First Step|It\'s Dangerous to Go Alone|PB Precipice|Awfully Silly|Think Fast|Going Places|What\'s Faster\?|How To Train A Speedrunner|No Category Left Behind|Game Masters|Never Before Seen|Mercy Kill|Random Number Generation|The Hotfix Grudge Match|Flame Fatales|Tina\'s RPG Show|Time Capsule|Speedruns From the Crypt|Passion Project|Frost Fatales|Tiny Treefort/i)):remove()
 
 ! Hide by video length (have to check that #text exists before checking video length because it loads last.)
   !! Hide videos <5 minutes
@@ -60,7 +59,7 @@
 
 ! Hide by age AND view count
   !! Hide videos after 2 days if <15k views
-  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(gamesdonequick|TechTechPotato)/")):has(#metadata-line > span:first-of-type:not(:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(TechTechPotato)/")):has(#metadata-line > span:first-of-type:not(:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <50k views
   youtube.com##:is(ytd-rich-item-renderer):has([href="/@kermodeandmayostake"]):has(#metadata-line > span:first-of-type:not(:has-text(/^[5-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <150k views  
