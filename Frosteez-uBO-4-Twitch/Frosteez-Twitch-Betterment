@@ -61,10 +61,15 @@
   !! Hide useless button from video settings
   twitch.tv##div[data-a-target="player-settings-menu"] button[data-a-target="player-settings-menu-item-report"]:upward(1)
   twitch.tv##div[data-a-target="player-settings-menu"] label:has-text(/Notify Track Changes in Theatre Mode/):upward(2)
+  twitch.tv##div[data-a-target="player-settings-menu"] p:has-text(/Always Show Events/):upward(3)
   !! Hide useless buttons under video player
   twitch.tv##div[data-target="channel-header-right"]
   twitch.tv##button[aria-label="Share"]:upward(4)
   twitch.tv##.boost-status:upward(2)
+  !! Hide monthly recap banner
+  twitch.tv##a[href*="/recaps/"]:upward(5)
+  !! Hide follower goal
+  twitch.tv##div[data-a-target="about-panel"] + div:has(h2[title*="Goal"])
   !! Hide Subtember Banner
   twitch.tv##.subtember-gradient:upward(2)
 
