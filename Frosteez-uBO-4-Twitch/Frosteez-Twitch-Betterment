@@ -81,6 +81,8 @@
   twitch.tv##.paid-pinned-chat-message-list:upward(2)
   !! Remove blank floating box
   twitch.tv##.community-highlight-stack__backlog-card
+  !! Hide gifted sub box on top of chat chat
+  twitch.tv##.chat-room__content > div:not([class*="chat"])
   !! Block Ugly Global Badges (Hide Mod/VIP badge but don't remove)
   twitch.tv##.chat-badge:not(:matches-attr(alt="/Subscriber|Founder|Verified|Broadcaster|VIP|Moderator/")):remove()
   twitch.tv##.chat-badge:matches-attr(alt="/VIP|Moderator|Broadcaster/")
