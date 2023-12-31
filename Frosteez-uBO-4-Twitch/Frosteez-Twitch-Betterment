@@ -8,10 +8,6 @@
 ! Site-wide
   !! Hide Offline notifications from sidebar
   twitch.tv##.side-nav-card__live-status:not(:has(.tw-channel-status-indicator))
-  !! Hide "Popular Channels" section in sidebar
-  twitch.tv##div[aria-label="Popular Channels"]
-  !! Hide "____ Viewers Also Watch" section in sidebar
-  twitch.tv##div[aria-label$="Viewers Also Watch"]
   !! Hide "Get Bits", "More", and "Following" buttons
   twitch.tv##.shell-nav
   twitch.tv##button[data-a-target="top-nav-get-bits-button"], button[aria-label="More"][data-a-target="ellipsis-button"]:upward(4)
@@ -83,15 +79,16 @@
   twitch.tv##.chat-line__message:style(color: #d9d9d9 !important)
   !! Block Ugly Global Badges (Hide Mod/VIP badge but don't remove)
   twitch.tv##.chat-badge:not(:matches-attr(alt="/Subscriber|Founder|Verified|Broadcaster|VIP|Moderator/")):remove()
-  twitch.tv##.chat-badge:matches-attr(alt="/VIP|Moderator/")
-  !! [Duplicated] Highlight Mod/VIP names so badges can be hidden
-  twitch.tv##.vod-message:has(.chat-badge[alt="Moderator"]) .chat-author__display-name:style(color: #d9d9d9 !important; background-color: #008800 !important)
-  twitch.tv##.chat-line__message:has(.chat-badge[alt="Moderator"]) .chat-author__display-name:style(color: #d9d9d9 !important; background-color: #008800 !important)
-  twitch.tv##.vod-message:has(.chat-badge[alt="VIP"]) .chat-author__display-name:style(color: #d9d9d9 !important; background-color: #b3008f !important)
-  twitch.tv##.chat-line__message:has(.chat-badge[alt="VIP"]) .chat-author__display-name:style(color: #d9d9d9 !important; background-color: #b3008f !important)
+  twitch.tv##.chat-badge:matches-attr(alt="/VIP|Moderator|Broadcaster/")
+  !! Highlight Mod/VIP/Broadcaster names so badges can be hidden
+  twitch.tv##.chat-line__message:has(.chat-badge[alt="Moderator"]) .chat-author__display-name:style(color: white !important;background-color: #008800 !important)
+  twitch.tv##.chat-line__message:has(.chat-badge[alt="VIP"]) .chat-author__display-name:style(color: white !important; background-color: #b3008f !important)
+  twitch.tv##.chat-line__message:has(.chat-badge[alt="Broadcaster"]) .chat-author__display-name:style(color: white !important; background-color: #ff0000 !important)
   !! Highlight chat messages from streamers & VIPs // Fix BTTV highlight color
-  twitch.tv##.chat-badge:matches-attr(alt="/Founder|Verified|Broadcaster/"):upward(.vod-message, .chat-line__message):style(background-color: rgba(255,255,255,.1) !important)
-  twitch.tv##.bttv-highlighted:style(background-color: rgba(255,255,255,.1) !important)
+  twitch.tv##.chat-badge:matches-attr(alt="/Founder|Verified|Broadcaster/"):upward(.chat-line__message) .text-fragment:style(background-color: rgba(0,0,0,1) !important)
+  twitch.tv##.bttv-highlighted:not(.bttv-chat-line-deleted):style(background-color: rgba(255,255,255,0) !important)
+  twitch.tv##.bttv-highlighted:not(.bttv-chat-line-deleted):upward(.chat-line__message) .text-fragment:style(background-color: rgba(255,255,255,.25) !important)
+  twitch.tv##.bttv-highlighted:not(.bttv-chat-line-deleted) .text-fragment:style(background-color: rgba(0,0,0,.7) !important)
   !! Block Gifted Subs, Highlighted Messages & Bits Notifications in Chat
   twitch.tv##.chat-line__message--cheer-amount:upward(.vod-message, .chat-line__message)
   twitch.tv##.chat-scrollable-area__message-container > *:not(.chat-line__message, .vod-message--user-notice)
