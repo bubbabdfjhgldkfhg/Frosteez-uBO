@@ -6,8 +6,10 @@
 ! Version: 02Sept2023
 
 ! Site-wide
-  !! Hide Offline notifications from sidebar
-  twitch.tv##.side-nav-card__live-status:not(:has(.tw-channel-status-indicator))
+  !! Hide followed channels sort button in sidebar
+  twitch.tv##.followed-side-nav-header--expanded > button
+  !! Hide offline followed channels in sidebar
+  twitch.tv##div[data-test-selector="side-nav-card"]:has(.side-nav-card__avatar--offline)
   !! Hide "Get Bits", "More", and "Following" buttons
   twitch.tv##.shell-nav
   twitch.tv##button[data-a-target="top-nav-get-bits-button"], button[aria-label="More"][data-a-target="ellipsis-button"]:upward(4)
