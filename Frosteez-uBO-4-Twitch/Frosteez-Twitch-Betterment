@@ -97,8 +97,8 @@
   twitch.tv##.vod-message__header
   !! Hide english names from intl names
   twitch.tv##.chat-author__intl-login
-  !! Hide purple "chat" button
-  twitch.tv##button[data-a-target="chat-send-button"]:upward(2)
+  !! Hide purple "chat" button and settings button
+  twitch.tv##.chat-input__buttons-container
   !! Hide donate button on chat box
   twitch.tv##[aria-label="Hype Chat"]:upward(1)
   !! Hide scroll bar
