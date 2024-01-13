@@ -69,7 +69,7 @@
   !! Hide monthly recap banner
   twitch.tv##a[href*="/recaps/"]:upward(5)
   !! Hide follower goal
-  twitch.tv##div[data-a-target="about-panel"] + div:has(h2[title*="Goal"])
+  twitch.tv##div[data-a-target="about-panel"] + div:has([title*="Goal"])
   !! Hide Subtember Banner
   twitch.tv##.subtember-gradient:upward(2)
 
