@@ -53,6 +53,8 @@
   !! Hide chat/chat replay
   youtube.com##ytd-live-chat-frame
   !! Recommendations side-bar
+    !!! Hide "Rent this movie" panel
+    youtube.com###offer-module
     !!! Hide recommendation filter buttons // Fix height of first recommendation
     youtube.com##yt-related-chip-cloud-renderer
     youtube.com##ytd-compact-video-renderer:first-of-type:style(margin-top: 0px !important)
