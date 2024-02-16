@@ -68,7 +68,7 @@
     youtube.com##.ytd-video-meta-block:has-text(/Recommended for you/):upward(ytd-compact-video-renderer)
     !!! Hide weird recommendations (Removing ytd-promoted-sparkles-web-renderer causes infinite load bug.)
     youtube.com##:is(#contents, #items):not(:has(ytd-promoted-sparkles-web-renderer)) ytd-compact-video-renderer:nth-child(3)
-    youtube.com##:is(#contents, #items):has(ytd-promoted-sparkles-web-renderer) ytd-compact-video-renderer:nth-child(4)
+    youtube.com##:is(#contents, #items):has(ytd-promoted-sparkles-web-renderer, ytd-ad-slot-renderer) ytd-compact-video-renderer:nth-child(4)
     youtube.com##ytd-compact-video-renderer:not(#metadata-line > span:first-of-type:has-text(/K|M/i))
   !! Video Box
     !!! Make ambient colors bigger
