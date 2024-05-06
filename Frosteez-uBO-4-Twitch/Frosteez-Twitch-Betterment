@@ -38,19 +38,19 @@
   !! Nuke the video player when ads appear 
   !twitch.tv##span[data-a-target="video-ad-label"]:upward(.video-player):remove()
   !! Truncate video stats (Floating Latency)
-  twitch.tv##div[data-a-target="player-overlay-video-stats"]:upward(3):style(right: 0rem; top: max(0px, calc((100vh - 56.25vw)/2)) !important)
-  twitch.tv##div[data-a-target="player-overlay-video-stats"]:style(background: none !important)
-  twitch.tv##button[aria-label="Close video stats"]
-  twitch.tv##div[data-a-target="player-overlay-video-stats"] .tw-table:style(box-shadow: none !important)
-  twitch.tv##div[data-a-target="player-overlay-video-stats"] thead
+  !twitch.tv##div[data-a-target="player-overlay-video-stats"]:upward(3):style(right: 0rem; top: max(0px, calc((100vh - 56.25vw)/2)) !important)
+  !twitch.tv##div[data-a-target="player-overlay-video-stats"]:style(background: none !important)
+  !twitch.tv##button[aria-label="Close video stats"]
+  !twitch.tv##div[data-a-target="player-overlay-video-stats"] .tw-table:style(box-shadow: none !important)
+  !twitch.tv##div[data-a-target="player-overlay-video-stats"] thead
     !!! Hide all vanilla stats but latency
-    twitch.tv##div[data-a-target="player-overlay-video-stats"] tbody .tw-table-row:not(:has([aria-label="Latency To Broadcaster"]))
+    !twitch.tv##div[data-a-target="player-overlay-video-stats"] tbody .tw-table-row:not(:has([aria-label="Latency To Broadcaster"]))
     !!! Hide Latency label
-    twitch.tv##tbody .tw-table-cell:has(p:has-text(/Latency To Broadcaster/))
+    !twitch.tv##tbody .tw-table-cell:has(p:has-text(/Latency To Broadcaster/))
     !!! Align text right in "Latency To Broadcaster" cell
-    twitch.tv##tbody .tw-table-row:has([aria-label="Latency To Broadcaster"]):style(text-align: right !important)
+    !twitch.tv##tbody .tw-table-row:has([aria-label="Latency To Broadcaster"]):style(text-align: right !important)
     !!! Remove padding in "Latency To Broadcaster" cell
-    twitch.tv##tbody .tw-table-row p[aria-label="Latency To Broadcaster"]:upward(1):style(padding: 0 !important)
+    !twitch.tv##tbody .tw-table-row p[aria-label="Latency To Broadcaster"]:upward(1):style(padding: 0 !important)
   !! Hide "Mature Audiences" warning
   twitch.tv##.disclosure-tool
   !! Hide some clutter from the video player
