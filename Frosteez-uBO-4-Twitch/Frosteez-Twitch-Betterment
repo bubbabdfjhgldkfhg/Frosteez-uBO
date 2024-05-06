@@ -84,19 +84,19 @@
   !! Hide gifted sub box on top of chat chat
   twitch.tv##.chat-room__content > div:not([class*="chat"])
   !! Block Ugly Global Badges (Hide Mod/VIP badge but don't remove)
-  twitch.tv##.chat-badge:not(:matches-attr(alt="/Subscriber|Founder|Verified|Broadcaster|VIP|Moderator/")):remove()
-  twitch.tv##.chat-badge:matches-attr(alt="/VIP|Moderator|Broadcaster/")
+  !twitch.tv##.chat-badge:not(:matches-attr(alt="/Subscriber|Founder|Verified|Broadcaster|VIP|Moderator/")):remove()
+  !twitch.tv##.chat-badge:matches-attr(alt="/VIP|Moderator|Broadcaster/")
   !! Highlight Mod/VIP/Broadcaster names so badges can be hidden
   twitch.tv##.chat-line__message:has(.chat-badge[alt="Moderator"]) .chat-author__display-name:style(color: white !important;background-color: #008800 !important)
   twitch.tv##.chat-line__message:has(.chat-badge[alt="VIP"]) .chat-author__display-name:style(color: white !important; background-color: #b3008f !important)
   twitch.tv##.chat-line__message:has(.chat-badge[alt="Broadcaster"]) .chat-author__display-name:style(color: white !important; background-color: #ff0000 !important)
   !! Highlight chat messages from streamers & VIPs // Fix BTTV highlight color
-  twitch.tv##.chat-badge:matches-attr(alt="/Founder|Verified|Broadcaster/"):upward(.chat-line__message) .text-fragment:style(background-color: rgba(0,0,0,1) !important)
+  !twitch.tv##.chat-badge:matches-attr(alt="/Verified|Broadcaster/"):upward(.chat-line__message) .text-fragment:style(background-color: rgba(0,0,0,1) !important)
   twitch.tv##.bttv-highlighted:not(.bttv-chat-line-deleted):style(background-color: rgba(255,255,255,0) !important)
   twitch.tv##.bttv-highlighted:not(.bttv-chat-line-deleted):upward(.chat-line__message) .text-fragment:style(background-color: rgba(255,255,255,.25) !important)
   twitch.tv##.bttv-highlighted:not(.bttv-chat-line-deleted) .text-fragment:style(background-color: rgba(0,0,0,.7) !important)
   !! Block Gifted Subs, Highlighted Messages & Bits Notifications in Chat
-  twitch.tv##.chat-line__message--cheer-amount:upward(.vod-message, .chat-line__message)
+  !twitch.tv##.chat-line__message--cheer-amount:upward(.vod-message, .chat-line__message)
   twitch.tv##.chat-scrollable-area__message-container > *:not(.chat-line__message, .vod-message--user-notice)
   !! Hide timestamps from chat
   twitch.tv##.chat-line__timestamp
