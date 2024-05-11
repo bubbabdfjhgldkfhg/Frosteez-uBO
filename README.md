@@ -10,6 +10,7 @@ https://raw.githubusercontent.com/iam-py-test/vxvault_filter/main/ubolist.txt
 https://raw.githubusercontent.com/liamengland1/miscfilters/master/antipaywall.txt
 https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt
 https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion%20Sprout's%20Anti-Malware%20List.txt
+
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-YT/Frosteez-YT-Betterment.txt
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-YT/Frosteez-Channel-Wrangler.txt
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-Twitch/Frosteez-Twitch-Betterment.txt
