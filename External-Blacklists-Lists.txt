@@ -5,11 +5,12 @@
 ! Expires: 1 hours
 ! Version: 10May2024
 
-!#include https://big.oisd.nl/
-!#include https://winhelp2002.mvps.org/hosts.txt
-!#include https://urlhaus.abuse.ch/downloads/text/
-!#include https://rescure.fruxlabs.com/rescure_domain_blacklist.txt
-!#include https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
+!https://big.oisd.nl/
+!https://winhelp2002.mvps.org/hosts.txt
+!https://urlhaus.abuse.ch/downloads/text/
+!https://rescure.fruxlabs.com/rescure_domain_blacklist.txt
+!https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
+
 !#include https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt
 !#include https://raw.githubusercontent.com/iam-py-test/vxvault_filter/main/ubolist.txt
 !#include https://raw.githubusercontent.com/liamengland1/miscfilters/master/antipaywall.txt
