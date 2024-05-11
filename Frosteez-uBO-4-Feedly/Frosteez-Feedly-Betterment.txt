@@ -1,5 +1,5 @@
 [uBlock Origin 1.57.0]
-! Title: Frosteez Google Betterment
+! Title: Frosteez Feedly Betterment
 ! Description: Cleanup some visual clutter and paywall stuff on Feedly
 ! Homepage: https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-Feedly/Frosteez-Feedly-Betterment.txt
 ! Expires: 1 hours
