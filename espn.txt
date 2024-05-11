@@ -1,7 +1,7 @@
 [uBlock Origin 1.57.0]
 ! Title: Frosteez ESPN Betterment
 ! Description: Improve the ESPN video player
-! Homepage: https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/feedly.txt
+! Homepage: https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/espn.txt
 ! Expires: 1 hours
 ! Version: 11MAY2024
 
