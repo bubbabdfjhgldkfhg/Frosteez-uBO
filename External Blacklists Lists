@@ -1,12 +1,9 @@
 https://abp.oisd.nl/
-https://fanboy.co.nz/fanboy-problematic-sites.txt
-https://filters.adtidy.org/extension/ublock/filters/14.txt
 https://malware-filter.gitlab.io/pup-filter/pup-filter.txt
 https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt
 https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-Twitch/Frosteez-Twitch-Betterment
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-Twitch/Frosteez-Twitch-Local-Chat-Moderation
-https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-Twitch/Frosteez-Twitch-Transparent-Theater-Mode-Chat-(Experimental)
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-YT/Frosteez-Channel-Wrangler
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-YT/Frosteez-YT-Betterment
 https://raw.githubusercontent.com/liamengland1/miscfilters/master/amazonannoyances.txt
@@ -15,7 +12,4 @@ https://raw.githubusercontent.com/liamengland1/miscfilters/master/clicktoload.tx
 https://raw.githubusercontent.com/liamengland1/miscfilters/master/facebook.txt
 https://raw.githubusercontent.com/liamengland1/miscfilters/master/yahoo.txt
 https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
-https://secure.fanboy.co.nz/fanboy-annoyance_ubo.txt
 https://winhelp2002.mvps.org/hosts.txt
-https://www.fanboy.co.nz/enhancedstats.txt
-https://www.fanboy.co.nz/fanboy-problematic-sites.txt
