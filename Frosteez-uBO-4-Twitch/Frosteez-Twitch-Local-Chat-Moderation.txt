@@ -6,7 +6,7 @@
 ! Version: 01July2023
 
 ! Need to copy chat-badge remover from main betterment script.
-!# include https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-Twitch/Frosteez-Twitch-Betterment.txt
+!#include Frosteez-Twitch-Betterment.txt
 
 ! Moderation modes
   !! Sub Only Mode
