@@ -7,6 +7,7 @@ https://rescure.fruxlabs.com/rescure_domain_blacklist.txt
 https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
 https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt
 https://raw.githubusercontent.com/iam-py-test/vxvault_filter/main/ubolist.txt
+https://raw.githubusercontent.com/gijsdev/ublock-hide-yt-shorts/master/list.txt
 https://raw.githubusercontent.com/liamengland1/miscfilters/master/antipaywall.txt
 https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt
 https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion%20Sprout's%20Anti-Malware%20List.txt
