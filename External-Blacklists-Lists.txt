@@ -1,0 +1,21 @@
+[uBlock Origin 1.57.0]
+! Title: Frosteez Big External Blacklists List
+! Description: Quickly download all external uBO filter lists
+! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
+! Expires: 1 hours
+! Version: 10May2024
+
+!#include https://big.oisd.nl/
+!#include https://winhelp2002.mvps.org/hosts.txt
+!#include https://urlhaus.abuse.ch/downloads/text/
+!#include https://rescure.fruxlabs.com/rescure_domain_blacklist.txt
+!#include https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
+!#include https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt
+!#include https://raw.githubusercontent.com/iam-py-test/vxvault_filter/main/ubolist.txt
+!#include https://raw.githubusercontent.com/liamengland1/miscfilters/master/antipaywall.txt
+!#include https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt
+!#include https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion%20Sprout's%20Anti-Malware%20List.txt
+!#include https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-YT/Frosteez-YT-Betterment.txt
+!#include https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-YT/Frosteez-Channel-Wrangler.txt
+!#include https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-Twitch/Frosteez-Twitch-Betterment.txt
+!#include https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-Twitch/Frosteez-Twitch-Transparent-Theater-Mode-Chat-(Experimental).txt
