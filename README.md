@@ -16,6 +16,6 @@ https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/espn.txt
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/feedly.txt
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/google.txt
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-YT/Frosteez-YT-Betterment.txt
-https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-YT/Frosteez-Channel-Wrangler.txt
+https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-Twitch/Frosteez-Twitch-Betterment.txt
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-Twitch/Frosteez-Twitch-Transparent-Theater-Mode-Chat-(Experimental).txt
