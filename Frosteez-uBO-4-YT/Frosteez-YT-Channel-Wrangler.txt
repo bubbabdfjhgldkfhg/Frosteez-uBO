@@ -1,7 +1,7 @@
 [uBlock Origin 1.57.0]
 ! Title: Frosteez YT Channel Wrangler
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are finely tuned personal preferences, not intended for wide usage.)
-! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
+! Homepage: https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
 ! Version: 11MAY2024
 
