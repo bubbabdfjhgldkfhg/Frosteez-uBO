@@ -1,0 +1,20 @@
+[uBlock Origin 1.57.0]
+! Title: Frosteez Google Betterment
+! Description: Cleanup some visual clutter on the Google homepage and search results
+! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
+! Expires: 1 hours
+! Version: 11MAY2024
+
+! Hide Ghostery clutter from search results
+google.com##.wtm-tracker-wheel-container
+! Hide homepage propaganda // Hide search by voice button
+google.com##div[class$="middle-slot-promo"], div[aria-label="Search by voice"]
+! Hide Search/I'm Feeling Lucky buttons
+google.com##input[value="Google Search"]:upward(2)
+! Random class names (maybe faster)
+  !! Hide Search/I'm Feeling Lucky buttons
+  google.com##.lJ9FBc
+  !! Hide promo section
+  google.com##.qarstb
+  !! Hide bottom bar
+  google.com##.c93Gbe
