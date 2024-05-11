@@ -12,6 +12,7 @@ https://raw.githubusercontent.com/liamengland1/miscfilters/master/antipaywall.tx
 https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt
 https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion%20Sprout's%20Anti-Malware%20List.txt
 
+https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/espn.txt
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/feedly.txt
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/google.txt
 https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-YT/Frosteez-YT-Betterment.txt
