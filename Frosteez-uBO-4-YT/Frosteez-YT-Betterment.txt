@@ -14,6 +14,10 @@
   youtube.com##:matches-path(/subscriptions/) ytd-two-column-browse-results-renderer:style(width: calc(97vw - 30px) !important; max-width: calc(97vw - 15px) !important)
 
 ! Home Page
+  !! Try to make video grid look normal
+  youtube.com###contents.ytd-rich-grid-row:style(margin: 0 !important)
+  youtube.com##ytd-rich-grid-row:style(width: fit-content !important)
+  youtube.com##ytd-rich-item-renderer:style(width: calc(100vw / var(--ytd-rich-grid-items-per-row) - var(--ytd-rich-grid-item-margin) - .01px) !important)
   !! Hide Watch Later & Add to Queue buttons
   youtube.com###hover-overlays
   !! Hide unused options in the video menu
