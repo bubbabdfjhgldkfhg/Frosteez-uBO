@@ -1,7 +1,7 @@
 [uBlock Origin 1.57.0]
 ! Title: Frosteez Big External Blacklists List
 ! Description: Quickly download all external uBO filter lists
-! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
+! Homepage: https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/External-Blacklists-Lists.txt
 ! Expires: 1 hours
 ! Version: 10May2024
 
