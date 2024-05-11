@@ -36,15 +36,15 @@
 
 ! Hide by view count
   !! Hide videos <200 views
-  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(HLStimson100|SIPRIorg)$/")):not(#metadata-line > span:first-of-type:has-text(/[2-9]\d\d|K|M/)):remove()
+  youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(HLStimson100|SIPRIorg)$/")):not(#metadata-line > span:first-of-type:has-text(/[2-9]\d\d|K|M/)):remove()
   !! Hide videos <500 views
-  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|ChathamHouse10|AtlanticCouncilUS)$/")):not(#metadata-line > span:first-of-type:has-text(/^[5-9]\d\d|K|M/)):remove()
+  youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|ChathamHouse10|AtlanticCouncilUS)$/")):not(#metadata-line > span:first-of-type:has-text(/^[5-9]\d\d|K|M/)):remove()
   !! Hide videos <1k views
-  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(BrookingsInstitution|CarnegieEndowment|cfr)$/")):not(#metadata-line > span:first-of-type:has-text(/K|M/)):remove()
+  youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(BrookingsInstitution|CarnegieEndowment|cfr)$/")):not(#metadata-line > span:first-of-type:has-text(/K|M/)):remove()
   !! Hide videos <2k views
-  youtube.com##:is(ytd-rich-item-renderer):has([href="/@csis"]):not(#metadata-line > span:first-of-type:has-text(/^[2-9](\.\d)?K|\d{2,3}K|M/)):remove()
+  youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has([href="/@csis"]):not(#metadata-line > span:first-of-type:has-text(/^[2-9](\.\d)?K|\d{2,3}K|M/)):remove()
   !! Hide videos <10k views
-  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(kermodeandmayostake|HooverInstitution)$/")):not(#metadata-line > span:first-of-type:has-text(/\d\dK|M/)):remove()
+  youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(kermodeandmayostake|HooverInstitution)$/")):not(#metadata-line > span:first-of-type:has-text(/\d\dK|M/)):remove()
   !! Hide videos <20k views
   youtube.com##:is(ytd-rich-item-renderer):has([href="/@PrestonStewart"]):not(#metadata-line > span:first-of-type:has-text(/^[2-9]\dK|^\d{3}K|M/)):remove()
   !! Hide videos <40k views
