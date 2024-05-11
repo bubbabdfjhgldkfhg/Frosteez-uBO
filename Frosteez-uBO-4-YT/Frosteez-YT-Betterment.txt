@@ -11,13 +11,13 @@
   !! Hide sidebar // Maximize page width  
   youtube.com##svg#menu-icon, #guide-button, #masthead-logo, tp-yt-app-drawer, ytd-mini-guide-renderer
   youtube.com##ytd-page-manager.ytd-app:style(margin-left: 0px !important)
-  youtube.com##:matches-path(/subscriptions/) ytd-two-column-browse-results-renderer:style(width: calc(97vw - 30px) !important; max-width: calc(97vw - 15px) !important)
+  youtube.com##:matches-path(/subscriptions/) ytd-two-column-browse-results-renderer:style(width: 97vw !important)
 
 ! Home Page
   !! Try to make video grid look normal
   youtube.com###contents.ytd-rich-grid-row:style(margin: 0 !important)
   youtube.com##ytd-rich-grid-row:style(width: fit-content !important)
-  youtube.com##ytd-rich-item-renderer:style(width: calc(100vw / var(--ytd-rich-grid-items-per-row) - var(--ytd-rich-grid-item-margin) - .01px) !important)
+  youtube.com##ytd-rich-item-renderer:style(width: calc(97vw / var(--ytd-rich-grid-items-per-row) - var(--ytd-rich-grid-item-margin)) !important)
   !! Hide Watch Later & Add to Queue buttons
   youtube.com###hover-overlays
   !! Hide unused options in the video menu
@@ -27,30 +27,19 @@
   youtube.com##ytd-rich-grid-media[is-dismissed]:upward(ytd-rich-item-renderer):remove()
   !! Hide season/episode counter above video name
   youtube.com##h3 > ytd-badge-supported-renderer
-  !! Combine grid sections into a continuous page
-  youtube.com##.grid-subheader
-  youtube.com##:matches-path(/subscriptions/) ytd-item-section-renderer:style(display: inline-block !important)
   !! Hide top right buttons & Voice search button
   youtube.com##button:matches-attr(aria-label="/Create|YouTube apps/"):upward(ytd-topbar-menu-button-renderer)
   youtube.com###voice-search-button, ytd-notification-topbar-button-renderer, #masthead-skeleton-icons
   !! Hide page view switch buttons
   youtube.com##[aria-label="Switch to grid view"]:upward(#menu)
-  !! Hide empty sections (when all videos have been removed)
-  youtube.com##:matches-path(/subscriptions/) ytd-item-section-renderer:not(:has(ytd-rich-item-renderer))
-
-! Shorts, Live, Upcoming
-  !! Hide Shorts and Upcoming videos from homescreen & search
-  youtube.com##.ytd-rich-shelf-renderer:has-text(/Shorts/):upward(ytd-rich-section-renderer)
-  youtube.com##[title*="#shorts"i]:upward(ytd-rich-item-renderer):remove()
-  youtube.com##:is(ytd-video-renderer, ytd-rich-item-renderer):has([overlay-style="SHORTS"], [overlay-style="UPCOMING"]):remove()
-  !! Hide Shorts, Live, Upcoming videos from video-side recommendations (Can't use :remove() cause the thumbnail will try to load forever)
-  youtube.com##ytd-thumbnail-overlay-time-status-renderer:not([overlay-style="DEFAULT"]):upward(ytd-compact-video-renderer)
+  !! Hide Upcoming live streams
+  youtube.com##:is(ytd-video-renderer, ytd-rich-item-renderer):has([overlay-style="UPCOMING"]):remove()
 
 ! Video Player
-  !! Theater mode fills screen
-  youtube.com##:matches-path(/watch/) #content:has(#player-theater-container:has(.video-stream)) #masthead-container
-  youtube.com##:matches-path(/watch/) #content:has(#player-theater-container:has(.video-stream)) #page-manager:style(margin-top: auto !important)
-  youtube.com###player-theater-container:has(.video-stream):style(width: 100vw !important; height: 100vh !important; min-height: 100vh !important; max-height: 100vh !important)
+  !! Theater mode fills screen (Broken)
+  !youtube.com##:matches-path(/watch/) #content:has(#player-theater-container:has(.video-stream)) #masthead-container
+  !youtube.com##:matches-path(/watch/) #content:has(#player-theater-container:has(.video-stream)) #page-manager:style(margin-top: auto !important)
+  !youtube.com###player-theater-container:has(.video-stream):style(width: 100vw !important; height: 100vh !important; min-height: 100vh !important; max-height: 100vh !important)
   !! Hide "Experiencing Interuptions" popup
   youtube.com##tp-yt-paper-toast
   !! Hide donation box
