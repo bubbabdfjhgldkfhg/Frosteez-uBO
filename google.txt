@@ -1,7 +1,7 @@
 [uBlock Origin 1.57.0]
 ! Title: Frosteez Google Betterment
 ! Description: Cleanup some visual clutter on the Google homepage and search results
-! Homepage: https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-Google/Frosteez-Google-Betterment.txt
+! Homepage: https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/google.txt
 ! Expires: 1 hours
 ! Version: 11MAY2024
 
