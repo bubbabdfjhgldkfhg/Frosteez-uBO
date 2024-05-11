@@ -1,11 +1,11 @@
-[uBlock Origin 1.53.0]
+[uBlock Origin 1.57.0]
 ! Title: Frosteez Channel Wrangler
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are finely tuned personal preferences, not intended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 02DEC2023
+! Version: 11MAY2024
 
-! Video Filters (:remove() is faster and more stable, also necessary for the empty section hider to work.)
+! Video Filters (:remove() is faster and more stable)
 
 ! Hide by video title
   youtube.com##:is(ytd-rich-item-renderer):has([href="/@CovertCabal"]):has([title*="Tac Ops"i]):remove()
@@ -82,19 +82,19 @@
 
 ! Hide by age AND title
   [Kept for templates]
-  !! Hide all Tested videos w/o "One Day Build" in title after 2 days
-  !youtube.com##:is(ytd-rich-item-renderer):has([href="/@tested"]):not(:has([title*="One Day Build"i])):not(#metadata-line > span:nth-of-type(2):has-text(/minute|hour|day ago/i)):remove()
+  !! Hide all Channel videos w/o "Desired Title" in title after 2 days
+  !youtube.com##:is(ytd-rich-item-renderer):has([href="/@channelname"]):not(:has([title*="Desired Title"i])):not(#metadata-line > span:nth-of-type(2):has-text(/minute|hour|day ago/i)):remove()
 
 ! Hide by length OR view count
   [Kept for templates]
   !! Hide videos <1hr if <1k views
-  !youtube.com##:is(ytd-rich-item-renderer):has([href="/@andyli"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(#metadata-line > span:first-of-type:has-text(/K|M/)):remove()
+  !youtube.com##:is(ytd-rich-item-renderer):has([href="/@channelname"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(#metadata-line > span:first-of-type:has-text(/K|M/)):remove()
 
 ! Hide by length AND age
   [Kept for templates]
   !! Hide videos after 2 days if <1hr
-  !youtube.com##:is(ytd-rich-item-renderer):has([href="/@andyli"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(#metadata-line > span:nth-of-type(2):has-text(/minute|hour|day ago/i)):remove()
+  !youtube.com##:is(ytd-rich-item-renderer):has([href="/@channelname"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(#metadata-line > span:nth-of-type(2):has-text(/minute|hour|day ago/i)):remove()
 
 ! Hide VODs
   [Kept for templates]
-  !youtube.com##:is(ytd-rich-item-renderer):has([href="/@thespiffingbrit"]):has(#metadata-line > span:nth-of-type(2):has-text(/Streamed/i)):remove()
+  !youtube.com##:is(ytd-rich-item-renderer):has([href="/@channelname"]):has(#metadata-line > span:nth-of-type(2):has-text(/Streamed/i)):remove()
