@@ -1,4 +1,4 @@
-External Lists to Import
+External Lists to Import (just copy the whole list)
 
 https://big.oisd.nl/
 https://winhelp2002.mvps.org/hosts.txt
