@@ -3,7 +3,10 @@
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 05May2024
+! Version: 11May2024
+
+! Prevent console log spam
+@@https://gaming.amazon.com/fiber
 
 ! Site-wide
   !! Hide followed channels sort button in sidebar
