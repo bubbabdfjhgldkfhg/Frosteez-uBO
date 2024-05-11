@@ -1,9 +1,9 @@
-[uBlock Origin 1.50.0]
+[uBlock Origin 1.57.0]
 ! Title: Frosteez YT Betterment
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 01July2023
+! Version: 11MAY2024
 
 ! Extras (Only use with Chrome Extension -> "Replace YouTube's Home with Subscriptions")
   !! Hide home page when redirecting to subscription page (if too slow)
@@ -36,6 +36,7 @@
 
 ! Shorts, Live, Upcoming
   !! Hide Shorts and Upcoming videos from homescreen & search
+  youtube.com##.ytd-rich-shelf-renderer:has-text(/Shorts/):upward(ytd-rich-section-renderer)
   youtube.com##[title*="#shorts"i]:upward(ytd-rich-item-renderer):remove()
   youtube.com##:is(ytd-video-renderer, ytd-rich-item-renderer):has([overlay-style="SHORTS"], [overlay-style="UPCOMING"]):remove()
   !! Hide Shorts, Live, Upcoming videos from video-side recommendations (Can't use :remove() cause the thumbnail will try to load forever)
