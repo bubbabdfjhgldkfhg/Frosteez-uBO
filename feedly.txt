@@ -7,3 +7,4 @@
 
 feedly.com##.UpgradeModal
 feedly.com##.LayerBuilderInResults__entries > div:nth-child(2)
+feedly.com##.LayerBuilderBeyondResults__entries > div:nth-child(2)
