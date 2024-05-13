@@ -130,7 +130,7 @@
     youtube.com##ytd-comments-header-renderer:style(margin-bottom: 0px !important)
     !! Hide Dislike and Reply buttons on comments // Hide like counter if likes = 0
     youtube.com###dislike-button, #reply-button-end
-    youtube.com##ytd-comment-action-buttons-renderer #toolbar:has(#vote-count-middle[hidden]) #like-button
+    youtube.com##ytd-comment-engagement-bar #toolbar:has(#vote-count-middle[hidden]) #like-button
 
 ! Search
   !! Hide "Additional" search results
