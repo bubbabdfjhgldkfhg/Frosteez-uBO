@@ -1,6 +1,6 @@
 [uBlock Origin 1.57.0]
 ! Title: Frosteez YT Channel Wrangler
-! Description: Cleanup Spammy Youtube Subscriptions. (These filters are finely tuned personal preferences, not intended for wide usage.)
+! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/edit/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
 ! Version: 11MAY2024
@@ -32,6 +32,8 @@
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|CarnegieEndowment|AtlanticCouncilUS|TheStimsonCenter|SIPRIorg|shieldoftherepublicpodcast9416)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 3 days
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(MilitaryAviationHistory|MentourPilot|CasualNavigation|TheB1M|BookingHunterTV|splunk_ml|SplunkHowTo|travishall2073|SeoulWalker)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
+  !! Hide videos after 7 days (mostly for stuff that gets through the "age AND view count" section)
+  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(HooverInstitution|60minutes|tested)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[1-6] day/i))):remove()
 
 ! Hide by view count
   !! Hide videos <200 views
