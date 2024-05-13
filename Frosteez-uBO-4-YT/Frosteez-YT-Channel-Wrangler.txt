@@ -1,7 +1,7 @@
 [uBlock Origin 1.57.0]
 ! Title: Frosteez YT Channel Wrangler
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are finely tuned personal preferences, not intended for wide usage.)
-! Homepage: https://raw.githubusercontent.com/bubbabdfjhgldkfhg/Frosteez-uBO/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
+! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/edit/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
 ! Version: 11MAY2024
 
@@ -9,7 +9,7 @@
 
 ! Hide by video title
   youtube.com##:is(ytd-rich-item-renderer):has([href="/@CovertCabal"]):has([title*="Tac Ops"i]):remove()
-  youtube.com##:is(ytd-rich-item-renderer):has([href="/@tested"]):not(:has([title*="One Day Build"i])):remove()
+  !youtube.com##:is(ytd-rich-item-renderer):has([href="/@tested"]):not(:has([title*="One Day Build"i])):remove()
   youtube.com##:is(ytd-rich-item-renderer):has([href="/@FirstWeFeast"]):not(:has([title*="Hot Ones"i])):remove()
   youtube.com##:is(ytd-rich-item-renderer):has([href="/@nbcwashington"]):not(:has([title*="News4 Rundown"i])):remove()
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(TomorrowsBuild|TheB1M)$/")):has([title*="New York"i]):remove()
@@ -21,21 +21,21 @@
   youtube.com##:is(ytd-rich-item-renderer):has([href="/@SandboxxApp"]):has(#text[class*="time-status"]:not(:has-text(/[5-9]:|\d\d:/))):remove()
   !! Hide videos <10 minutes
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(60minutes|FirstWeFeast)$/")):has(#text[class*="time-status"]:not(:has-text(/\d\d:/))):remove()
-  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|HooverInstitution|CarnegieEndowment|AtlanticCouncilUS|HLStimson100|SIPRIorg)$/")):has(#text[class*="time-status"]:not(:has-text(/\d\d:/))):remove()
+  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|HooverInstitution|CarnegieEndowment|AtlanticCouncilUS|TheStimsonCenter|SIPRIorg)$/")):has(#text[class*="time-status"]:not(:has-text(/\d\d:/))):remove()
 
 ! Hide by video age (Exlude live videos by checking if video age exists with :has(#metadata-line > span:nth-of-type(2)).)
   !! Hide videos after 1 day
-  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(NFL|Formula1|PGATOUR|americascup)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
-  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(PrestonStewart|clearvaluetax9382|yachtingworld|PlanetSailOnline|nbcwashington|SpaceX)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
+  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(NFL|Formula1|SailGP|americascup)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
+  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(PrestonStewart|clearvaluetax9382|PlanetSailOnline|nbcwashington|SpaceX)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
   !! Hide videos after 2 days
-  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|NASA|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport|PerunAU|WardCarroll|FighterPilotPodcast)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
-  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|CarnegieEndowment|AtlanticCouncilUS|HLStimson100|SIPRIorg|shieldoftherepublicpodcast9416)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|wsj|NASA|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport|PerunAU|WardCarroll|FighterPilotPodcast)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|CarnegieEndowment|AtlanticCouncilUS|TheStimsonCenter|SIPRIorg|shieldoftherepublicpodcast9416)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 3 days
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(MilitaryAviationHistory|MentourPilot|CasualNavigation|TheB1M|BookingHunterTV|splunk_ml|SplunkHowTo|travishall2073|SeoulWalker)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
 
 ! Hide by view count
   !! Hide videos <200 views
-  youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(HLStimson100|SIPRIorg)$/")):not(#metadata-line > span:first-of-type:has-text(/[2-9]\d\d|K|M/)):remove()
+  youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(TheStimsonCenter|SIPRIorg)$/")):not(#metadata-line > span:first-of-type:has-text(/[2-9]\d\d|K|M/)):remove()
   !! Hide videos <500 views
   youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|ChathamHouse10|AtlanticCouncilUS)$/")):not(#metadata-line > span:first-of-type:has-text(/^[5-9]\d\d|K|M/)):remove()
   !! Hide videos <1k views
@@ -81,8 +81,8 @@
 
 ! Hide by age AND title
   [Kept for templates]
-  !! Hide all Channel videos w/o "Desired Title" in title after 2 days
-  !youtube.com##:is(ytd-rich-item-renderer):has([href="/@channelname"]):not(:has([title*="Desired Title"i])):not(#metadata-line > span:nth-of-type(2):has-text(/minute|hour|day ago/i)):remove()
+  !! Hide all Channel videos w/o "Desired Keywords" in title after 2 days
+  !youtube.com##:is(ytd-rich-item-renderer):has([href="/@channelname"]):not(:has([title*="Desired Keywords"i])):not(#metadata-line > span:nth-of-type(2):has-text(/minute|hour|day ago/i)):remove()
 
 ! Hide by length OR view count
   [Kept for templates]
