@@ -1,9 +1,9 @@
 [uBlock Origin 1.57.0]
 ! Title: Frosteez YT Channel Wrangler
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
-! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/edit/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
+! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 11MAY2024
+! Version: 13MAY2024
 
 ! Video Filters (:remove() is faster and more stable)
 
@@ -21,7 +21,7 @@
   youtube.com##:is(ytd-rich-item-renderer):has([href="/@SandboxxApp"]):has(#text[class*="time-status"]:not(:has-text(/[5-9]:|\d\d:/))):remove()
   !! Hide videos <10 minutes
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(60minutes|FirstWeFeast)$/")):has(#text[class*="time-status"]:not(:has-text(/\d\d:/))):remove()
-  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|HooverInstitution|CarnegieEndowment|AtlanticCouncilUS|TheStimsonCenter|SIPRIorg)$/")):has(#text[class*="time-status"]:not(:has-text(/\d\d:/))):remove()
+  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|HooverInstitution|CarnegieEndowment|AtlanticCouncilUS|TheStimsonCenter|SIPRIorg)$/")):has(#text[class*="time-status"]:not(:has-text(/\d\d:/))):remove()
 
 ! Hide by video age (Exlude live videos by checking if video age exists with :has(#metadata-line > span:nth-of-type(2)).)
   !! Hide videos after 1 day
@@ -29,7 +29,7 @@
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(PrestonStewart|clearvaluetax9382|PlanetSailOnline|nbcwashington|SpaceX)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
   !! Hide videos after 2 days
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|wsj|NASA|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport|PerunAU|WardCarroll|FighterPilotPodcast)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
-  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|IISSorg|CNASdc|ChathamHouse10|CarnegieEndowment|AtlanticCouncilUS|TheStimsonCenter|SIPRIorg|shieldoftherepublicpodcast9416)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|CarnegieEndowment|AtlanticCouncilUS|TheStimsonCenter|SIPRIorg|shieldoftherepublicpodcast9416)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 3 days
   youtube.com##:is(ytd-rich-item-renderer):has(a:matches-attr(href="/@(MilitaryAviationHistory|MentourPilot|CasualNavigation|TheB1M|BookingHunterTV|splunk_ml|SplunkHowTo|travishall2073|SeoulWalker)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
   !! Hide videos after 7 days (mostly for stuff that gets through the "age AND view count" section)
