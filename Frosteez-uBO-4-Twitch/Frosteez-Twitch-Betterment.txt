@@ -45,7 +45,9 @@
   !! Hide some clutter from the video player
   twitch.tv##.theatre-social-panel:upward(2)
   twitch.tv##.tw-channel-status-text-indicator:upward(1)
+  twitch.tv##button[data-a-target="player-play-pause-button"]:upward(1)
   twitch.tv###bttv-picture-in-picture
+  twitch.tv##button[aria-label$="Theatre Mode (alt+t)"]:upward(1)
   twitch.tv##button:matches-attr(data-a-target="/player-clip-button|player-fullscreen-button/"):upward(1)
   !! Hide sponsor logo
   twitch.tv##.channel-skins-overlay__interactive
