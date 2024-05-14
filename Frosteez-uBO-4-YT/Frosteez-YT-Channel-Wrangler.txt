@@ -44,6 +44,8 @@
   youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(BrookingsInstitution|CarnegieEndowment|cfr)$/")):not(#metadata-line > span:first-of-type:has-text(/K|M/)):remove()
   !! Hide videos <2k views
   youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has([href="/@csis"]):not(#metadata-line > span:first-of-type:has-text(/^[2-9](\.\d)?K|\d{2,3}K|M/)):remove()
+  !! Hide videos <5k views
+  youtube.com##:is(ytd-rich-item-renderer):has([href="/@americascup"]):not(#metadata-line > span:first-of-type:has-text(/^[5-9](\.\d)?K|\d{2,3}K|M/)):remove()
   !! Hide videos <10k views
   youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(kermodeandmayostake|HooverInstitution)$/")):not(#metadata-line > span:first-of-type:has-text(/\d\dK|M/)):remove()
   !! Hide videos <20k views
