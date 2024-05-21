@@ -39,9 +39,9 @@
   !! Hide videos <200 views
   youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(TheStimsonCenter|SIPRIorg)$/")):not(#metadata-line > span:first-of-type:has-text(/[2-9]\d\d|K|M/)):remove()
   !! Hide videos <500 views
-  youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|ChathamHouse10|AtlanticCouncilUS)$/")):not(#metadata-line > span:first-of-type:has-text(/^[5-9]\d\d|K|M/)):remove()
+  youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(hudsoninstitute|FPRI|AtlanticCouncilUS)$/")):not(#metadata-line > span:first-of-type:has-text(/^[5-9]\d\d|K|M/)):remove()
   !! Hide videos <1k views
-  youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(BrookingsInstitution|CarnegieEndowment|cfr)$/")):not(#metadata-line > span:first-of-type:has-text(/K|M/)):remove()
+  youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(BrookingsInstitution|CarnegieEndowment|cfr|ChathamHouse10)$/")):not(#metadata-line > span:first-of-type:has-text(/K|M/)):remove()
   !! Hide videos <2k views
   youtube.com##:is(ytd-rich-item-renderer):not(:has([title*="Cyber"i])):has([href="/@csis"]):not(#metadata-line > span:first-of-type:has-text(/^[2-9](\.\d)?K|\d{2,3}K|M/)):remove()
   !! Hide videos <5k views
