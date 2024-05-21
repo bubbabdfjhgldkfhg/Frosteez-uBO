@@ -16,9 +16,6 @@
 ! Home Page
   !! Try to make video grid look normal
   youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
-  !youtube.com###contents.ytd-rich-grid-row:style(margin: 0 !important)
-  !youtube.com##ytd-rich-grid-row:style(width: fit-content !important)
-  !youtube.com##ytd-rich-item-renderer:style(width: calc(97vw / var(--ytd-rich-grid-items-per-row) - var(--ytd-rich-grid-item-margin)) !important)
   !! Hide Watch Later & Add to Queue buttons
   youtube.com###hover-overlays
   !! Hide unused options in the video menu
@@ -59,9 +56,9 @@
     youtube.com##ytd-radio-renderer, ytd-compact-radio-renderer, ytd-compact-playlist-renderer, ytd-reel-shelf-renderer, a[data-is-mix="true"]
     !!! Hide movies from recommendations
     youtube.com##ytd-compact-movie-renderer
-    !!! Hide "Recommended for you" videos
+    !!! Hide videos w/ "Recommended for you" tag
     youtube.com##.ytd-video-meta-block:has-text(/Recommended for you/):upward(ytd-compact-video-renderer)
-    !!! Hide weird recommendations (Videos in the 3rd slot that are always weird and random stuff <1k views).
+    !!! Hide videos in the 3rd slot that are always weird and random stuff <1k views.
     youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:nth-of-type(3)
     youtube.com##ytd-compact-video-renderer:not(#metadata-line > span:first-of-type:has-text(/K|M/i))
   !! Video Box
