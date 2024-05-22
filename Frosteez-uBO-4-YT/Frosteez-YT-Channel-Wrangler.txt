@@ -3,13 +3,12 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 13MAY2024
+! Version: 22MAY2024
 
 ! Video Filters (:remove() is faster and more stable)
 
 ! Hide by video title
   youtube.com##ytd-rich-item-renderer:has([href="/@CovertCabal"]):has([title*="Tac Ops"i]):remove()
-  !youtube.com##ytd-rich-item-renderer:has([href="/@tested"]):not(:has([title*="One Day Build"i])):remove()
   youtube.com##ytd-rich-item-renderer:has([href="/@FirstWeFeast"]):not(:has([title*="Hot Ones"i])):remove()
   youtube.com##ytd-rich-item-renderer:has([href="/@nbcwashington"]):not(:has([title*="News4 Rundown"i])):remove()
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(TomorrowsBuild|TheB1M)$/")):has([title*="New York"i]):remove()
