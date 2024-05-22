@@ -81,7 +81,7 @@
 
 ! Hide by title AND view count
   !! Hide 60 minutes videos w/ "Archive" or "Full Espisodes" in title if <15k views
-  youtube.com##ytd-rich-item-renderer):has([href="/@60minutes"]):has([title*="Archive"i], [title*="Full Episodes"i]):not(#metadata-line > span:first-of-type:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:has([href="/@60minutes"]):has([title*="Archive"i], [title*="Full Episodes"i]):not(#metadata-line > span:first-of-type:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)):remove()
 
 ! Hide by age AND title
   [Kept for templates]
