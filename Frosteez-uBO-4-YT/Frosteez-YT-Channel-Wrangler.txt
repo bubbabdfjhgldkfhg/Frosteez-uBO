@@ -50,8 +50,10 @@
   youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(kermodeandmayostake|HooverInstitution)$/")):not(#metadata-line > span:first-of-type:has-text(/\d\dK|M/)):remove()
   !! Hide videos <20k views
   youtube.com##ytd-rich-item-renderer:has([href="/@PrestonStewart"]):not(#metadata-line > span:first-of-type:has-text(/^[2-9]\dK|^\d{3}K|M/)):remove()
+  !! Hide videos <30k views
+  youtube.com##ytd-rich-item-renderer:has([href="/@MilitaryAviationHistory"]):not(#metadata-line > span:first-of-type:has-text(/^[3-9]\dK|^\d{3}K|M/)):remove()
   !! Hide videos <40k views
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(tested|PrestonStewart|MilitaryAviationHistory|business)$/")):not(#metadata-line > span:first-of-type:has-text(/^[4-9]\dK|^\d{3}K|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(tested|PrestonStewart|business)$/")):not(#metadata-line > span:first-of-type:has-text(/^[4-9]\dK|^\d{3}K|M/)):remove()
   !! Hide videos <50k views (if not live)
   youtube.com##ytd-rich-item-renderer:has([href="/@NASA"]):has([overlay-style="DEFAULT"]):not(#metadata-line > span:first-of-type:has-text(/^[5-9]\dK|^\d{3}K|M/)):remove()
   !! Hide videos <100k views  
