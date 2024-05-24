@@ -3,7 +3,7 @@
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 21MAY2024
+! Version: 24MAY2024
 
 ! Extras (Only use with Chrome Extension -> "Replace YouTube's Home with Subscriptions")
   !! Hide home page when redirecting to subscription page (if too slow)
@@ -109,6 +109,8 @@
     youtube.com###snippet.ytd-text-inline-expander
     !!! Hide "#X in Trending"
     youtube.com###info > a
+    !!! Hide "# Products" in description box
+    youtube.com###info > span:nth-of-type(4), span:nth-of-type(5)
     !!! Make unexpanded description box a little smaller
     youtube.com###bottom-row:style(display: inline-flex !important)
     youtube.com###description:style(min-width: fit-content !important)
