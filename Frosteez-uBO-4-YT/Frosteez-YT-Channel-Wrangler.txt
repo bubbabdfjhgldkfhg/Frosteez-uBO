@@ -44,9 +44,9 @@
   !! Hide videos <2k views
   youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has([href="/@csis"]):not(#metadata-line > span:first-of-type:has-text(/^[2-9](\.\d)?K|\d{2,3}K|M/)):remove()
   !! Hide videos <5k views
-  youtube.com##ytd-rich-item-renderer:has([href="/@americascup"]):not(#metadata-line > span:first-of-type:has-text(/^[5-9](\.\d)?K|\d{2,3}K|M/)):remove()
+  !youtube.com##ytd-rich-item-renderer:has([href="/@"]):not(#metadata-line > span:first-of-type:has-text(/^[5-9](\.\d)?K|\d{2,3}K|M/)):remove()
   !! Hide videos <10k views
-  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(kermodeandmayostake|HooverInstitution)$/")):not(#metadata-line > span:first-of-type:has-text(/\d\dK|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(americascup|kermodeandmayostake|HooverInstitution)$/")):not(#metadata-line > span:first-of-type:has-text(/\d\dK|M/)):remove()
   !! Hide videos <20k views
   youtube.com##ytd-rich-item-renderer:has([href="/@PrestonStewart"]):not(#metadata-line > span:first-of-type:has-text(/^[2-9]\dK|^\d{3}K|M/)):remove()
   !! Hide videos <30k views
