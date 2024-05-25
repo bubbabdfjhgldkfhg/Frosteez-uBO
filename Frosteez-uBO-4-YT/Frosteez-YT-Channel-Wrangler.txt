@@ -25,7 +25,7 @@
 ! Hide by video age (Exlude live videos by checking if video age exists with :has(#metadata-line > span:nth-of-type(2)).)
   !! Hide videos after 1 day
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(NFL|Formula1|SailGP|americascup)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(clearvaluetax9382|PlanetSailOnline|PrestonStewart|_JohnHammond|nbcwashington|SpaceX)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(clearvaluetax9382|KymIllman|PlanetSailOnline|PrestonStewart|_JohnHammond|nbcwashington|SpaceX)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
   !! Hide videos after 2 days
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|wsj|NASA|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport|PerunAU|WardCarroll|FighterPilotPodcast)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(AtlanticCouncilUS|csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|CarnegieEndowment|hudsoninstitute|FPRI|McCraryInstitute|SIPRIorg|shieldoftherepublicpodcast9416|TheStimsonCenter)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
