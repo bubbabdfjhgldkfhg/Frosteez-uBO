@@ -32,7 +32,7 @@
   !! Hide videos after 3 days
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(MilitaryAviationHistory|MentourPilot|CasualNavigation|TheB1M|BookingHunterTV|splunk_ml|SplunkHowTo|travishall2073|SeoulWalker)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
   !! Hide videos after 7 days (mostly for stuff that gets through the "age AND view count" section)
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|Asianometry|FirstWeFeast|HooverInstitution|kermodeandmayostake|SailingUma|scottmanley|TechTechPotato|tested)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[1-6] day/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|Asianometry|davidbombal|FirstWeFeast|HooverInstitution|kermodeandmayostake|NetworkChuck|SailingUma|scottmanley|TechTechPotato|tested)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[1-6] day/i))):remove()
 
 ! Hide by view count
   !! Hide videos <200 views
