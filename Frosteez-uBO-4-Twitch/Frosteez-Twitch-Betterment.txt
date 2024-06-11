@@ -1,9 +1,9 @@
-[uBlock Origin 1.57.0]
+[uBlock Origin 1.58.0]
 ! Title: Frosteez Twitch Betterment
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 21May2024
+! Version: 10June2024
 
 ! Prevent console log spam
 @@https://gaming.amazon.com/fiber
@@ -18,7 +18,7 @@
   twitch.tv##button[data-a-target="top-nav-get-bits-button"], button[aria-label="More"][data-a-target="ellipsis-button"]:upward(4)
   twitch.tv##a[data-test-selector="top-nav__following-link"]:upward(2)
   !! Hide Twitch Turbo button
-  twitch.tv##button:has(div:has-text(/Get Ad-Free/)):upward(5)
+  twitch.tv##button:has(div:has-text(/Ad-Free/)):upward(5)
   !! Hide channel tags
   twitch.tv##.tw-tag:upward(3)
 
