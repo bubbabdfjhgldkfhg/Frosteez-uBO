@@ -3,7 +3,7 @@
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 10June2024
+! Version: 13June2024
 
 ! Prevent console log spam
 @@https://gaming.amazon.com/fiber
@@ -40,6 +40,8 @@
 ! Video player
   !! Nuke the video player when ads appear (Overkill)
   !twitch.tv##span[data-a-target="video-ad-label"]:upward(.video-player):remove()
+  !! Hide On-Screen Celebration (paid emote spam)
+  twitch.tv##.celebration__overlay:remove()
   !! Hide "Mature Audiences" warning
   twitch.tv##.disclosure-tool
   !! Hide some clutter from the video player
