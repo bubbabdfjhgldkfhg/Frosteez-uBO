@@ -3,7 +3,7 @@
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 13June2024
+! Version: 15July2024
 
 ! Prevent console log spam
 @@https://gaming.amazon.com/fiber
@@ -90,6 +90,8 @@
   twitch.tv##.community-highlight-stack__backlog-card
   !! Hide gifted sub box on top of chat chat
   twitch.tv##.chat-room__content > div:not([class*="chat"])
+  !! Hide Large Emotes (paid emote spam)
+  twitch.tv##.chat-line__message:has(.chat-line__message--emote-button-gigantified)
   !! Block Ugly Global Badges (Hide Mod/VIP badge but don't remove)
   !twitch.tv##.chat-badge:not(:matches-attr(alt="/Subscriber|Founder|Verified|Broadcaster|VIP|Moderator/")):remove()
   !twitch.tv##.chat-badge:matches-attr(alt="/VIP|Moderator|Broadcaster/")
