@@ -1,14 +1,16 @@
-[uBlock Origin 1.58.0]
+[uBlock Origin 1.59.0]
 ! Title: Frosteez Twitch Betterment
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 15July2024
+! Version: 05Sept2024
 
 ! Prevent console log spam
 @@https://gaming.amazon.com/fiber
 
 ! Site-wide
+  !! Hide Stories
+  twitch.tv##div[class*="storiesLeftNavSection"]
   !! Hide followed channels sort button in sidebar
   twitch.tv##.followed-side-nav-header--expanded > button
   !! Hide offline followed channels in sidebar
