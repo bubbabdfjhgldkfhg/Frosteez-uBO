@@ -45,7 +45,8 @@
   !! Nuke the video player when ads appear (Overkill)
   !twitch.tv##span[data-a-target="video-ad-label"]:upward(.video-player):remove()
   !! Hide On-Screen Celebration (paid emote spam)
-  twitch.tv##.celebration__overlay:remove()
+  !! [Currently breaks the player controls container when video player goes mini mode]
+  !twitch.tv##.celebration__overlay:remove()
   !! Hide "Mature Audiences" warning
   twitch.tv##.disclosure-tool
   !! Hide some clutter from the video player
