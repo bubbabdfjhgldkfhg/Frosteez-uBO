@@ -82,7 +82,8 @@
       youtube.com###secondary.ytd-watch-flexy:style(padding-right: 4px !important)
       youtube.com###columns .video-stream:style(width: -webkit-fill-available !important; height: auto !important)
       !!!! Hide videos after ending (so they don't sit at the top of the player container.)
-      youtube.com##video:matches-css(top: /^-/)
+      !youtube.com##video:matches-css(top: /^-/)
+      youtube.com##.ended-mode video
   
   !! Title Area
     !!! Hide page load skeleton under video player
