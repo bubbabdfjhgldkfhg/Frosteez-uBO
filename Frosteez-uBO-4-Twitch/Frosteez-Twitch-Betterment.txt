@@ -3,7 +3,7 @@
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 23Oct2024
+! Version: 26Oct2024
 
 ! Prevent console log spam
 @@https://gaming.amazon.com/fiber
@@ -111,7 +111,7 @@
   twitch.tv##.bttv-highlighted:not(.bttv-chat-line-deleted) .text-fragment:style(background-color: rgba(0,0,0,.7) !important)
   !! Block Gifted Subs, Highlighted Messages & Bits Notifications in Chat
   !twitch.tv##.chat-line__message--cheer-amount:upward(.vod-message, .chat-line__message)
-  twitch.tv##.chat-scrollable-area__message-container > *:not(.chat-line__message):has(> *:not(.chat-line__message))
+  twitch.tv##.chat-scrollable-area__message-container > *:not(.chat-line__message, .chat-line__status):has(> *:not(.chat-line__message, .chat-line__status))  
   !! Hide timestamps from chat
   twitch.tv##.chat-line__timestamp
   twitch.tv##.vod-message__header
