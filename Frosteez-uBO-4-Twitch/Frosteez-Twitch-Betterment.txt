@@ -3,7 +3,7 @@
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 26Oct2024
+! Version: 13Nov2024
 
 ! Prevent console log spam
 @@https://gaming.amazon.com/fiber
@@ -55,7 +55,8 @@
   twitch.tv##button[data-a-target="player-play-pause-button"]:upward(1)
   twitch.tv###bttv-picture-in-picture
   twitch.tv##button[aria-label$="Theatre Mode (alt+t)"]:upward(1)
-  twitch.tv##button:matches-attr(data-a-target="/player-clip-button|player-fullscreen-button/"):upward(1)
+  twitch.tv##button[aria-label^="Clip"]
+  twitch.tv##button:matches-attr(data-a-target="/player-fullscreen-button/"):upward(1)
   !! Hide sponsor logo
   twitch.tv##.channel-skins-overlay__interactive
   !! Hide sponsor banner
