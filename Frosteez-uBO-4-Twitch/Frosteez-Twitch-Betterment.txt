@@ -3,7 +3,7 @@
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 15Nov2024
+! Version: 25Nov2024
 
 ! Prevent console log spam
 @@https://gaming.amazon.com/fiber
@@ -66,7 +66,7 @@
   twitch.tv##div[data-a-target="player-settings-menu"] p:has-text(/Always Show Events/):upward(2)
   !! Hide useless buttons under video player
   twitch.tv##div[data-target="channel-header-right"]
-  twitch.tv##button[aria-label="Share"]:upward(4)
+  twitch.tv##button[aria-label="Share"]
   twitch.tv##.boost-status:upward(2)
   !! Hide monthly recap banner
   twitch.tv##a[href*="/recaps/"]:upward(5)
