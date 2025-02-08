@@ -1,9 +1,9 @@
-[uBlock Origin 1.57.0]
+[uBlock Origin 1.62.0]
 ! Title: Frosteez YT Betterment
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 19Oct2024
+! Version: 08Feb2025
 
 ! Extras (Only use with Chrome Extension -> "Replace YouTube's Home with Subscriptions")
   !! Hide home page when redirecting to subscription page (if too slow)
@@ -61,6 +61,8 @@
     !!! Hide videos in the 3rd slot that are always weird and random stuff <1k views.
     youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:nth-of-type(3)
     youtube.com##ytd-compact-video-renderer:not(#metadata-line > span:first-of-type:has-text(/K|M/i))
+    !!! Hide Recommendations w/ Trump in the title
+    youtube.com##.ytd-compact-video-renderer[title*='trump'i]:upward(.ytd-item-section-renderer)
   !! Video Box
     !!! Make ambient colors bigger
     youtube.com###cinematics > div:style(inset: -50px !important)
