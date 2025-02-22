@@ -58,7 +58,7 @@
   !! Hide videos <50k views (if not live)
   youtube.com##ytd-rich-item-renderer:has([href="/@NASA"]):has([overlay-style="DEFAULT"]):not(#metadata-line > span:first-of-type:has-text(/^[5-9]\dK|^\d{3}K|M/)):remove()
   !! Hide videos <100k views  
-  !youtube.com##ytd-rich-item-renderer:has([href="/@business"]):not(#metadata-line > span:first-of-type:has-text(/^\d{3}K|M/)):remove()  
+  youtube.com##ytd-rich-item-renderer:has([href="/@business"]):not(#metadata-line > span:first-of-type:has-text(/^\d{3}K|M/)):remove()  
   !! Hide videos <150k views
   youtube.com##ytd-rich-item-renderer:has([href="/@CNBC"]):not(#metadata-line > span:first-of-type:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)):remove()
 
