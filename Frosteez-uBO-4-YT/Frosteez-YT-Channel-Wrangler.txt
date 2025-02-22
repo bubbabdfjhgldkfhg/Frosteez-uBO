@@ -87,9 +87,8 @@
   youtube.com##ytd-rich-item-renderer:has([href="/@60minutes"]):has([title*="Archive"i], [title*="Full Episodes"i]):not(#metadata-line > span:first-of-type:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)):remove()
 
 ! Hide by age AND title
-  [Kept for templates]
-  !! Hide all Channel videos w/o "Desired Keywords" in title after 2 days
-  !youtube.com##ytd-rich-item-renderer:has([href="/@channelname"]):not(:has([title*="Desired Keywords"i])):not(#metadata-line > span:nth-of-type(2):has-text(/minute|hour|day ago/i)):remove()
+  !! Hide all Channel videos w/ undesired keywords in title after 2 days
+  youtube.com##ytd-rich-item-renderer:has([href="/@downhill254skate"]):has([title*="podcast"i]):not(#metadata-line > span:nth-of-type(2):has-text(/minute|hour|day ago/i)):remove()
 
 ! Hide by length AND view count
   [Kept for templates]
