@@ -17,14 +17,14 @@
   twitch.tv###side-nav div:has(> .hype-train-icon)
   !! Hide offline followed channels in sidebar
   twitch.tv##.side-nav-card:has(.side-nav-card__avatar--offline)
-  !! Hide 3 dot menu on top left of page
-  twitch.tv##div:has(a[data-test-selector="top-nav__browse-link"]) button[data-a-target="ellipsis-button"]
-  !! Hide "Get Bits", "More", and "Following" buttons
-  twitch.tv##.shell-nav
-  twitch.tv##button[data-a-target="top-nav-get-bits-button"], button[aria-label="More"][data-a-target="ellipsis-button"]:upward(4)
+  !! Hide "Following", "More", and "Get Bits" buttons
+  !twitch.tv##.shell-nav
   twitch.tv##a[data-test-selector="top-nav__following-link"]:upward(2)
+  twitch.tv##div:has(a[data-test-selector="top-nav__browse-link"]) button[data-a-target="ellipsis-button"]
+  twitch.tv##button[data-a-target="top-nav-get-bits-button"]:upward(5)
   !! Hide Twitch Turbo button
   twitch.tv##button:has(div:has-text(/Ad-Free/)):upward(4)
+  twitch.tv##button[aria-label*="Ad-Free"]:upward(4)
   !! Hide channel tags
   twitch.tv##.tw-tag:upward(3)
 
