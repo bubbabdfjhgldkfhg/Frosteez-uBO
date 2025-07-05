@@ -1,9 +1,9 @@
-[uBlock Origin 1.62.0]
+[uBlock Origin 1.64.0]
 ! Title: Frosteez YT Betterment
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 08Feb2025
+! Version: 05July2025
 
 ! Extras (Only use with Chrome Extension -> "Replace YouTube's Home with Subscriptions")
   !! Hide home page when redirecting to subscription page (if too slow)
@@ -79,14 +79,6 @@
     !!! Hide "View Products" button
     youtube.com##.ytp-suggested-action
   
-    !!! Make player bigger (aka Break Everything)
-      youtube.com###columns.ytd-watch-flexy:style(max-width: 100vw !important)
-      youtube.com###secondary.ytd-watch-flexy:style(padding-right: 4px !important)
-      youtube.com###columns .video-stream:style(width: -webkit-fill-available !important; height: auto !important)
-      !!!! Hide videos after ending (so they don't sit at the top of the player container.)
-      !youtube.com##video:matches-css(top: /^-/)
-      youtube.com##.ended-mode video
-  
   !! Title Area
     !!! Hide page load skeleton under video player
     youtube.com##.watch-skeleton
@@ -130,9 +122,9 @@
     !!! Hide comment submission box
     youtube.com##ytd-comment-simplebox-renderer
     youtube.com##ytd-comments-header-renderer:style(margin-bottom: 0px !important)
-    !! Hide Dislike and Reply buttons on comments // Hide like counter if likes = 0
+    !! Hide like button & counter if likes = 0 // Hide Dislike and Reply buttons on all comments
+    youtube.com###action-buttons:has(#vote-count-middle[hidden])
     youtube.com###dislike-button, #reply-button-end
-    youtube.com##ytd-comment-engagement-bar #toolbar:has(#vote-count-middle[hidden]) #like-button
 
 ! Search
   !! Hide "Additional" search results
