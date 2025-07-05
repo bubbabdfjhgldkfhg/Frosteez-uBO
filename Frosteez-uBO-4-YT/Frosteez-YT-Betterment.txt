@@ -26,18 +26,15 @@
   !! Hide season/episode counter above video name
   youtube.com##h3 > ytd-badge-supported-renderer
   !! Hide top right buttons & Voice search button
-  youtube.com##button:matches-attr(aria-label="/Create|YouTube apps/"):upward(ytd-topbar-menu-button-renderer)
-  youtube.com###voice-search-button, ytd-notification-topbar-button-renderer, #masthead-skeleton-icons
+  youtube.com###masthead-skeleton-icons
+  youtube.com###masthead #buttons > :not(ytd-topbar-menu-button-renderer)
+  youtube.com###voice-search-button
   !! Hide page view switch buttons
   youtube.com##[aria-label="Switch to grid view"]:upward(#menu)
   !! Hide Upcoming live streams
   youtube.com##:is(ytd-video-renderer, ytd-rich-item-renderer):has([overlay-style="UPCOMING"]):remove()
 
 ! Video Player
-  !! Theater mode fills screen (Broken)
-  !youtube.com##:matches-path(/watch/) #content:has(#player-theater-container:has(.video-stream)) #masthead-container
-  !youtube.com##:matches-path(/watch/) #content:has(#player-theater-container:has(.video-stream)) #page-manager:style(margin-top: auto !important)
-  !youtube.com###player-theater-container:has(.video-stream):style(width: 100vw !important; height: 100vh !important; min-height: 100vh !important; max-height: 100vh !important)
   !! Hide "Experiencing Interuptions" popup
   youtube.com##tp-yt-paper-toast
   !! Hide donation box
