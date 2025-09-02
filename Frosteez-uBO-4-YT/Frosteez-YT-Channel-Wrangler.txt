@@ -1,16 +1,15 @@
-[uBlock Origin 1.62.0]
+[uBlock Origin 1.65.0]
 ! Title: Frosteez YT Channel Wrangler
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 23APR2025
+! Version: 02Sept2025
 
 ! Video Filters (:remove() is faster and more stable)
 
 ! Hide by video title
   youtube.com##ytd-rich-item-renderer:has([href="/@CovertCabal"]):has([title*="Tac Ops"i]):remove()
   youtube.com##ytd-rich-item-renderer:has([href="/@FirstWeFeast"]):not(:has([title*="Hot Ones"i])):remove()
-  youtube.com##ytd-rich-item-renderer:has([href="/@mythicalkitchen"]):not(:has([title*="Last Meal"i])):remove()
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(TomorrowsBuild|TheB1M)$/")):has([title*="New York"i]):remove()
   youtube.com##ytd-rich-item-renderer:has([href="/@Formula1"]):has(#video-title:has-text(/Esports|^F2|^F3|F1 Academy/i)):remove()
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(NFL|SailGP|Formula1)$/")):not(:has([title*="Highlight"i])):remove()
@@ -25,14 +24,14 @@
 ! Hide by video age (Exlude live videos by checking if video age exists with :has(#metadata-line > span:nth-of-type(2)).)
   !! Hide videos after 1 day
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(NFL|Formula1|SailGP|americascup)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(clearvaluetax9382|KymIllman|PlanetSailOnline|PrestonStewart|_JohnHammond|SpaceX)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(clearvaluetax9382|KymIllman|PlanetSailOnline|PrestonStewart|_JohnHammond|davidbombal|SpaceX)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
   !! Hide videos after 2 days
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|wsj|NASA|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport|PerunAU|WardCarroll|FighterPilotPodcast|josemonkey|aloneintokyo|OceanlinerDesigns|WeAreTheRace)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(AtlanticCouncilUS|csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|CarnegieEndowment|hudsoninstitute|FPRI|McCraryInstitute|SIPRIorg|shieldoftherepublicpodcast9416|TheStimsonCenter)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(AtlanticCouncilUS|csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|CarnegieEndowment|hudsoninstitute|FPRI|McCraryCyber|SIPRIorg|shieldoftherepublicpodcast9416|TheStimsonCenter)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 3 days
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(MilitaryAviationHistory|MentourPilot|CasualNavigation|TheB1M|BookingHunterTV|splunk_ml|SplunkHowTo|travishall2073|SeoulWalker)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(MilitaryAviationHistory|MentourPilot|TheB1M|BookingHunterTV|splunk_ml|SplunkHowTo|travishall2073|SeoulWalker|SequoiaCapital)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
   !! Hide videos after 5 days (mostly for stuff that gets through the "age AND view count" section)
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|Asianometry|davidbombal|FirstWeFeast|HooverInstitution|kermodeandmayostake|NetworkChuck|SailingUma|scottmanley|TechTechPotato|tested|veritasium)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[1-4] day/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|Asianometry|FirstWeFeast|HooverInstitution|kermodeandmayostake|NetworkChuck|SailingUma|scottmanley|TechTechPotato|tested|veritasium|mkbhd)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[1-4] day/i))):remove()
 
 ! Hide by view count
   !! Hide videos <200 views
