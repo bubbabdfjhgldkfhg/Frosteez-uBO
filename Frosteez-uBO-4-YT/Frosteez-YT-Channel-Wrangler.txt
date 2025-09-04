@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 03Sept2025
+! Version: 02Sept2025
 
 ! Video Filters (:remove() is faster and more stable)
 
@@ -21,84 +21,84 @@
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|FirstWeFeast)$/")):has(#text[class*="time-status"]:not(:has-text(/\d\d:/))):remove()
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|HooverInstitution|CarnegieEndowment|AtlanticCouncilUS|TheStimsonCenter|SIPRIorg)$/")):has(#text[class*="time-status"]:not(:has-text(/\d\d:/))):remove()
 
-! Hide by video age (Exlude live videos by checking if video age exists with :has(.yt-content-metadata-view-model__metadata-row > span:nth-of-type(2)).)
+! Hide by video age (Exlude live videos by checking if video age exists with :has(#metadata-line > span:nth-of-type(2)).)
   !! Hide videos after 1 day
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(NFL|Formula1|SailGP|americascup)$/")):has(.yt-content-metadata-view-model__metadata-row > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(clearvaluetax9382|KymIllman|PlanetSailOnline|PrestonStewart|_JohnHammond|davidbombal|SpaceX)$/")):has(.yt-content-metadata-view-model__metadata-row > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(NFL|Formula1|SailGP|americascup)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(clearvaluetax9382|KymIllman|PlanetSailOnline|PrestonStewart|_JohnHammond|davidbombal|SpaceX)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour/i))):remove()
   !! Hide videos after 2 days
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|wsj|NASA|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport|PerunAU|WardCarroll|FighterPilotPodcast|josemonkey|aloneintokyo|OceanlinerDesigns|WeAreTheRace)$/")):has(.yt-content-metadata-view-model__metadata-row > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(AtlanticCouncilUS|csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|CarnegieEndowment|hudsoninstitute|FPRI|McCraryCyber|SIPRIorg|shieldoftherepublicpodcast9416|TheStimsonCenter)$/")):has(.yt-content-metadata-view-model__metadata-row > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|wsj|NASA|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport|PerunAU|WardCarroll|FighterPilotPodcast|josemonkey|aloneintokyo|OceanlinerDesigns|WeAreTheRace)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(AtlanticCouncilUS|csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|CarnegieEndowment|hudsoninstitute|FPRI|McCraryCyber|SIPRIorg|shieldoftherepublicpodcast9416|TheStimsonCenter)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 3 days
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(MilitaryAviationHistory|MentourPilot|TheB1M|BookingHunterTV|splunk_ml|SplunkHowTo|travishall2073|SeoulWalker|sequoiacapital|NFLFilms)$/")):has(.yt-content-metadata-view-model__metadata-row > span:nth-of-type(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(MilitaryAviationHistory|MentourPilot|TheB1M|BookingHunterTV|splunk_ml|SplunkHowTo|travishall2073|SeoulWalker|sequoiacapital|NFLFilms)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[12] day/i))):remove()
   !! Hide videos after 5 days (mostly for stuff that gets through the "age AND view count" section)
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|Asianometry|FirstWeFeast|HooverInstitution|kermodeandmayostake|NetworkChuck|SailingUma|scottmanley|TechTechPotato|tested|veritasium|mkbhd|anthropic-ai|OpenAI|Stratechery|Fireship)$/")):has(.yt-content-metadata-view-model__metadata-row > span:nth-of-type(2):not(:has-text(/minute|hour|^[1-4] day/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|Asianometry|FirstWeFeast|HooverInstitution|kermodeandmayostake|NetworkChuck|SailingUma|scottmanley|TechTechPotato|tested|veritasium|mkbhd|anthropic-ai|OpenAI|Stratechery|Fireship)$/")):has(#metadata-line > span:nth-of-type(2):not(:has-text(/minute|hour|^[1-4] day/i))):remove()
 
 ! Hide by view count
   !! Hide videos <200 views
-  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(TheStimsonCenter|SIPRIorg)$/")):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/[2-9]\d\d|K|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(TheStimsonCenter|SIPRIorg)$/")):not(#metadata-line > span:first-of-type:has-text(/[2-9]\d\d|K|M/)):remove()
   !! Hide videos <500 views
-  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(hudsoninstitute|FPRI)$/")):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/^[5-9]\d\d|K|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(hudsoninstitute|FPRI)$/")):not(#metadata-line > span:first-of-type:has-text(/^[5-9]\d\d|K|M/)):remove()
   !! Hide videos <1k views
-  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(AtlanticCouncilUS|BrookingsInstitution|CarnegieEndowment|cfr|ChathamHouse10)$/")):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/K|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(AtlanticCouncilUS|BrookingsInstitution|CarnegieEndowment|cfr|ChathamHouse10)$/")):not(#metadata-line > span:first-of-type:has-text(/K|M/)):remove()
   !! Hide videos <2k views
-  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has([href="/@csis"]):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/^[2-9](\.\d)?K|\d{2,3}K|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has([href="/@csis"]):not(#metadata-line > span:first-of-type:has-text(/^[2-9](\.\d)?K|\d{2,3}K|M/)):remove()
   !! Hide videos <5k views
-  !youtube.com##ytd-rich-item-renderer:has([href="/@"]):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/^[5-9](\.\d)?K|\d{2,3}K|M/)):remove()
+  !youtube.com##ytd-rich-item-renderer:has([href="/@"]):not(#metadata-line > span:first-of-type:has-text(/^[5-9](\.\d)?K|\d{2,3}K|M/)):remove()
   !! Hide videos <10k views
-  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(americascup|kermodeandmayostake|HooverInstitution)$/")):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/\d\dK|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(americascup|kermodeandmayostake|HooverInstitution)$/")):not(#metadata-line > span:first-of-type:has-text(/\d\dK|M/)):remove()
   !! Hide videos <20k views
-  !youtube.com##ytd-rich-item-renderer:has([href="/@"]):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/^[2-9]\dK|^\d{3}K|M/)):remove()
+  !youtube.com##ytd-rich-item-renderer:has([href="/@"]):not(#metadata-line > span:first-of-type:has-text(/^[2-9]\dK|^\d{3}K|M/)):remove()
   !! Hide videos <30k views
-  youtube.com##ytd-rich-item-renderer:has([href="/@MilitaryAviationHistory"]):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/^[3-9]\dK|^\d{3}K|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:has([href="/@MilitaryAviationHistory"]):not(#metadata-line > span:first-of-type:has-text(/^[3-9]\dK|^\d{3}K|M/)):remove()
   !! Hide videos <40k views
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(PrestonStewart)$/")):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/^[4-9]\dK|^\d{3}K|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(PrestonStewart)$/")):not(#metadata-line > span:first-of-type:has-text(/^[4-9]\dK|^\d{3}K|M/)):remove()
   !! Hide videos <50k views
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(tested)$/")):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/^[5-9]\dK|^\d{3}K|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(tested)$/")):not(#metadata-line > span:first-of-type:has-text(/^[5-9]\dK|^\d{3}K|M/)):remove()
   !! Hide videos <50k views (if not live)
-  youtube.com##ytd-rich-item-renderer:has([href="/@NASA"]):has([overlay-style="DEFAULT"]):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/^[5-9]\dK|^\d{3}K|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:has([href="/@NASA"]):has([overlay-style="DEFAULT"]):not(#metadata-line > span:first-of-type:has-text(/^[5-9]\dK|^\d{3}K|M/)):remove()
   !! Hide videos <100k views  
-  youtube.com##ytd-rich-item-renderer:has([href="/@business"]):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/^\d{3}K|M/)):remove()  
+  youtube.com##ytd-rich-item-renderer:has([href="/@business"]):not(#metadata-line > span:first-of-type:has-text(/^\d{3}K|M/)):remove()  
   !! Hide videos <150k views
-  youtube.com##ytd-rich-item-renderer:has([href="/@CNBC"]):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:has([href="/@CNBC"]):not(#metadata-line > span:first-of-type:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)):remove()
 
 ! Hide by age AND view count
   !! Hide videos after 2 days if <15k views
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(TechTechPotato)/")):has(.yt-content-metadata-view-model__metadata-row > span:first-of-type:not(:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(TechTechPotato)/")):has(#metadata-line > span:first-of-type:not(:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <50k views
-  youtube.com##ytd-rich-item-renderer:has([href="/@kermodeandmayostake"]):has(.yt-content-metadata-view-model__metadata-row > span:first-of-type:not(:has-text(/^[5-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has([href="/@kermodeandmayostake"]):has(#metadata-line > span:first-of-type:not(:has-text(/^[5-9]\dK|^\d{3}K|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <150k views
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(tested|GoodTimesBadTimes)/")):has(.yt-content-metadata-view-model__metadata-row > span:first-of-type:not(:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(tested|GoodTimesBadTimes)/")):has(#metadata-line > span:first-of-type:not(:has-text(/^1[5-9]\dK|[2-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <200k views
-  youtube.com##ytd-rich-item-renderer:has([href="/@Asianometry"]):has(.yt-content-metadata-view-model__metadata-row > span:first-of-type:not(:has-text(/^[2-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has([href="/@Asianometry"]):has(#metadata-line > span:first-of-type:not(:has-text(/^[2-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <300k views
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|MoneyMacro)/")):has(.yt-content-metadata-view-model__metadata-row > span:first-of-type:not(:has-text(/^[3-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|MoneyMacro)/")):has(#metadata-line > span:first-of-type:not(:has-text(/^[3-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <500k views
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(FoundAndExplained|OBFYT|CaspianReport)/")):has(.yt-content-metadata-view-model__metadata-row > span:first-of-type:not(:has-text(/^[5-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(FoundAndExplained|OBFYT|CaspianReport)/")):has(#metadata-line > span:first-of-type:not(:has-text(/^[5-9]\d\dK|M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <1M views
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(tomscottplus|NotWhatYouThink)/")):has(.yt-content-metadata-view-model__metadata-row > span:first-of-type:not(:has-text(/M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(tomscottplus|NotWhatYouThink)/")):has(#metadata-line > span:first-of-type:not(:has-text(/M/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <2.5M views
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(mkbhd|RealLifeLore)/")):has(.yt-content-metadata-view-model__metadata-row > span:first-of-type:not(:has-text(/^2\.[5-9]M|^[3-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(mkbhd|RealLifeLore)/")):has(#metadata-line > span:first-of-type:not(:has-text(/^2\.[5-9]M|^[3-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 2 days if <4M views
-  youtube.com##ytd-rich-item-renderer:has([href="/@veritasium"]):has(.yt-content-metadata-view-model__metadata-row > span:first-of-type:not(:has-text(/^[4-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has([href="/@veritasium"]):has(#metadata-line > span:first-of-type:not(:has-text(/^[4-9](\.\d)?M|\d\dM/)) + span:not(:has-text(/minute|hour|day ago/i))):remove()
 
 ! Hide by title AND view count
   !! Hide 60 minutes videos w/ "Archive" or "Full Espisodes" in title if <15k views
-  youtube.com##ytd-rich-item-renderer:has([href="/@60minutes"]):has([title*="Archive"i], [title*="Full Episodes"i]):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)):remove()
+  youtube.com##ytd-rich-item-renderer:has([href="/@60minutes"]):has([title*="Archive"i], [title*="Full Episodes"i]):not(#metadata-line > span:first-of-type:has-text(/^1[5-9]K|^[2-9]\dK|^\d{3}K|M/)):remove()
 
 ! Hide by age AND title
   !! Hide all Channel videos w/ undesired keywords in title after 2 days
-  youtube.com##ytd-rich-item-renderer:has([href="/@downhill254skate"]):has([title*="podcast"i]):not(.yt-content-metadata-view-model__metadata-row > span:nth-of-type(2):has-text(/minute|hour|day ago/i)):remove()
+  youtube.com##ytd-rich-item-renderer:has([href="/@downhill254skate"]):has([title*="podcast"i]):not(#metadata-line > span:nth-of-type(2):has-text(/minute|hour|day ago/i)):remove()
 
 ! Hide by length AND view count
   [Kept for templates]
   !! Hide videos <1hr if <1k views
-  !youtube.com##ytd-rich-item-renderer:has([href="/@channelname"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/K|M/)):remove()
+  !youtube.com##ytd-rich-item-renderer:has([href="/@channelname"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(#metadata-line > span:first-of-type:has-text(/K|M/)):remove()
 
 ! Hide by length AND age
   [Kept for templates]
   !! Hide videos after 2 days if <1hr
-  !youtube.com##ytd-rich-item-renderer:has([href="/@channelname"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(.yt-content-metadata-view-model__metadata-row > span:nth-of-type(2):has-text(/minute|hour|day ago/i)):remove()
+  !youtube.com##ytd-rich-item-renderer:has([href="/@channelname"]):has(#text[class*="time-status"]:not(:has-text(/:\d\d:/))):not(#metadata-line > span:nth-of-type(2):has-text(/minute|hour|day ago/i)):remove()
 
 ! Hide VODs
   [Kept for templates]
-  !youtube.com##ytd-rich-item-renderer:has([href="/@channelname"]):has(.yt-content-metadata-view-model__metadata-row > span:nth-of-type(2):has-text(/Streamed/i)):remove()
+  !youtube.com##ytd-rich-item-renderer:has([href="/@channelname"]):has(#metadata-line > span:nth-of-type(2):has-text(/Streamed/i)):remove()
