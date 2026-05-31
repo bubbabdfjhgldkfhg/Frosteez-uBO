@@ -3,16 +3,16 @@
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 31May2026
+! Version: 31May2026b
 
 ! Prevent console log spam
 @@https://gaming.amazon.com/fiber
 
 ! Site-wide
-  !! Hide Stories [DEAD: Twitch removed the Stories sidebar section — re-enable if it returns]
-  !twitch.tv##div[class*="storiesLeftNavSection"]
-  !! Hide followed channels sort button [DEAD: header is now .side-nav-header, no sort button found]
-  !twitch.tv##.followed-side-nav-header--expanded > button
+  !! Hide Stories
+  twitch.tv##div[class*="storiesLeftNavSection"]
+  !! Hide followed channels sort button in sidebar
+  twitch.tv##.followed-side-nav-header--expanded > button
   !! Hide Hype Train label in side nav
   twitch.tv###side-nav div:has(> .hype-train-icon)
   !! Hide offline followed channels in sidebar
