@@ -35,7 +35,7 @@
   !! Hide page view switch buttons
   youtube.com##[aria-label="Switch to grid view"]:upward(#menu)
   !! Hide Upcoming live streams
-  youtube.com##:is(ytd-video-renderer, ytd-rich-item-renderer):has(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/Scheduled|Premieres/)):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-rich-item-renderer):has(yt-content-metadata-view-model:has-text(/Scheduled for|Premieres/)):remove()
 
 ! Video Player
   !! Hide "Experiencing Interuptions" popup
@@ -58,7 +58,7 @@
     !!! Hide movies from recommendations
     youtube.com##ytd-compact-movie-renderer
     !!! Hide videos w/ "Recommended for you" tag
-    youtube.com##.yt-content-metadata-view-model__metadata-row:has-text(/Recommended for you/):upward(yt-lockup-view-model)
+    youtube.com##yt-lockup-view-model:has(yt-content-metadata-view-model:has-text(/Recommended for you/)):remove()
     !!! Hide videos in the 3rd slot that are always weird and random stuff <1k views.
     youtube.com###contents > yt-lockup-view-model:nth-of-type(3)
     !youtube.com##yt-lockup-view-model:not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/K|M/i))
