@@ -3,28 +3,24 @@
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 15Jun2025
+! Version: 31May2026
 
 ! Prevent console log spam
 @@https://gaming.amazon.com/fiber
 
 ! Site-wide
-  !! Hide Stories
-  twitch.tv##div[class*="storiesLeftNavSection"]
-  !! Hide followed channels sort button in sidebar
-  twitch.tv##.followed-side-nav-header--expanded > button
+  !! Hide Stories [DEAD: Twitch removed the Stories sidebar section — re-enable if it returns]
+  !twitch.tv##div[class*="storiesLeftNavSection"]
+  !! Hide followed channels sort button [DEAD: header is now .side-nav-header, no sort button found]
+  !twitch.tv##.followed-side-nav-header--expanded > button
   !! Hide Hype Train label in side nav
   twitch.tv###side-nav div:has(> .hype-train-icon)
   !! Hide offline followed channels in sidebar
   twitch.tv##.side-nav-card:has(.side-nav-card__avatar--offline)
-  !! Hide "Following", "More", and "Get Bits" buttons
+  !! Hide Following / More / Get Bits / Turbo etc — keep only Browse (left) and the user menu (right)
   !twitch.tv##.shell-nav
-  twitch.tv##a[data-test-selector="top-nav__following-link"]:upward(2)
-  twitch.tv##div:has(a[data-test-selector="top-nav__browse-link"]) button[data-a-target="ellipsis-button"]
-  twitch.tv##button[data-a-target="top-nav-get-bits-button"]:upward(5)
-  !! Hide Twitch Turbo button
-  twitch.tv##button:has(div:has-text(/Ad-Free/)):upward(4)
-  twitch.tv##button[aria-label*="Ad-Free"]:upward(4)
+  twitch.tv##.top-nav__menu > div:has(button[data-a-target="user-menu-toggle"]) > div:not(:has(button[data-a-target="user-menu-toggle"]))
+  twitch.tv##a[aria-label="Twitch Home"] ~ div > div > div:not(:has(a[data-test-selector="top-nav__browse-link"]))
   !! Hide channel tags
   twitch.tv##.tw-tag:upward(3)
 
@@ -54,6 +50,8 @@
   twitch.tv##div[aria-controls="one-tap-store-id"]
   !! Hide "Mature Audiences" warning
   twitch.tv##.disclosure-tool
+  !! Hide low latency notification
+  twitch.tv##.low-latency-notification
   !! Hide some clutter from the video player
   twitch.tv##.theatre-social-panel:upward(2)
   twitch.tv##.tw-channel-status-text-indicator:upward(1)
@@ -83,7 +81,7 @@
   twitch.tv###live-channel-stream-information .metadata-layout__support:style(min-height: 0 !important)
   twitch.tv###live-channel-stream-information .metadata-layout__support:upward(1):style(align-self: end !important)
   twitch.tv###live-channel-stream-information [data-a-target="stream-title"]:upward(1):style(margin-top: 0 !important)
-  twitch.tv###live-channel-stream-information p[aria-label="Viewer Count"]:upward(5):style(margin-top: 0 !important)
+  twitch.tv###live-channel-stream-information [data-a-target="animated-channel-viewers-count"]:upward(5):style(margin-top: 0 !important)
   twitch.tv###live-channel-about-panel:upward(2):style(margin-top: 0 !important)
 
 ! Chat Appearance
@@ -118,7 +116,7 @@
   twitch.tv##.bttv-highlighted:not(.bttv-chat-line-deleted) .text-fragment:style(background-color: rgba(0,0,0,.7) !important)
   !! Block Gifted Subs, Highlighted Messages & Bits Notifications in Chat
   !twitch.tv##.chat-line__message--cheer-amount:upward(.vod-message, .chat-line__message)
-  twitch.tv##.chat-scrollable-area__message-container > *:not(.chat-line__message, .chat-line__status):has(> *:not(.chat-line__message, .chat-line__status))  
+  twitch.tv##.chat-scrollable-area__message-container > *:not(:has(.chat-line__message, .chat-line__status))  
   !! Hide timestamps from chat
   twitch.tv##.chat-line__timestamp
   twitch.tv##.vod-message__header
@@ -129,7 +127,7 @@
   !! Hide donate button on chat box
   twitch.tv##[aria-label="Hype Chat"]:upward(1)
   !! Hide scroll bar
-  twitch.tv##.video-chat__message-list-wrapper::-webkit-scrollbar, .simplebar-track
+  twitch.tv##body:style(scrollbar-color:hsla(0,0%,0%,0) transparent !important;)
   !! Hide "Elevate Message" button
   twitch.tv##button[aria-label="ElevatedMessage"]
   !! Hide "Introduce Yourself" button
