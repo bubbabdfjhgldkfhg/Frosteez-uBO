@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 31May2026p
+! Version: 31May2026q
 ! DOM note: anchored on the stable yt-content-metadata-view-model TAG + text content, NOT the
 !   volatile class names (YouTube A/B-s ytContentMetadataViewModelMetadataRow vs the kebab form).
 !     views = yt-content-metadata-view-model span:has-text(/views|watching/)
@@ -54,7 +54,7 @@
 
 ! Hide by view count (count span isolated by "views"/"watching" text, so channel names can't false-match)
   !! Hide videos <200 views
-  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(TheStimsonCenter|SIPRIorg)$/")):has(yt-content-metadata-view-model span:has-text(/views|watching/):not(:has-text(/[2-9]\d\d|K|M/))):remove()
+  youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(TheStimsonCenter|SIPRIorg|CNASdc)$/")):has(yt-content-metadata-view-model span:has-text(/views|watching/):not(:has-text(/[2-9]\d\d|K|M/))):remove()
   !! Hide videos <500 views
   youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(hudsoninstitute|FPRI)$/")):has(yt-content-metadata-view-model span:has-text(/views|watching/):not(:has-text(/^[5-9]\d\d|K|M/))):remove()
   !! Hide videos <1k views
