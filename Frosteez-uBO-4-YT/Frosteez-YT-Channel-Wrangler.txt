@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 31May2026i
+! Version: 31May2026j
 ! DOM note: anchored on the stable yt-content-metadata-view-model TAG + text content, NOT the
 !   volatile class names (YouTube A/B-s ytContentMetadataViewModelMetadataRow vs the kebab form).
 !     views = yt-content-metadata-view-model span:has-text(/views|watching/)
@@ -63,8 +63,6 @@
   youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has([href="/@csis"]):has(yt-content-metadata-view-model span:has-text(/views|watching/):not(:has-text(/^[2-9](\.\d)?K|\d{2,3}K|M/))):remove()
   !! Hide videos <10k views
   youtube.com##ytd-rich-item-renderer:not(:has([title*="Cyber"i])):has(a:matches-attr(href="/@(kermodeandmayostake|HooverInstitution)$/")):has(yt-content-metadata-view-model span:has-text(/views|watching/):not(:has-text(/\d\dK|M/))):remove()
-  !! Hide videos <30k views
-  youtube.com##ytd-rich-item-renderer:has([href="/@MilitaryAviationHistory"]):has(yt-content-metadata-view-model span:has-text(/views|watching/):not(:has-text(/^[3-9]\dK|^\d{3}K|M/))):remove()
   !! Hide videos <40k views
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(PrestonStewart)$/")):has(yt-content-metadata-view-model span:has-text(/views|watching/):not(:has-text(/^[4-9]\dK|^\d{3}K|M/))):remove()
   !! Hide videos <50k views
