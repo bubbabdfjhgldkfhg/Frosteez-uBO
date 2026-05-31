@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 31May2026v
+! Version: 31May2026w
 ! DOM note: anchored on the stable yt-content-metadata-view-model TAG + text content, NOT the
 !   volatile class names (YouTube A/B-s ytContentMetadataViewModelMetadataRow vs the kebab form).
 !     views = yt-content-metadata-view-model span:has-text(/views|watching/)
@@ -30,6 +30,8 @@
   youtube.com##ytd-rich-item-renderer:has(yt-avatar-stack-view-model):has(yt-content-metadata-view-model span:has-text(/Center for Strategic/)):has(yt-content-metadata-view-model span:has-text(/views|watching/):not(:has-text(/^[5-9](\.\d)?K|\d{2,3}K|M/))):remove()
   !! First We Feast collabs: anything that isn't Hot Ones
   youtube.com##ytd-rich-item-renderer:has(yt-avatar-stack-view-model):has(yt-content-metadata-view-model span:has-text(/First We Feast/)):not(:has([title*="Hot Ones"i])):remove()
+  !! Downhill254 collabs: after 5 days (matches the solo 5-day bracket)
+  youtube.com##ytd-rich-item-renderer:has(yt-avatar-stack-view-model):has(yt-content-metadata-view-model span:has-text(/Downhill254/)):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|^[1-4] day/i))):remove()
 
 ! Hide by video length — read runtime from the title aria-label (STABLE). The thumbnail badge is NOT
 !   usable: on hover YouTube plays a preview and the badge changes to elapsed time (1:32:36 -> 0:03),
