@@ -3,7 +3,7 @@
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 31May2026a
+! Version: 31May2026b
 ! DOM note: migrated broken legacy selectors (#hover-overlays, ytd-menu-service-item-renderer,
 !   .badges, ytd-compact-video-renderer, #metadata-line, overlay-style=UPCOMING, title=) onto the
 !   new view-model components (yt-lockup-view-model, yt-list-item-view-model,
@@ -18,8 +18,10 @@
   youtube.com##:matches-path(/subscriptions/) ytd-two-column-browse-results-renderer:style(width: 97vw !important)
 
 ! Home Page
-  !! Try to make video grid look normal
-  youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
+  !! Make the grid reflow when items are :remove()'d (no empty gaps). YouTube dropped the old
+  !! ytd-rich-grid-row wrappers, so the old display:contents rule was dead. Force the items
+  !! container to flex-wrap so removed tiles repack instead of leaving holes.
+  youtube.com##ytd-rich-grid-renderer #contents:style(display: flex !important; flex-wrap: wrap !important; align-content: flex-start !important)
   !! Hide Watch Later & Add to Queue buttons
   youtube.com###hover-overlays, yt-thumbnail-hover-overlay-toggle-actions-view-model
   !! Hide unused options in the video menu
