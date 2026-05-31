@@ -62,8 +62,8 @@
     !!! Hide videos in the 3rd slot that are always weird and random stuff <1k views.
     youtube.com###contents > yt-lockup-view-model:nth-of-type(3)
     !youtube.com##yt-lockup-view-model:not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/K|M/i))
-    !!! Hide Recommendations w/ Trump in the title
-    youtube.com##yt-lockup-view-model:has(h3:matches-attr(title="/trump/i")):remove()
+    !!! Hide Recommendations w/ Trump in the title (sidebar only — not the subscriptions feed)
+    youtube.com##ytd-watch-next-secondary-results-renderer yt-lockup-view-model:has(h3:matches-attr(title="/trump/i")):remove()
   !! Video Box
     !!! Make ambient colors bigger
     youtube.com###cinematics > div:style(inset: -50px !important)

@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 31May2026e  (view-count rules TEMPORARILY DISABLED while debugging false removals)
+! Version: 31May2026f  (view-count AND length rules temporarily disabled)
 ! DOM note: anchored on the stable yt-content-metadata-view-model TAG + text content, NOT the
 !   volatile class names (YouTube A/B-s ytContentMetadataViewModelMetadataRow vs the kebab form).
 !     views = yt-content-metadata-view-model span:has-text(/views|watching/)
@@ -37,10 +37,10 @@
 
 ! Hide by video length (duration badge = badge-shape with M:SS / MM:SS text)
   !! Hide videos <5 minutes
-  youtube.com##ytd-rich-item-renderer:has([href="/@SandboxxApp"]):has(badge-shape:has-text(/:\d\d/):not(:has-text(/[5-9]:|\d\d:/))):remove()
+  !youtube.com##ytd-rich-item-renderer:has([href="/@SandboxxApp"]):has(badge-shape:has-text(/:\d\d/):not(:has-text(/[5-9]:|\d\d:/))):remove()
   !! Hide videos <10 minutes
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|FirstWeFeast)$/")):has(badge-shape:has-text(/:\d\d/):not(:has-text(/\d\d:/))):remove()
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|HooverInstitution|CarnegieEndowment|TheStimsonCenter|SIPRIorg)$/")):has(badge-shape:has-text(/:\d\d/):not(:has-text(/\d\d:/))):remove()
+  !youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|FirstWeFeast)$/")):has(badge-shape:has-text(/:\d\d/):not(:has-text(/\d\d:/))):remove()
+  !youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|HooverInstitution|CarnegieEndowment|TheStimsonCenter|SIPRIorg)$/")):has(badge-shape:has-text(/:\d\d/):not(:has-text(/\d\d:/))):remove()
 
 ! Hide by video age (age = yt-content-metadata-view-model span:has-text(/ ago/); excludes live/upcoming which lack "ago")
   !! Hide videos after 1 day
