@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 31May2026a
+! Version: 31May2026b
 ! DOM note: anchored on the stable yt-content-metadata-view-model TAG + text content, NOT the
 !   volatile class names (YouTube A/B-s ytContentMetadataViewModelMetadataRow vs the kebab form).
 !     views = yt-content-metadata-view-model span:has-text(/views|watching/)
@@ -36,7 +36,7 @@
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(NFL|Formula1|SailGP)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour/i))):remove()
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(clearvaluetax9382|KymIllman|PlanetSailOnline|PrestonStewart|_JohnHammond|davidbombal|SpaceX|neilmcdonnell)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour/i))):remove()
   !! Hide videos after 2 days
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|wsj|NASA|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport|PerunAU|WardCarroll|FighterPilotPodcast|josemonkey|aloneintokyo|WeAreTheRace|claude|OpenAI)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|wsj|NASA|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport|PerunAU|WardCarroll|FighterPilotPodcast|josemonkey|aloneintokyo|WeAreTheRace|claude|OpenAI|JomboyMedia)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|day ago/i))):remove()
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|CarnegieEndowment|hudsoninstitute|FPRI|McCraryCyber|SIPRIorg|shieldoftherepublicpodcast9416|TheStimsonCenter)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|day ago/i))):remove()
   !! Hide videos after 3 days
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(MilitaryAviationHistory|MentourPilot|TheB1M|BookingHunterTV|splunk_ml|SplunkHowTo|travis-hall|SeoulWalker|sequoiacapital|NFLFilms)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|^[12] day/i))):remove()
