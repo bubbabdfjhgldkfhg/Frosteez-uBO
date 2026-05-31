@@ -3,7 +3,11 @@
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 05July2025
+! Version: 30May2026
+! DOM note: migrated broken legacy selectors (#hover-overlays, ytd-menu-service-item-renderer,
+!   .badges, ytd-compact-video-renderer, #metadata-line, overlay-style=UPCOMING, title=) onto the
+!   new view-model components (yt-lockup-view-model, yt-list-item-view-model,
+!   .yt-content-metadata-view-model__metadata-row / -wiz__badge).
 
 ! Extras (Only use with Chrome Extension -> "Replace YouTube's Home with Subscriptions")
   !! Hide home page when redirecting to subscription page (if too slow)
@@ -17,10 +21,9 @@
   !! Try to make video grid look normal
   youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
   !! Hide Watch Later & Add to Queue buttons
-  youtube.com###hover-overlays
+  youtube.com###hover-overlays, yt-thumbnail-hover-overlay-toggle-actions-view-model
   !! Hide unused options in the video menu
-  youtube.com##ytd-menu-service-item-renderer:has(yt-formatted-string:has-text(/Share|Add to queue|Save to Watch later|Save to playlist/))
-  youtube.com##ytd-menu-service-item-download-renderer
+  youtube.com##yt-list-item-view-model:has(span:has-text(/Share|Add to queue|Save to Watch later|Save to playlist|Download/))
   !! Hide "Video hidden from feed" box
   youtube.com##ytd-rich-grid-media[is-dismissed]:upward(ytd-rich-item-renderer):remove()
   !! Hide season/episode counter above video name
@@ -32,7 +35,7 @@
   !! Hide page view switch buttons
   youtube.com##[aria-label="Switch to grid view"]:upward(#menu)
   !! Hide Upcoming live streams
-  youtube.com##:is(ytd-video-renderer, ytd-rich-item-renderer):has([overlay-style="UPCOMING"]):remove()
+  youtube.com##:is(ytd-video-renderer, ytd-rich-item-renderer):has(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/Scheduled|Premieres/)):remove()
 
 ! Video Player
   !! Hide "Experiencing Interuptions" popup
@@ -47,19 +50,20 @@
     !!! Hide recommendation filter buttons // Fix height of first recommendation
     youtube.com##yt-related-chip-cloud-renderer
     youtube.com##ytd-compact-video-renderer:first-of-type:style(margin-top: 0px !important)
+    youtube.com##yt-lockup-view-model:first-of-type:style(margin-top: 0px !important)
     !!! Hide badges from recommended videos ("New", etc.)
-    youtube.com##.badges, #badges
+    youtube.com##.badges, #badges, .yt-content-metadata-view-model-wiz__badge
     !!! Hide "Mix" Thumbnails
     youtube.com##ytd-radio-renderer, ytd-compact-radio-renderer, ytd-compact-playlist-renderer, ytd-reel-shelf-renderer, a[data-is-mix="true"]
     !!! Hide movies from recommendations
     youtube.com##ytd-compact-movie-renderer
     !!! Hide videos w/ "Recommended for you" tag
-    youtube.com##.ytd-video-meta-block:has-text(/Recommended for you/):upward(ytd-compact-video-renderer)
+    youtube.com##.yt-content-metadata-view-model__metadata-row:has-text(/Recommended for you/):upward(yt-lockup-view-model)
     !!! Hide videos in the 3rd slot that are always weird and random stuff <1k views.
-    youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:nth-of-type(3)
-    youtube.com##ytd-compact-video-renderer:not(#metadata-line > span:first-of-type:has-text(/K|M/i))
+    youtube.com###contents > yt-lockup-view-model:nth-of-type(3)
+    !youtube.com##yt-lockup-view-model:not(.yt-content-metadata-view-model__metadata-row > span:first-of-type:has-text(/K|M/i))
     !!! Hide Recommendations w/ Trump in the title
-    youtube.com##.ytd-compact-video-renderer[title*='trump'i]:upward(.ytd-item-section-renderer)
+    youtube.com##yt-lockup-view-model:has(h3:matches-attr(title="/trump/i")):remove()
   !! Video Box
     !!! Make ambient colors bigger
     youtube.com###cinematics > div:style(inset: -50px !important)
@@ -67,12 +71,17 @@
     youtube.com##.ytp-ce-element
     !!! Hide recommendations after video
     youtube.com##.ytp-videowall-still, .autonav-endscreen
+    !!! Hide recommendation grid / quick-action buttons on the fullscreen end screen
+    youtube.com##.ytp-fullscreen-grid-main-content
+    youtube.com##.ytp-fullscreen-quick-actions
+    !!! Hide the leftover paused video frame in ended mode
+    youtube.com##.ended-mode video
     !!! Hide uselesss buttons on video player
     youtube.com##.ytp-chrome-top-buttons, .ytp-cards-button, .ytp-prev-button, .ytp-next-button, .ytp-miniplayer-button, .ytp-size-button, .ytp-remote-button, .ytp-fullscreen-button
     !!! Hide captions button if captions are unavailable
     youtube.com##button[title="Subtitles/closed captions unavailable"]
     !!! Hide autoplay button if autoplay is disabled
-    youtube.com##button[title="Autoplay is off"]
+    youtube.com##button[title="Autoplay is off"], button[aria-label="Autoplay is off"]
     !!! Hide "View Products" button
     youtube.com##.ytp-suggested-action
   
