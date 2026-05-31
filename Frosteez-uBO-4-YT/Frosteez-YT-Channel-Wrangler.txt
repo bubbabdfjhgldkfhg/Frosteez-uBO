@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 31May2026g
+! Version: 31May2026h
 ! DOM note: anchored on the stable yt-content-metadata-view-model TAG + text content, NOT the
 !   volatile class names (YouTube A/B-s ytContentMetadataViewModelMetadataRow vs the kebab form).
 !     views = yt-content-metadata-view-model span:has-text(/views|watching/)
@@ -17,12 +17,8 @@
 ! Hide by video title
   youtube.com##ytd-rich-item-renderer:has([href="/@CovertCabal"]):has([title*="Tac Ops"i]):remove()
   youtube.com##ytd-rich-item-renderer:has([href="/@FirstWeFeast"]):not(:has([title*="Hot Ones"i])):remove()
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(TomorrowsBuild|TheB1M)$/")):has([title*="New York"i]):remove()
   youtube.com##ytd-rich-item-renderer:has([href="/@Formula1"]):has(h3:matches-attr(title="/Esports|^F2|^F3|F1 Academy/i")):remove()
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(NFL|SailGP|Formula1)$/")):not(:has([title*="Highlight"i])):remove()
-
-! Hide vloggers after 2 days
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(MaliaRamos|tracysohn)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|day ago/i))):remove()
 
 ! Collabs drop the /@handle link (avatar = yt-avatar-stack-view-model), so match these heavy-collab
 ! channels by display-name text, GATED to collab tiles so solo look-alikes (NFL vs NFL Films) are safe.
