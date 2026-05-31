@@ -3,7 +3,7 @@
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 31May2026b
+! Version: 31May2026c
 
 ! Prevent console log spam
 @@https://gaming.amazon.com/fiber
@@ -17,6 +17,8 @@
   twitch.tv###side-nav div:has(> .hype-train-icon)
   !! Hide offline followed channels in sidebar
   twitch.tv##.side-nav-card:has(.side-nav-card__avatar--offline)
+  !! Hide gift-sub "Discount • Ends in Xh" promo line on followed-channel cards
+  twitch.tv##.side-nav-card div:has(> [aria-label="Gift Sub"])
   !! Hide Following / More / Get Bits / Turbo etc — keep only Browse (left) and the user menu (right)
   !twitch.tv##.shell-nav
   twitch.tv##.top-nav__menu > div:has(button[data-a-target="user-menu-toggle"]) > div:not(:has(button[data-a-target="user-menu-toggle"]))
