@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 31May2026b
+! Version: 31May2026c
 ! DOM note: anchored on the stable yt-content-metadata-view-model TAG + text content, NOT the
 !   volatile class names (YouTube A/B-s ytContentMetadataViewModelMetadataRow vs the kebab form).
 !     views = yt-content-metadata-view-model span:has-text(/views|watching/)
@@ -23,6 +23,17 @@
 
 ! Hide vloggers after 2 days
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(MaliaRamos|tracysohn)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|day ago/i))):remove()
+
+! Collabs drop the /@handle link (avatar = yt-avatar-stack-view-model), so match these heavy-collab
+! channels by display-name text, GATED to collab tiles so solo look-alikes (NFL vs NFL Films) are safe.
+  !! NFL + FORMULA 1 collabs: non-highlights now, highlights after 1 day
+  youtube.com##ytd-rich-item-renderer:has(yt-avatar-stack-view-model):has(yt-content-metadata-view-model span:has-text(/NFL|FORMULA 1/i)):not(:has([title*="Highlight"i])):remove()
+  youtube.com##ytd-rich-item-renderer:has(yt-avatar-stack-view-model):has(yt-content-metadata-view-model span:has-text(/NFL|FORMULA 1/i)):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour/i))):remove()
+  !! CSIS collabs: after 2 days, or under 2k views
+  youtube.com##ytd-rich-item-renderer:has(yt-avatar-stack-view-model):has(yt-content-metadata-view-model span:has-text(/Center for Strategic/)):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|day ago/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(yt-avatar-stack-view-model):has(yt-content-metadata-view-model span:has-text(/Center for Strategic/)):not(:has(yt-content-metadata-view-model span:has-text(/views|watching/):has-text(/^[2-9](\.\d)?K|\d{2,3}K|M/))):remove()
+  !! First We Feast collabs: anything that isn't Hot Ones
+  youtube.com##ytd-rich-item-renderer:has(yt-avatar-stack-view-model):has(yt-content-metadata-view-model span:has-text(/First We Feast/)):not(:has([title*="Hot Ones"i])):remove()
 
 ! Hide by video length (duration badge = badge-shape with M:SS / MM:SS text)
   !! Hide videos <5 minutes
