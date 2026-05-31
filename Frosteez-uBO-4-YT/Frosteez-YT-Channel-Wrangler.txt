@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 30May2026b
+! Version: 30May2026c
 ! DOM note: anchored on the stable yt-content-metadata-view-model TAG + text content, NOT the
 !   volatile class names (YouTube A/B-s ytContentMetadataViewModelMetadataRow vs the kebab form).
 !     views = yt-content-metadata-view-model span:has-text(/views|watching/)
