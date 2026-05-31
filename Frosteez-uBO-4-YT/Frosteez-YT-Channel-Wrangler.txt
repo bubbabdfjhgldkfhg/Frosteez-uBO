@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 31May2026h
+! Version: 31May2026i
 ! DOM note: anchored on the stable yt-content-metadata-view-model TAG + text content, NOT the
 !   volatile class names (YouTube A/B-s ytContentMetadataViewModelMetadataRow vs the kebab form).
 !     views = yt-content-metadata-view-model span:has-text(/views|watching/)
@@ -36,16 +36,14 @@
 !   which the old badge rule misread as "short" and deleted long videos. aria-label keeps the true
 !   runtime. Keep >=10min = has "hour" or two-digit minutes; the :matches-attr(/minute|second/) guard
 !   skips live videos (no duration); the $ anchor on minutes avoids matching "10 Minutes" in a title.
-  !! Hide videos <5 minutes
-  youtube.com##ytd-rich-item-renderer:has([href="/@SandboxxApp"]):has(a[href^="/watch"][aria-label]:matches-attr(aria-label="/minute|second/"):not(:matches-attr(aria-label="/hour|([5-9]|[1-9]\d) minutes?(, \d+ seconds?)?$/"))):remove()
   !! Hide videos <10 minutes
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|FirstWeFeast)$/")):has(a[href^="/watch"][aria-label]:matches-attr(aria-label="/minute|second/"):not(:matches-attr(aria-label="/hour|[1-9]\d minutes?(, \d+ seconds?)?$/"))):remove()
+  youtube.com##ytd-rich-item-renderer:has([href="/@FirstWeFeast"]):has(a[href^="/watch"][aria-label]:matches-attr(aria-label="/minute|second/"):not(:matches-attr(aria-label="/hour|[1-9]\d minutes?(, \d+ seconds?)?$/"))):remove()
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(hudsoninstitute|FPRI|csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|HooverInstitution|CarnegieEndowment|TheStimsonCenter|SIPRIorg)$/")):has(a[href^="/watch"][aria-label]:matches-attr(aria-label="/minute|second/"):not(:matches-attr(aria-label="/hour|[1-9]\d minutes?(, \d+ seconds?)?$/"))):remove()
 
 ! Hide by video age (age = yt-content-metadata-view-model span:has-text(/ ago/); excludes live/upcoming which lack "ago")
   !! Hide videos after 1 day
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(NFL|Formula1|SailGP)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour/i))):remove()
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(clearvaluetax9382|KymIllman|PlanetSailOnline|PrestonStewart|_JohnHammond|davidbombal|SpaceX|neilmcdonnell)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(clearvaluetax9382|KymIllman|PlanetSailOnline|PrestonStewart|_JohnHammond|davidbombal|neilmcdonnell)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour/i))):remove()
   !! Hide videos after 2 days
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(TomorrowsBuild|wgowshipping|CNBC|business|wsj|NASA|CovertCabal|SandboxxApp|livethforevermore|TheOperationsRoom|TheIntelReport|PerunAU|WardCarroll|FighterPilotPodcast|josemonkey|aloneintokyo|WeAreTheRace|claude|OpenAI|JomboyMedia)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|day ago/i))):remove()
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(csis|cfr|BrookingsInstitution|CNASdc|ChathamHouse10|CarnegieEndowment|hudsoninstitute|FPRI|McCraryCyber|SIPRIorg|shieldoftherepublicpodcast9416|TheStimsonCenter)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|day ago/i))):remove()
