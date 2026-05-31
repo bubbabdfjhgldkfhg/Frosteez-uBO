@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 31May2026u
+! Version: 31May2026v
 ! DOM note: anchored on the stable yt-content-metadata-view-model TAG + text content, NOT the
 !   volatile class names (YouTube A/B-s ytContentMetadataViewModelMetadataRow vs the kebab form).
 !     views = yt-content-metadata-view-model span:has-text(/views|watching/)
@@ -50,7 +50,7 @@
   !! Hide videos after 3 days
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(MilitaryAviationHistory|MentourPilot|TheB1M|BookingHunterTV|splunk_ml|SplunkHowTo|travis-hall|SeoulWalker|sequoiacapital|NFLFilms)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|^[12] day/i))):remove()
   !! Hide videos after 5 days (mostly for stuff that gets through the "age AND view count" section)
-  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|Asianometry|FirstWeFeast|HooverInstitution|kermodeandmayostake|SailingUma|scottmanley|TechTechPotato|tested|veritasium|mkbhd|anthropic-ai|Stratechery|Fireship|scenicroutestothepast|toldinstone|BrianSuttererMD|bigboxSWE)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|^[1-4] day/i))):remove()
+  youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(60minutes|Asianometry|FirstWeFeast|HooverInstitution|kermodeandmayostake|SailingUma|scottmanley|TechTechPotato|tested|veritasium|mkbhd|anthropic-ai|Stratechery|Fireship|scenicroutestothepast|toldinstone|BrianSuttererMD|bigboxSWE|downhill254skate)$/")):has(yt-content-metadata-view-model span:has-text(/ ago/):not(:has-text(/minute|hour|^[1-4] day/i))):remove()
 
 ! Hide by view count (count span isolated by "views"/"watching" text, so channel names can't false-match)
   !! Hide videos <200 views
