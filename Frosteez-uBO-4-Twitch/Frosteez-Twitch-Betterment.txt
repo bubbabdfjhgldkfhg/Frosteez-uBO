@@ -3,7 +3,7 @@
 ! Description: Improve Twitch UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-Twitch
 ! Expires: 1 hours
-! Version: 31May2026c
+! Version: 03Jun2026a
 
 ! Prevent console log spam
 @@https://gaming.amazon.com/fiber
@@ -91,6 +91,8 @@
   twitch.tv##[class^="community-highlight"]
   !! Hide ad box on top of chat
   twitch.tv##.channel-skins-banner__interactive
+  !! Hide sponsored collab banner above chat
+  twitch.tv##[data-test-selector="channel-skins-above-chat-v3"]
   ! Hide charity popup
   twitch.tv##.ReactModal__Overlay:has(.charity-avatar)
   twitch.tv##button[aria-label="Charity details"]
