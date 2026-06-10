@@ -3,7 +3,7 @@
 ! Description: Cleanup Spammy Youtube Subscriptions. (These filters are personal preferences, not recommended for wide usage.)
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/blob/main/Frosteez-uBO-4-YT/Frosteez-YT-Channel-Wrangler.txt
 ! Expires: 1 hours
-! Version: 31May2026w
+! Version: 10Jun2026a
 ! DOM note: anchored on the stable yt-content-metadata-view-model TAG + text content, NOT the
 !   volatile class names (YouTube A/B-s ytContentMetadataViewModelMetadataRow vs the kebab form).
 !     views = yt-content-metadata-view-model span:has-text(/views|watching/)
@@ -71,8 +71,8 @@
   youtube.com##ytd-rich-item-renderer:has(a:matches-attr(href="/@(tested)$/")):has(yt-content-metadata-view-model span:has-text(/views|watching/):not(:has-text(/^[3-9]\dK|^\d{3}K|M/))):remove()
   !! Hide videos <50k views (if not live -> requires a "views" span)
   youtube.com##ytd-rich-item-renderer:has([href="/@NASA"]):has(yt-content-metadata-view-model span:has-text(/ views/)):has(yt-content-metadata-view-model span:has-text(/ views/):not(:has-text(/^[5-9]\dK|^\d{3}K|M/))):remove()
-  !! Hide videos <50k views
-  youtube.com##ytd-rich-item-renderer:has([href="/@business"]):has(yt-content-metadata-view-model span:has-text(/views|watching/):not(:has-text(/^[5-9]\dK|^\d{3}K|M/))):remove()
+  !! Hide videos <50k views (disabled — the 2-day age rule covers @business)
+  !youtube.com##ytd-rich-item-renderer:has([href="/@business"]):has(yt-content-metadata-view-model span:has-text(/views|watching/):not(:has-text(/^[5-9]\dK|^\d{3}K|M/))):remove()
   !! Hide videos <75k views
   youtube.com##ytd-rich-item-renderer:has([href="/@CNBC"]):has(yt-content-metadata-view-model span:has-text(/views|watching/):not(:has-text(/^7[5-9]K|^[89]\dK|^\d{3}K|M/))):remove()
 
