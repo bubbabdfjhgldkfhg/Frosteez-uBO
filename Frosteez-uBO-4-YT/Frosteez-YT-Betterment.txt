@@ -3,7 +3,7 @@
 ! Description: Improve YouTube UI by hiding clutter and useless buttons, removing bad recommendations, and making better use of screen real estate.
 ! Homepage: https://github.com/bubbabdfjhgldkfhg/Frosteez-uBO/tree/main/Frosteez-uBO-4-YT
 ! Expires: 1 hours
-! Version: 02Jun2026a
+! Version: 20Jun2026a
 ! DOM note: migrated broken legacy selectors (#hover-overlays, ytd-menu-service-item-renderer,
 !   .badges, ytd-compact-video-renderer, #metadata-line, overlay-style=UPCOMING, title=) onto the
 !   new view-model components (yt-lockup-view-model, yt-list-item-view-model,
@@ -52,8 +52,8 @@
     !!! Hide recommendation filter buttons // Fix height of first recommendation
     youtube.com##yt-related-chip-cloud-renderer
     youtube.com##yt-lockup-view-model:first-of-type:style(margin-top: 0px !important)
-    !!! Hide badges from recommended videos ("New", etc.)
-    youtube.com##.badges, #badges, .yt-content-metadata-view-model-wiz__badge, .ytContentMetadataViewModelBadge
+    !!! Hide badges from recommended videos ("New", etc.) but keep commerce badges ("Members only")
+    youtube.com##.badges, #badges, .yt-content-metadata-view-model-wiz__badge:not(:has(.ytBadgeShapeCommerce)), .ytContentMetadataViewModelBadge:not(:has(.ytBadgeShapeCommerce))
     !!! Hide "Mix" Thumbnails
     youtube.com##ytd-radio-renderer, ytd-compact-radio-renderer, ytd-compact-playlist-renderer, ytd-reel-shelf-renderer, a[data-is-mix="true"]
     !!! Hide movies from recommendations
